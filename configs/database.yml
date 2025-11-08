@@ -1,0 +1,346 @@
+# Database Schema Configuration
+# Defines all tables, indexes, and constraints for the Racing Analysis system
+
+tables:
+  # ============================================================================
+  # CORE RACING DATA
+  # ============================================================================
+  
+  races:
+    description: "Race metadata and track conditions"
+    columns:
+      race_id: "VARCHAR PRIMARY KEY"
+      venue_code: "VARCHAR NOT NULL"  # FLE, RAN, CAU, etc.
+      venue_name: "VARCHAR"
+      race_date: "DATE NOT NULL"
+      race_number: "INTEGER NOT NULL"
+      race_name: "VARCHAR"
+      distance: "INTEGER NOT NULL"  # meters
+      surface: "VARCHAR"  # turf, sand
+      class: "VARCHAR"  # Group 1, Listed, BM78, etc.
+      rail_position: "VARCHAR"  # TRUE, +3m, +9m, etc.
+      going: "VARCHAR"  # Good4, Soft5, Heavy8, etc.
+      penetrometer: "FLOAT"  # reading
+      field_size: "INTEGER"
+      start_type: "VARCHAR"  # barrier, walk-up
+      prize_money: "INTEGER"
+      created_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+      updated_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+    indexes:
+      - "idx_races_date ON races(race_date)"
+      - "idx_races_venue ON races(venue_code, race_date)"
+      - "UNIQUE idx_races_unique ON races(venue_code, race_date, race_number)"
+
+  runs:
+    description: "Individual horse performances in races"
+    columns:
+      run_id: "VARCHAR PRIMARY KEY"
+      race_id: "VARCHAR NOT NULL REFERENCES races(race_id)"
+      horse_id: "VARCHAR NOT NULL"
+      barrier: "INTEGER"
+      weight: "FLOAT"  # kg
+      jockey_id: "VARCHAR"
+      trainer_id: "VARCHAR"
+      finishing_position: "INTEGER"
+      margin: "FLOAT"  # lengths
+      time: "FLOAT"  # seconds
+      l600_time: "FLOAT"  # last 600m split
+      l400_time: "FLOAT"  # last 400m split
+      l200_time: "FLOAT"  # last 200m split
+      l600_rank: "INTEGER"
+      speed_rating: "FLOAT"
+      starting_price: "FLOAT"  # decimal odds
+      betfair_sp: "FLOAT"  # Betfair starting price
+      emergency: "BOOLEAN DEFAULT FALSE"
+      scratched: "BOOLEAN DEFAULT FALSE"
+      incident_codes: "VARCHAR"  # comma-separated
+      created_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+    indexes:
+      - "idx_runs_race ON runs(race_id)"
+      - "idx_runs_horse ON runs(horse_id, race_id)"
+      - "idx_runs_date ON runs(race_id)"
+  
+  horses:
+    description: "Horse profiles and career statistics"
+    columns:
+      horse_id: "VARCHAR PRIMARY KEY"
+      name: "VARCHAR NOT NULL"
+      foaling_date: "DATE"
+      sex: "VARCHAR"  # C, G, H, M, F
+      color: "VARCHAR"
+      sire: "VARCHAR"
+      dam: "VARCHAR"
+      country: "VARCHAR"
+      trainer_id: "VARCHAR"
+      career_starts: "INTEGER"
+      career_wins: "INTEGER"
+      career_places: "INTEGER"
+      career_earnings: "INTEGER"
+      last_updated: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+    indexes:
+      - "idx_horses_name ON horses(name)"
+      - "idx_horses_trainer ON horses(trainer_id)"
+
+  jockeys:
+    description: "Jockey profiles and statistics"
+    columns:
+      jockey_id: "VARCHAR PRIMARY KEY"
+      name: "VARCHAR NOT NULL"
+      claim: "FLOAT DEFAULT 0"  # apprentice claim (kg)
+      country: "VARCHAR"
+      active: "BOOLEAN DEFAULT TRUE"
+      career_wins: "INTEGER"
+      career_rides: "INTEGER"
+      last_updated: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+    indexes:
+      - "idx_jockeys_name ON jockeys(name)"
+
+  trainers:
+    description: "Trainer profiles and statistics"
+    columns:
+      trainer_id: "VARCHAR PRIMARY KEY"
+      name: "VARCHAR NOT NULL"
+      stable_location: "VARCHAR"
+      country: "VARCHAR"
+      active: "BOOLEAN DEFAULT TRUE"
+      career_wins: "INTEGER"
+      career_starts: "INTEGER"
+      last_updated: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+    indexes:
+      - "idx_trainers_name ON trainers(name)"
+
+  # ============================================================================
+  # MARKET DATA
+  # ============================================================================
+
+  markets:
+    description: "Betfair market snapshots"
+    columns:
+      market_id: "VARCHAR PRIMARY KEY"
+      race_id: "VARCHAR NOT NULL REFERENCES races(race_id)"
+      market_type: "VARCHAR"  # WIN, PLACE
+      snapshot_time: "TIMESTAMP NOT NULL"  # when captured
+      minutes_before_start: "INTEGER"  # T-60, T-15, T-2, etc.
+      total_matched: "FLOAT"  # total volume traded
+      overround: "FLOAT"  # book percentage
+      created_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+    indexes:
+      - "idx_markets_race ON markets(race_id)"
+      - "idx_markets_snapshot ON markets(race_id, snapshot_time)"
+
+  prices:
+    description: "Individual horse prices in market snapshots"
+    columns:
+      price_id: "VARCHAR PRIMARY KEY"
+      market_id: "VARCHAR NOT NULL REFERENCES markets(market_id)"
+      horse_id: "VARCHAR NOT NULL"
+      back_price_1: "FLOAT"  # best back price
+      back_size_1: "FLOAT"   # liquidity at best back
+      back_price_2: "FLOAT"
+      back_size_2: "FLOAT"
+      back_price_3: "FLOAT"
+      back_size_3: "FLOAT"
+      lay_price_1: "FLOAT"   # best lay price
+      lay_size_1: "FLOAT"
+      lay_price_2: "FLOAT"
+      lay_size_2: "FLOAT"
+      lay_price_3: "FLOAT"
+      lay_size_3: "FLOAT"
+      total_matched: "FLOAT"  # volume traded on this horse
+      last_traded: "FLOAT"    # last matched price
+      created_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+    indexes:
+      - "idx_prices_market ON prices(market_id)"
+      - "idx_prices_horse ON prices(horse_id, market_id)"
+
+  # ============================================================================
+  # CONTEXT & QUALITATIVE DATA
+  # ============================================================================
+
+  gear:
+    description: "Gear changes for horses"
+    columns:
+      gear_id: "VARCHAR PRIMARY KEY"
+      race_id: "VARCHAR NOT NULL REFERENCES races(race_id)"
+      horse_id: "VARCHAR NOT NULL"
+      gear_type: "VARCHAR NOT NULL"  # Blinkers, Tongue Tie, etc.
+      first_time: "BOOLEAN DEFAULT FALSE"
+      removed: "BOOLEAN DEFAULT FALSE"
+      created_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+    indexes:
+      - "idx_gear_race ON gear(race_id)"
+      - "idx_gear_horse ON gear(horse_id, race_id)"
+
+  stewards:
+    description: "Stewards reports and vet incidents"
+    columns:
+      incident_id: "VARCHAR PRIMARY KEY"
+      race_id: "VARCHAR NOT NULL REFERENCES races(race_id)"
+      horse_id: "VARCHAR"
+      jockey_id: "VARCHAR"
+      incident_type: "VARCHAR NOT NULL"  # Vet, Inquiry, Protest, etc.
+      severity: "VARCHAR"  # Minor, Moderate, Severe
+      description: "TEXT"
+      outcome: "VARCHAR"  # Stand-down, Fine, Suspension, etc.
+      days_affected: "INTEGER"  # stand-down period
+      report_date: "DATE NOT NULL"
+      created_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+    indexes:
+      - "idx_stewards_race ON stewards(race_id)"
+      - "idx_stewards_horse ON stewards(horse_id, report_date)"
+      - "idx_stewards_jockey ON stewards(jockey_id, report_date)"
+
+  weather:
+    description: "Weather conditions at race time"
+    columns:
+      weather_id: "VARCHAR PRIMARY KEY"
+      race_id: "VARCHAR NOT NULL REFERENCES races(race_id)"
+      observation_time: "TIMESTAMP NOT NULL"
+      temperature: "FLOAT"  # Celsius
+      humidity: "FLOAT"  # percentage
+      wind_speed: "FLOAT"  # m/s
+      wind_direction: "INTEGER"  # degrees
+      rainfall: "FLOAT"  # mm in last hour
+      rainfall_24h: "FLOAT"  # mm in last 24 hours
+      conditions: "VARCHAR"  # Clear, Overcast, Rain, etc.
+      created_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+    indexes:
+      - "idx_weather_race ON weather(race_id)"
+      - "idx_weather_time ON weather(observation_time)"
+
+  qual_claims:
+    description: "Qualitative claims from Deep Research"
+    columns:
+      claim_id: "VARCHAR PRIMARY KEY"
+      race_id: "VARCHAR NOT NULL REFERENCES races(race_id)"
+      horse_id: "VARCHAR"
+      claim_type: "VARCHAR NOT NULL"  # health, fitness, tactics, gear, bias
+      polarity: "VARCHAR NOT NULL"  # positive, neutral, negative
+      confidence: "FLOAT"  # 0-1
+      summary: "TEXT"
+      source_url: "VARCHAR"
+      source_type: "VARCHAR"  # stewards, news, interview, etc.
+      extracted_at: "TIMESTAMP NOT NULL"
+      created_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+    indexes:
+      - "idx_claims_race ON qual_claims(race_id)"
+      - "idx_claims_horse ON qual_claims(horse_id, race_id)"
+      - "idx_claims_type ON qual_claims(claim_type)"
+
+  # ============================================================================
+  # MODEL & SYSTEM METADATA
+  # ============================================================================
+
+  feature_versions:
+    description: "Feature engineering version tracking"
+    columns:
+      version_id: "VARCHAR PRIMARY KEY"
+      version_name: "VARCHAR NOT NULL"
+      description: "TEXT"
+      feature_list: "TEXT"  # JSON array of feature names
+      created_at: "TIMESTAMP NOT NULL"
+      active: "BOOLEAN DEFAULT TRUE"
+    indexes:
+      - "idx_feature_versions_active ON feature_versions(active, created_at)"
+
+  model_versions:
+    description: "Model version registry"
+    columns:
+      model_id: "VARCHAR PRIMARY KEY"
+      model_name: "VARCHAR NOT NULL"
+      model_type: "VARCHAR"  # catboost, lightgbm, ensemble
+      hyperparameters: "TEXT"  # JSON
+      training_date: "TIMESTAMP NOT NULL"
+      training_samples: "INTEGER"
+      validation_brier: "FLOAT"
+      validation_auc: "FLOAT"
+      feature_version_id: "VARCHAR REFERENCES feature_versions(version_id)"
+      artifact_path: "VARCHAR"
+      active: "BOOLEAN DEFAULT FALSE"
+      created_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+    indexes:
+      - "idx_model_versions_active ON model_versions(active, created_at)"
+
+  predictions:
+    description: "Stored predictions for backtesting and monitoring"
+    columns:
+      prediction_id: "VARCHAR PRIMARY KEY"
+      race_id: "VARCHAR NOT NULL REFERENCES races(race_id)"
+      horse_id: "VARCHAR NOT NULL"
+      model_id: "VARCHAR REFERENCES model_versions(model_id)"
+      prediction_time: "TIMESTAMP NOT NULL"
+      win_prob: "FLOAT NOT NULL"
+      place_prob: "FLOAT"
+      fair_odds: "FLOAT"
+      recommended_stake: "FLOAT"
+      edge_vs_market: "FLOAT"
+      actual_result: "VARCHAR"  # win, place, unplaced (filled post-race)
+      brier_score: "FLOAT"  # calculated post-race
+      created_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+    indexes:
+      - "idx_predictions_race ON predictions(race_id)"
+      - "idx_predictions_model ON predictions(model_id, prediction_time)"
+
+  system_logs:
+    description: "Application logs and events"
+    columns:
+      log_id: "VARCHAR PRIMARY KEY"
+      log_level: "VARCHAR NOT NULL"  # INFO, WARNING, ERROR
+      component: "VARCHAR"  # etl, features, models, api, etc.
+      message: "TEXT NOT NULL"
+      metadata: "TEXT"  # JSON additional data
+      timestamp: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+    indexes:
+      - "idx_logs_timestamp ON system_logs(timestamp)"
+      - "idx_logs_level ON system_logs(log_level, timestamp)"
+
+# ============================================================================
+# VIEWS (Computed queries for common operations)
+# ============================================================================
+
+views:
+  v_recent_form:
+    description: "Last 5 runs for each horse"
+    query: |
+      WITH ranked_runs AS (
+        SELECT 
+          r.*,
+          h.name as horse_name,
+          races.race_date,
+          ROW_NUMBER() OVER (PARTITION BY r.horse_id ORDER BY races.race_date DESC) as rn
+        FROM runs r
+        JOIN races ON r.race_id = races.race_id
+        JOIN horses h ON r.horse_id = h.horse_id
+      )
+      SELECT * FROM ranked_runs WHERE rn <= 5
+
+  v_trainer_stats:
+    description: "Rolling trainer statistics (30/90/365 days)"
+    query: |
+      WITH date_ranges AS (
+        SELECT DISTINCT
+          trainer_id,
+          COUNT(*) FILTER (WHERE race_date >= CURRENT_DATE - INTERVAL '30 days') as starts_30d,
+          SUM(CASE WHEN finishing_position = 1 AND race_date >= CURRENT_DATE - INTERVAL '30 days' THEN 1 ELSE 0 END) as wins_30d,
+          COUNT(*) FILTER (WHERE race_date >= CURRENT_DATE - INTERVAL '90 days') as starts_90d,
+          SUM(CASE WHEN finishing_position = 1 AND race_date >= CURRENT_DATE - INTERVAL '90 days' THEN 1 ELSE 0 END) as wins_90d,
+          COUNT(*) FILTER (WHERE race_date >= CURRENT_DATE - INTERVAL '365 days') as starts_365d,
+          SUM(CASE WHEN finishing_position = 1 AND race_date >= CURRENT_DATE - INTERVAL '365 days' THEN 1 ELSE 0 END) as wins_365d
+        FROM runs
+        JOIN races ON runs.race_id = races.race_id
+        GROUP BY trainer_id
+      )
+      SELECT * FROM date_ranges
+
+  v_market_evolution:
+    description: "Price movement from T-60 to jump"
+    query: |
+      SELECT 
+        m.race_id,
+        p.horse_id,
+        MAX(CASE WHEN m.minutes_before_start = 60 THEN p.back_price_1 END) as price_t60,
+        MAX(CASE WHEN m.minutes_before_start = 15 THEN p.back_price_1 END) as price_t15,
+        MAX(CASE WHEN m.minutes_before_start = 2 THEN p.back_price_1 END) as price_t2
+      FROM markets m
+      JOIN prices p ON m.market_id = p.market_id
+      GROUP BY m.race_id, p.horse_id
