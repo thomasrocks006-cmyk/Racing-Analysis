@@ -41,21 +41,25 @@ class BacktestMetrics:
         Returns:
             ROI as decimal (e.g., 0.15 = 15%)
         """
-        total_staked = self.results['stake'].sum()
+        total_staked = self.results["stake"].sum()
 
         if total_staked == 0:
             return 0.0
 
-        total_profit = self.results['profit'].sum()
+        total_profit = self.results["profit"].sum()
         return total_profit / total_staked
 
     def total_profit(self) -> float:
         """Calculate total profit/loss."""
-        return self.results['profit'].sum()
+        return self.results["profit"].sum()
 
     def final_bankroll(self) -> float:
         """Get final bankroll value."""
-        return self.results['bankroll'].iloc[-1] if len(self.results) > 0 else self.initial_bankroll
+        return (
+            self.results["bankroll"].iloc[-1]
+            if len(self.results) > 0
+            else self.initial_bankroll
+        )
 
     def total_bets(self) -> int:
         """Count total number of bets placed."""
@@ -71,16 +75,16 @@ class BacktestMetrics:
         if len(self.results) == 0:
             return 0.0
 
-        wins = (self.results['outcome'] == 1).sum()
+        wins = (self.results["outcome"] == 1).sum()
         return wins / len(self.results)
 
     def average_odds(self) -> float:
         """Calculate average odds of bets placed."""
-        return self.results['odds'].mean() if len(self.results) > 0 else 0.0
+        return self.results["odds"].mean() if len(self.results) > 0 else 0.0
 
     def average_stake(self) -> float:
         """Calculate average stake size."""
-        return self.results['stake'].mean() if len(self.results) > 0 else 0.0
+        return self.results["stake"].mean() if len(self.results) > 0 else 0.0
 
     def sharpe_ratio(self, risk_free_rate: float = 0.0) -> float:
         """
@@ -96,7 +100,7 @@ class BacktestMetrics:
             return 0.0
 
         # Calculate returns per bet as percentage of stake
-        returns = self.results['profit'] / self.results['stake']
+        returns = self.results["profit"] / self.results["stake"]
 
         mean_return = returns.mean()
         std_return = returns.std()
@@ -114,22 +118,23 @@ class BacktestMetrics:
             Dictionary with max_drawdown (absolute) and max_drawdown_pct
         """
         if len(self.results) == 0:
-            return {'max_drawdown': 0.0, 'max_drawdown_pct': 0.0}
+            return {"max_drawdown": 0.0, "max_drawdown_pct": 0.0}
 
         # Calculate running maximum
-        bankroll = self.results['bankroll'].values
+        bankroll = self.results["bankroll"].values
         running_max = np.maximum.accumulate(bankroll)
 
         # Drawdown = current value - running max
         drawdown = bankroll - running_max
 
         max_dd = drawdown.min()  # Most negative value
-        max_dd_pct = max_dd / running_max[np.argmin(drawdown)] if running_max[np.argmin(drawdown)] > 0 else 0.0
+        max_dd_pct = (
+            max_dd / running_max[np.argmin(drawdown)]
+            if running_max[np.argmin(drawdown)] > 0
+            else 0.0
+        )
 
-        return {
-            'max_drawdown': max_dd,
-            'max_drawdown_pct': max_dd_pct
-        }
+        return {"max_drawdown": max_dd, "max_drawdown_pct": max_dd_pct}
 
     def profit_factor(self) -> float:
         """
@@ -138,11 +143,11 @@ class BacktestMetrics:
         Returns:
             Profit factor (> 1 = profitable)
         """
-        wins = self.results[self.results['profit'] > 0]['profit'].sum()
-        losses = abs(self.results[self.results['profit'] < 0]['profit'].sum())
+        wins = self.results[self.results["profit"] > 0]["profit"].sum()
+        losses = abs(self.results[self.results["profit"] < 0]["profit"].sum())
 
         if losses == 0:
-            return float('inf') if wins > 0 else 0.0
+            return float("inf") if wins > 0 else 0.0
 
         return wins / losses
 
@@ -153,7 +158,7 @@ class BacktestMetrics:
         Returns:
             Average profit per bet
         """
-        return self.results['profit'].mean() if len(self.results) > 0 else 0.0
+        return self.results["profit"].mean() if len(self.results) > 0 else 0.0
 
     def get_summary(self) -> dict[str, Union[float, int]]:
         """
@@ -165,19 +170,19 @@ class BacktestMetrics:
         dd = self.max_drawdown()
 
         return {
-            'total_bets': self.total_bets(),
-            'total_profit': self.total_profit(),
-            'roi': self.roi(),
-            'win_rate': self.win_rate(),
-            'average_odds': self.average_odds(),
-            'average_stake': self.average_stake(),
-            'sharpe_ratio': self.sharpe_ratio(),
-            'max_drawdown': dd['max_drawdown'],
-            'max_drawdown_pct': dd['max_drawdown_pct'],
-            'profit_factor': self.profit_factor(),
-            'expectancy': self.expectancy(),
-            'initial_bankroll': self.initial_bankroll,
-            'final_bankroll': self.final_bankroll()
+            "total_bets": self.total_bets(),
+            "total_profit": self.total_profit(),
+            "roi": self.roi(),
+            "win_rate": self.win_rate(),
+            "average_odds": self.average_odds(),
+            "average_stake": self.average_stake(),
+            "sharpe_ratio": self.sharpe_ratio(),
+            "max_drawdown": dd["max_drawdown"],
+            "max_drawdown_pct": dd["max_drawdown_pct"],
+            "profit_factor": self.profit_factor(),
+            "expectancy": self.expectancy(),
+            "initial_bankroll": self.initial_bankroll,
+            "final_bankroll": self.final_bankroll(),
         }
 
     def plot_equity_curve(self, figsize: tuple[int, int] = (12, 6), **kwargs):
@@ -193,12 +198,18 @@ class BacktestMetrics:
         """
         fig, ax = plt.subplots(figsize=figsize)
 
-        ax.plot(self.results.index, self.results['bankroll'], **kwargs)
-        ax.axhline(y=self.initial_bankroll, color='r', linestyle='--', alpha=0.5, label='Initial Bankroll')
+        ax.plot(self.results.index, self.results["bankroll"], **kwargs)
+        ax.axhline(
+            y=self.initial_bankroll,
+            color="r",
+            linestyle="--",
+            alpha=0.5,
+            label="Initial Bankroll",
+        )
 
-        ax.set_xlabel('Bet Number')
-        ax.set_ylabel('Bankroll ($)')
-        ax.set_title('Equity Curve')
+        ax.set_xlabel("Bet Number")
+        ax.set_ylabel("Bankroll ($)")
+        ax.set_title("Equity Curve")
         ax.legend()
         ax.grid(True, alpha=0.3)
 
@@ -217,19 +228,21 @@ class BacktestMetrics:
         """
         fig, ax = plt.subplots(figsize=figsize)
 
-        cumulative_profit = self.results['profit'].cumsum()
+        cumulative_profit = self.results["profit"].cumsum()
         ax.plot(self.results.index, cumulative_profit, **kwargs)
-        ax.axhline(y=0, color='r', linestyle='--', alpha=0.5, label='Break Even')
+        ax.axhline(y=0, color="r", linestyle="--", alpha=0.5, label="Break Even")
 
-        ax.set_xlabel('Bet Number')
-        ax.set_ylabel('Cumulative Profit ($)')
-        ax.set_title('Profit Curve')
+        ax.set_xlabel("Bet Number")
+        ax.set_ylabel("Cumulative Profit ($)")
+        ax.set_title("Profit Curve")
         ax.legend()
         ax.grid(True, alpha=0.3)
 
         return fig
 
-    def plot_rolling_roi(self, window: int = 100, figsize: tuple[int, int] = (12, 6), **kwargs):
+    def plot_rolling_roi(
+        self, window: int = 100, figsize: tuple[int, int] = (12, 6), **kwargs
+    ):
         """
         Plot rolling ROI over time.
 
@@ -243,16 +256,18 @@ class BacktestMetrics:
         """
         fig, ax = plt.subplots(figsize=figsize)
 
-        rolling_profit = self.results['profit'].rolling(window=window).sum()
-        rolling_stake = self.results['stake'].rolling(window=window).sum()
+        rolling_profit = self.results["profit"].rolling(window=window).sum()
+        rolling_stake = self.results["stake"].rolling(window=window).sum()
         rolling_roi = rolling_profit / rolling_stake
 
-        ax.plot(self.results.index, rolling_roi * 100, **kwargs)  # Convert to percentage
-        ax.axhline(y=0, color='r', linestyle='--', alpha=0.5, label='Break Even')
+        ax.plot(
+            self.results.index, rolling_roi * 100, **kwargs
+        )  # Convert to percentage
+        ax.axhline(y=0, color="r", linestyle="--", alpha=0.5, label="Break Even")
 
-        ax.set_xlabel('Bet Number')
-        ax.set_ylabel(f'Rolling ROI (%, {window} bets)')
-        ax.set_title(f'Rolling ROI ({window} bet window)')
+        ax.set_xlabel("Bet Number")
+        ax.set_ylabel(f"Rolling ROI (%, {window} bets)")
+        ax.set_title(f"Rolling ROI ({window} bet window)")
         ax.legend()
         ax.grid(True, alpha=0.3)
 
@@ -271,16 +286,16 @@ class BacktestMetrics:
         """
         fig, ax = plt.subplots(figsize=figsize)
 
-        bankroll = self.results['bankroll'].values
+        bankroll = self.results["bankroll"].values
         running_max = np.maximum.accumulate(bankroll)
         drawdown = bankroll - running_max
 
         ax.fill_between(self.results.index, drawdown, 0, alpha=0.3, **kwargs)
         ax.plot(self.results.index, drawdown, **kwargs)
 
-        ax.set_xlabel('Bet Number')
-        ax.set_ylabel('Drawdown ($)')
-        ax.set_title('Drawdown Over Time')
+        ax.set_xlabel("Bet Number")
+        ax.set_ylabel("Drawdown ($)")
+        ax.set_title("Drawdown Over Time")
         ax.grid(True, alpha=0.3)
 
         return fig

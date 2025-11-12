@@ -36,7 +36,7 @@ class TestHyperparameterOptimization:
             n_features=10,
             n_informative=5,
             n_redundant=2,
-            random_state=42
+            random_state=42,
         )
         return X, y
 
@@ -45,17 +45,17 @@ class TestHyperparameterOptimization:
         X, y = sample_data
 
         tuner = HyperparameterTuner(
-            model_type='lightgbm',
+            model_type="lightgbm",
             n_trials=5,  # Small number for testing
             cv_folds=3,
-            random_state=42
+            random_state=42,
         )
 
         best_params = tuner.optimize(X, y, verbose=False)
 
         assert best_params is not None
-        assert 'learning_rate' in best_params
-        assert 'n_estimators' in best_params
+        assert "learning_rate" in best_params
+        assert "n_estimators" in best_params
         assert tuner.best_score is not None
         assert tuner.study is not None
 
@@ -64,44 +64,35 @@ class TestHyperparameterOptimization:
         X, y = sample_data
 
         tuner = HyperparameterTuner(
-            model_type='xgboost',
-            n_trials=5,
-            cv_folds=3,
-            random_state=42
+            model_type="xgboost", n_trials=5, cv_folds=3, random_state=42
         )
 
         best_params = tuner.optimize(X, y, verbose=False)
 
         assert best_params is not None
-        assert 'learning_rate' in best_params
-        assert 'n_estimators' in best_params
+        assert "learning_rate" in best_params
+        assert "n_estimators" in best_params
 
     def test_catboost_optimization(self, sample_data):
         """Test CatBoost hyperparameter tuning."""
         X, y = sample_data
 
         tuner = HyperparameterTuner(
-            model_type='catboost',
-            n_trials=5,
-            cv_folds=3,
-            random_state=42
+            model_type="catboost", n_trials=5, cv_folds=3, random_state=42
         )
 
         best_params = tuner.optimize(X, y, verbose=False)
 
         assert best_params is not None
-        assert 'learning_rate' in best_params
-        assert 'iterations' in best_params
+        assert "learning_rate" in best_params
+        assert "iterations" in best_params
 
     def test_get_best_model(self, sample_data):
         """Test getting model with best parameters."""
         X, y = sample_data
 
         tuner = HyperparameterTuner(
-            model_type='lightgbm',
-            n_trials=3,
-            cv_folds=2,
-            random_state=42
+            model_type="lightgbm", n_trials=3, cv_folds=2, random_state=42
         )
 
         tuner.optimize(X, y, verbose=False)
@@ -116,19 +107,15 @@ class TestHyperparameterOptimization:
         """Test optimization summary generation."""
         X, y = sample_data
 
-        tuner = HyperparameterTuner(
-            model_type='lightgbm',
-            n_trials=3,
-            random_state=42
-        )
+        tuner = HyperparameterTuner(model_type="lightgbm", n_trials=3, random_state=42)
 
         tuner.optimize(X, y, verbose=False)
         summary = tuner.get_optimization_summary()
 
-        assert 'best_score' in summary
-        assert 'best_params' in summary
-        assert 'n_trials' in summary
-        assert summary['n_trials'] == 3
+        assert "best_score" in summary
+        assert "best_params" in summary
+        assert "n_trials" in summary
+        assert summary["n_trials"] == 3
 
 
 class TestBettingStrategies:
@@ -208,7 +195,7 @@ class TestBettingStrategies:
         base_strategy = FixedStake(stake_amount=10.0)
         value_strategy = ValueBetting(
             stake_calculator=base_strategy,
-            min_value_threshold=0.2  # 20% value required
+            min_value_threshold=0.2,  # 20% value required
         )
 
         stakes = value_strategy.calculate_stakes(probs, odds, bankroll)
@@ -232,10 +219,7 @@ class TestBacktesting:
 
         n_samples = 500
         X, y = make_classification(
-            n_samples=n_samples,
-            n_features=10,
-            n_informative=5,
-            random_state=42
+            n_samples=n_samples, n_features=10, n_informative=5, random_state=42
         )
 
         # Generate realistic odds (inversely related to win probability)
@@ -251,63 +235,42 @@ class TestBacktesting:
 
         strategy = FixedStake(stake_amount=10.0, min_edge=0.05)
         backtester = Backtester(
-            strategy=strategy,
-            min_train_size=200,
-            test_size=50,
-            window_type='expanding'
+            strategy=strategy, min_train_size=200, test_size=50, window_type="expanding"
         )
 
         model = RandomForestClassifier(n_estimators=50, random_state=42)
         results = backtester.run(
-            model=model,
-            X=X,
-            y=y,
-            odds=odds,
-            initial_bankroll=1000.0,
-            verbose=False
+            model=model, X=X, y=y, odds=odds, initial_bankroll=1000.0, verbose=False
         )
 
         assert len(results) > 0
-        assert 'stake' in results.columns
-        assert 'profit' in results.columns
-        assert 'bankroll' in results.columns
-        assert all(results['stake'] >= 0)
+        assert "stake" in results.columns
+        assert "profit" in results.columns
+        assert "bankroll" in results.columns
+        assert all(results["stake"] >= 0)
 
     def test_kelly_backtest(self, backtest_data):
         """Test backtesting with Kelly criterion."""
         X, y, odds = backtest_data
 
         strategy = KellyCriterion(fraction=0.25, min_edge=0.05)
-        backtester = Backtester(
-            strategy=strategy,
-            min_train_size=200,
-            test_size=50
-        )
+        backtester = Backtester(strategy=strategy, min_train_size=200, test_size=50)
 
         model = RandomForestClassifier(n_estimators=50, random_state=42)
         results = backtester.run(
-            model=model,
-            X=X,
-            y=y,
-            odds=odds,
-            initial_bankroll=1000.0,
-            verbose=False
+            model=model, X=X, y=y, odds=odds, initial_bankroll=1000.0, verbose=False
         )
 
         assert len(results) > 0
         # Kelly stakes should vary based on edge
-        assert results['stake'].std() > 0
+        assert results["stake"].std() > 0
 
     def test_walk_forward_folds(self, backtest_data):
         """Test walk-forward fold creation."""
         X, y, odds = backtest_data
 
         strategy = FixedStake(stake_amount=10.0)
-        backtester = Backtester(
-            strategy=strategy,
-            min_train_size=200,
-            test_size=50
-        )
+        backtester = Backtester(strategy=strategy, min_train_size=200, test_size=50)
 
         folds = backtester._create_folds(len(X))
 
@@ -325,20 +288,12 @@ class TestBacktesting:
 
         strategy = FixedStake(stake_amount=10.0)
         backtester = Backtester(
-            strategy=strategy,
-            min_train_size=200,
-            test_size=50,
-            window_type='rolling'
+            strategy=strategy, min_train_size=200, test_size=50, window_type="rolling"
         )
 
         model = RandomForestClassifier(n_estimators=50, random_state=42)
         results = backtester.run(
-            model=model,
-            X=X,
-            y=y,
-            odds=odds,
-            initial_bankroll=1000.0,
-            verbose=False
+            model=model, X=X, y=y, odds=odds, initial_bankroll=1000.0, verbose=False
         )
 
         assert len(results) > 0
@@ -350,13 +305,15 @@ class TestBacktestMetrics:
     @pytest.fixture
     def sample_results(self):
         """Generate sample backtest results."""
-        results = pd.DataFrame({
-            'stake': [10, 10, 10, 10, 10] * 10,
-            'profit': [5, -10, 15, -10, 8] * 10,
-            'outcome': [1, 0, 1, 0, 1] * 10,
-            'odds': [2.5, 3.0, 4.0, 2.0, 3.5] * 10,
-            'bankroll': np.cumsum([5, -10, 15, -10, 8] * 10) + 1000
-        })
+        results = pd.DataFrame(
+            {
+                "stake": [10, 10, 10, 10, 10] * 10,
+                "profit": [5, -10, 15, -10, 8] * 10,
+                "outcome": [1, 0, 1, 0, 1] * 10,
+                "odds": [2.5, 3.0, 4.0, 2.0, 3.5] * 10,
+                "bankroll": np.cumsum([5, -10, 15, -10, 8] * 10) + 1000,
+            }
+        )
         return results
 
     def test_roi_calculation(self, sample_results):
@@ -364,8 +321,8 @@ class TestBacktestMetrics:
         metrics = BacktestMetrics(sample_results, initial_bankroll=1000.0)
         roi = metrics.roi()
 
-        total_staked = sample_results['stake'].sum()
-        total_profit = sample_results['profit'].sum()
+        total_staked = sample_results["stake"].sum()
+        total_profit = sample_results["profit"].sum()
         expected_roi = total_profit / total_staked
 
         assert roi == expected_roi
@@ -375,7 +332,7 @@ class TestBacktestMetrics:
         metrics = BacktestMetrics(sample_results, initial_bankroll=1000.0)
         win_rate = metrics.win_rate()
 
-        expected_win_rate = (sample_results['outcome'] == 1).sum() / len(sample_results)
+        expected_win_rate = (sample_results["outcome"] == 1).sum() / len(sample_results)
         assert win_rate == expected_win_rate
 
     def test_sharpe_ratio(self, sample_results):
@@ -391,18 +348,18 @@ class TestBacktestMetrics:
         metrics = BacktestMetrics(sample_results, initial_bankroll=1000.0)
         dd = metrics.max_drawdown()
 
-        assert 'max_drawdown' in dd
-        assert 'max_drawdown_pct' in dd
-        assert dd['max_drawdown'] <= 0  # Drawdown is negative
+        assert "max_drawdown" in dd
+        assert "max_drawdown_pct" in dd
+        assert dd["max_drawdown"] <= 0  # Drawdown is negative
 
     def test_profit_factor(self, sample_results):
         """Test profit factor calculation."""
         metrics = BacktestMetrics(sample_results, initial_bankroll=1000.0)
         pf = metrics.profit_factor()
 
-        wins = sample_results[sample_results['profit'] > 0]['profit'].sum()
-        losses = abs(sample_results[sample_results['profit'] < 0]['profit'].sum())
-        expected_pf = wins / losses if losses > 0 else float('inf')
+        wins = sample_results[sample_results["profit"] > 0]["profit"].sum()
+        losses = abs(sample_results[sample_results["profit"] < 0]["profit"].sum())
+        expected_pf = wins / losses if losses > 0 else float("inf")
 
         assert pf == expected_pf
 
@@ -411,7 +368,7 @@ class TestBacktestMetrics:
         metrics = BacktestMetrics(sample_results, initial_bankroll=1000.0)
         expectancy = metrics.expectancy()
 
-        expected_expectancy = sample_results['profit'].mean()
+        expected_expectancy = sample_results["profit"].mean()
         assert expectancy == expected_expectancy
 
     def test_summary(self, sample_results):
@@ -420,14 +377,20 @@ class TestBacktestMetrics:
         summary = metrics.get_summary()
 
         required_keys = [
-            'total_bets', 'total_profit', 'roi', 'win_rate',
-            'sharpe_ratio', 'max_drawdown', 'profit_factor',
-            'expectancy', 'final_bankroll'
+            "total_bets",
+            "total_profit",
+            "roi",
+            "win_rate",
+            "sharpe_ratio",
+            "max_drawdown",
+            "profit_factor",
+            "expectancy",
+            "final_bankroll",
         ]
 
         for key in required_keys:
             assert key in summary
 
 
-if __name__ == '__main__':
-    pytest.main([__file__, '-v'])
+if __name__ == "__main__":
+    pytest.main([__file__, "-v"])

@@ -23,10 +23,7 @@ class BettingStrategy(ABC):
 
     @abstractmethod
     def calculate_stakes(
-        self,
-        probabilities: np.ndarray,
-        odds: np.ndarray,
-        bankroll: float
+        self, probabilities: np.ndarray, odds: np.ndarray, bankroll: float
     ) -> np.ndarray:
         """
         Calculate stake amounts for each bet.
@@ -61,10 +58,7 @@ class FixedStake(BettingStrategy):
         self.min_edge = min_edge
 
     def calculate_stakes(
-        self,
-        probabilities: np.ndarray,
-        odds: np.ndarray,
-        bankroll: float
+        self, probabilities: np.ndarray, odds: np.ndarray, bankroll: float
     ) -> np.ndarray:
         """Calculate fixed stakes."""
         # Calculate edge: expected value - 1
@@ -99,10 +93,7 @@ class ProportionalStake(BettingStrategy):
         self.min_edge = min_edge
 
     def calculate_stakes(
-        self,
-        probabilities: np.ndarray,
-        odds: np.ndarray,
-        bankroll: float
+        self, probabilities: np.ndarray, odds: np.ndarray, bankroll: float
     ) -> np.ndarray:
         """Calculate proportional stakes."""
         # Calculate edge
@@ -130,10 +121,7 @@ class KellyCriterion(BettingStrategy):
     """
 
     def __init__(
-        self,
-        fraction: float = 1.0,
-        min_edge: float = 0.0,
-        max_stake_pct: float = 0.25
+        self, fraction: float = 1.0, min_edge: float = 0.0, max_stake_pct: float = 0.25
     ):
         """
         Initialize Kelly Criterion strategy.
@@ -151,10 +139,7 @@ class KellyCriterion(BettingStrategy):
         self.max_stake_pct = max_stake_pct
 
     def calculate_stakes(
-        self,
-        probabilities: np.ndarray,
-        odds: np.ndarray,
-        bankroll: float
+        self, probabilities: np.ndarray, odds: np.ndarray, bankroll: float
     ) -> np.ndarray:
         """Calculate Kelly stakes."""
         # Net odds (what you win per unit)
@@ -184,7 +169,7 @@ class KellyCriterion(BettingStrategy):
         stakes = np.where(
             valid_mask,
             np.minimum(kelly_fractions * bankroll, self.max_stake_pct * bankroll),
-            0.0
+            0.0,
         )
 
         return stakes
@@ -199,9 +184,7 @@ class ValueBetting(BettingStrategy):
     """
 
     def __init__(
-        self,
-        stake_calculator: BettingStrategy,
-        min_value_threshold: float = 0.1
+        self, stake_calculator: BettingStrategy, min_value_threshold: float = 0.1
     ):
         """
         Initialize value betting strategy.
@@ -214,10 +197,7 @@ class ValueBetting(BettingStrategy):
         self.min_value_threshold = min_value_threshold
 
     def calculate_stakes(
-        self,
-        probabilities: np.ndarray,
-        odds: np.ndarray,
-        bankroll: float
+        self, probabilities: np.ndarray, odds: np.ndarray, bankroll: float
     ) -> np.ndarray:
         """Calculate value-based stakes."""
         # Implied probability from odds

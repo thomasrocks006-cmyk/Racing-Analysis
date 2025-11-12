@@ -31,10 +31,10 @@ class Backtester:
         strategy: BettingStrategy,
         min_train_size: int = 1000,
         test_size: int = 200,
-        window_type: str = 'expanding',
+        window_type: str = "expanding",
         commission: float = 0.0,
         min_odds: float = 1.01,
-        max_odds: float = 100.0
+        max_odds: float = 100.0,
     ):
         """
         Initialize backtester.
@@ -79,7 +79,7 @@ class Backtester:
         current_train_end = self.min_train_size
 
         while current_train_end + self.test_size <= n_samples:
-            if self.window_type == 'expanding':
+            if self.window_type == "expanding":
                 train_idx = np.arange(0, current_train_end)
             else:  # rolling
                 train_start = max(0, current_train_end - self.min_train_size)
@@ -101,7 +101,7 @@ class Backtester:
         race_ids: Union[np.ndarray, pd.Series, None] = None,
         dates: Union[np.ndarray, pd.Series, None] = None,
         initial_bankroll: float = 1000.0,
-        verbose: bool = True
+        verbose: bool = True,
     ) -> pd.DataFrame:
         """
         Run walk-forward backtesting.
@@ -132,7 +132,9 @@ class Backtester:
 
         if verbose:
             print(f"Running {self.window_type} walk-forward validation")
-            print(f"Folds: {len(folds)}, Min train: {self.min_train_size}, Test: {self.test_size}")
+            print(
+                f"Folds: {len(folds)}, Min train: {self.min_train_size}, Test: {self.test_size}"
+            )
 
         # Track results
         all_results = []
@@ -141,7 +143,9 @@ class Backtester:
         for fold_idx, (train_idx, test_idx) in enumerate(folds):
             if verbose:
                 print(f"\nFold {fold_idx + 1}/{len(folds)}")
-                print(f"  Train: {len(train_idx)} samples, Test: {len(test_idx)} samples")
+                print(
+                    f"  Train: {len(train_idx)} samples, Test: {len(test_idx)} samples"
+                )
 
             # Train model
             X_train, y_train = X[train_idx], y[train_idx]
@@ -150,7 +154,7 @@ class Backtester:
             model.fit(X_train, y_train)
 
             # Get predictions
-            if hasattr(model, 'predict_proba'):
+            if hasattr(model, "predict_proba"):
                 probs = model.predict_proba(X_test)[:, 1]
             else:
                 probs = model.predict(X_test)
@@ -165,11 +169,13 @@ class Backtester:
             stakes = self.strategy.calculate_stakes(
                 probabilities=probs[valid_mask],
                 odds=test_odds[valid_mask],
-                bankroll=current_bankroll
+                bankroll=current_bankroll,
             )
 
             # Simulate bets
-            for i, (prob, odd, stake) in enumerate(zip(probs[valid_mask], test_odds[valid_mask], stakes)):
+            for i, (prob, odd, stake) in enumerate(
+                zip(probs[valid_mask], test_odds[valid_mask], stakes)
+            ):
                 original_idx = test_idx[np.where(valid_mask)[0][i]]
                 outcome = y_test[np.where(valid_mask)[0][i]]
 
@@ -185,26 +191,30 @@ class Backtester:
 
                 # Store result
                 result = {
-                    'fold': fold_idx,
-                    'sample_idx': original_idx,
-                    'predicted_prob': prob,
-                    'odds': odd,
-                    'stake': stake,
-                    'outcome': outcome,
-                    'profit': profit,
-                    'bankroll': current_bankroll
+                    "fold": fold_idx,
+                    "sample_idx": original_idx,
+                    "predicted_prob": prob,
+                    "odds": odd,
+                    "stake": stake,
+                    "outcome": outcome,
+                    "profit": profit,
+                    "bankroll": current_bankroll,
                 }
 
                 if race_ids is not None:
-                    result['race_id'] = race_ids[original_idx]
+                    result["race_id"] = race_ids[original_idx]
                 if dates is not None:
-                    result['date'] = dates[original_idx]
+                    result["date"] = dates[original_idx]
 
                 all_results.append(result)
 
             if verbose:
-                fold_profit = sum(r['profit'] for r in all_results if r['fold'] == fold_idx)
-                print(f"  Fold profit: ${fold_profit:.2f}, Bankroll: ${current_bankroll:.2f}")
+                fold_profit = sum(
+                    r["profit"] for r in all_results if r["fold"] == fold_idx
+                )
+                print(
+                    f"  Fold profit: ${fold_profit:.2f}, Bankroll: ${current_bankroll:.2f}"
+                )
 
         # Convert to DataFrame
         self.results_ = pd.DataFrame(all_results)
@@ -213,9 +223,9 @@ class Backtester:
         self.metrics_ = BacktestMetrics(self.results_, initial_bankroll)
 
         if verbose:
-            print("\n" + "="*60)
+            print("\n" + "=" * 60)
             print("BACKTEST SUMMARY")
-            print("="*60)
+            print("=" * 60)
             summary = self.metrics_.get_summary()
             for key, value in summary.items():
                 if isinstance(value, float):
