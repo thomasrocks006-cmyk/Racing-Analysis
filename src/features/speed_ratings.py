@@ -10,7 +10,7 @@ Implements Category 18 from the quantitative pipeline:
 
 Usage:
     from src.features.speed_ratings import SpeedRatingsEngine
-    
+
     engine = SpeedRatingsEngine()
     rating = engine.calculate_speed_rating(race_result)
 """
@@ -46,13 +46,13 @@ class SpeedRating:
 class SpeedRatingsEngine:
     """
     Calculate speed ratings for horses.
-    
+
     Speed ratings normalize race times accounting for:
     - Track conditions (Good 3 vs Soft 7)
     - Distance variations (1200m vs 2000m)
     - Sectional times (finishing speed)
     - Track bias and rail position
-    
+
     Rating scale: 0-150 (higher = faster)
     - 100 = Average open-class horse
     - 110+ = Group level
@@ -85,7 +85,7 @@ class SpeedRatingsEngine:
     def __init__(self, db_path: str = "data/racing.duckdb"):
         """
         Initialize speed ratings engine.
-        
+
         Args:
             db_path: Path to DuckDB database
         """
@@ -102,7 +102,7 @@ class SpeedRatingsEngine:
     ) -> SpeedRating:
         """
         Calculate speed rating for a single performance.
-        
+
         Args:
             race_id: Race identifier
             horse_id: Horse identifier
@@ -110,7 +110,7 @@ class SpeedRatingsEngine:
             distance: Race distance in meters
             track_condition: Track condition (e.g., "Good 4")
             sectional_times: Dict with '600m', '400m', '200m' splits
-            
+
         Returns:
             SpeedRating object
         """
@@ -159,10 +159,10 @@ class SpeedRatingsEngine:
     def calculate_race_ratings(self, race_id: str) -> list[SpeedRating]:
         """
         Calculate speed ratings for all horses in a race.
-        
+
         Args:
             race_id: Race identifier
-            
+
         Returns:
             List of SpeedRating objects sorted by rating (descending)
         """
@@ -171,7 +171,7 @@ class SpeedRatingsEngine:
         try:
             # Query race results with sectionals
             query = """
-                SELECT 
+                SELECT
                     r.race_id,
                     r.distance,
                     r.track_condition,
@@ -227,9 +227,13 @@ class SpeedRatingsEngine:
 
             # Calculate percentiles within race
             if ratings:
-                sorted_ratings = sorted(ratings, key=lambda x: x.final_rating, reverse=True)
+                sorted_ratings = sorted(
+                    ratings, key=lambda x: x.final_rating, reverse=True
+                )
                 for i, rating in enumerate(sorted_ratings):
-                    rating.percentile = ((len(sorted_ratings) - i) / len(sorted_ratings)) * 100
+                    rating.percentile = (
+                        (len(sorted_ratings) - i) / len(sorted_ratings)
+                    ) * 100
 
             return ratings
 
@@ -259,7 +263,7 @@ class SpeedRatingsEngine:
     def _get_distance_adjustment(self, distance: int, race_time: float) -> float:
         """
         Calculate distance-based adjustment.
-        
+
         Compares actual time to par time for distance.
         """
         # Find closest par distance
@@ -280,7 +284,7 @@ class SpeedRatingsEngine:
     ) -> float:
         """
         Calculate rating based on sectional times.
-        
+
         Emphasizes strong finish (last 400m, 200m).
         """
         if "200m" not in sectional_times:
@@ -308,11 +312,11 @@ class SpeedRatingsEngine:
     ) -> dict[str, Any]:
         """
         Get average speed rating for a horse over recent starts.
-        
+
         Args:
             horse_id: Horse identifier
             last_n_starts: Number of recent starts to average
-            
+
         Returns:
             dict with average, best, and consistency metrics
         """
@@ -321,7 +325,7 @@ class SpeedRatingsEngine:
         try:
             # Get recent results
             query = """
-                SELECT 
+                SELECT
                     r.race_id,
                     r.distance,
                     r.track_condition,

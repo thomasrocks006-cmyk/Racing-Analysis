@@ -3,7 +3,9 @@ Test suite for feature engineering engines.
 
 Tests:
 - Speed ratings calculation
-- Class ratings calculation  
+- Class ratings calculation
+- Sectional analysis
+- Pedigree analysis
 - Integration with database
 - Edge cases and validation
 """
@@ -11,9 +13,10 @@ Tests:
 from __future__ import annotations
 
 import logging
-from datetime import date
 
 from src.features.class_ratings import ClassRatingsEngine
+from src.features.pedigree_analyzer import PedigreeAnalyzer
+from src.features.sectional_analyzer import SectionalAnalyzer
 from src.features.speed_ratings import SpeedRatingsEngine
 
 logging.basicConfig(level=logging.INFO)
@@ -134,17 +137,21 @@ def test_integration_with_database():
 
         # Test horse averages (will be empty for test data)
         try:
-            speed_avg = speed_engine.get_horse_average_rating(test_horse_id, last_n_starts=5)
+            speed_avg = speed_engine.get_horse_average_rating(
+                test_horse_id, last_n_starts=5
+            )
             print(f"\n  Horse Speed Average:")
             print(f"    Starts analyzed: {speed_avg['starts']}")
-            if speed_avg['starts'] > 0:
+            if speed_avg["starts"] > 0:
                 print(f"    Average: {speed_avg['average']:.1f}")
                 print(f"    Best: {speed_avg['best']}")
 
-            class_avg = class_engine.get_horse_average_class(test_horse_id, last_n_starts=5)
+            class_avg = class_engine.get_horse_average_class(
+                test_horse_id, last_n_starts=5
+            )
             print(f"\n  Horse Class Average:")
             print(f"    Starts analyzed: {class_avg['starts']}")
-            if class_avg['starts'] > 0:
+            if class_avg["starts"] > 0:
                 print(f"    Average: {class_avg['average']:.1f}")
                 print(f"    Best: {class_avg['best']}")
 
@@ -181,7 +188,9 @@ def test_edge_cases():
             distance=1200,
             track_condition=condition,
         )
-        print(f"  {condition:10s} -> Rating: {rating.final_rating}, Adj: {rating.track_adjustment:.3f}")
+        print(
+            f"  {condition:10s} -> Rating: {rating.final_rating}, Adj: {rating.track_adjustment:.3f}"
+        )
 
     # Test with missing sectionals
     print("\n✓ Testing without sectionals:")
@@ -199,10 +208,18 @@ def test_edge_cases():
     # Test rating bounds
     print("\n✓ Testing rating bounds:")
     very_fast = speed_engine.calculate_speed_rating(
-        race_id="TEST", horse_id="H001", race_time=65.0, distance=1200, track_condition="Good 4"
+        race_id="TEST",
+        horse_id="H001",
+        race_time=65.0,
+        distance=1200,
+        track_condition="Good 4",
     )
     very_slow = speed_engine.calculate_speed_rating(
-        race_id="TEST", horse_id="H001", race_time=85.0, distance=1200, track_condition="Good 4"
+        race_id="TEST",
+        horse_id="H001",
+        race_time=85.0,
+        distance=1200,
+        track_condition="Good 4",
     )
     print(f"  Very fast (65s): {very_fast.final_rating}")
     print(f"  Very slow (85s): {very_slow.final_rating}")
@@ -210,6 +227,92 @@ def test_edge_cases():
     assert 0 <= very_slow.final_rating <= 150
 
     print("\n✓ Edge cases test PASSED\n")
+
+
+def test_sectional_analyzer():
+    """Test sectional analysis engine."""
+    print("=" * 70)
+    print("TEST 5: Sectional Analysis Engine")
+    print("=" * 70)
+
+    analyzer = SectionalAnalyzer()
+
+    # Test pace profile classification
+    print("\n✓ Testing pace profile classification:")
+
+    profiles = [
+        ("Leader", 35.0, 23.5, 12.0),  # Fast early, fades
+        ("On-Pace", 34.5, 23.0, 11.5),  # Consistent
+        ("Closer", 36.0, 23.0, 10.8),  # Slow early, fast late
+    ]
+
+    for style_name, L600, L400, L200 in profiles:
+        profile = analyzer.analyze_sectionals(
+            race_id="TEST",
+            horse_id=f"H_{style_name}",
+            distance=1200,
+            L600_time=L600,
+            L400_time=L400,
+            L200_time=L200,
+        )
+        print(f"  {style_name:10s} -> {profile.pace_profile:10s} (balance: {profile.sectional_balance:+.2f})")
+        assert profile.finish_speed_rating >= 0
+        assert profile.finish_speed_rating <= 150
+
+    # Test finish speed rating
+    print("\n✓ Testing finish speed ratings:")
+    fast_finish = analyzer.analyze_sectionals(
+        "TEST", "H_FAST", 1200, L600_time=35.0, L400_time=23.0, L200_time=10.5
+    )
+    slow_finish = analyzer.analyze_sectionals(
+        "TEST", "H_SLOW", 1200, L600_time=35.0, L400_time=24.0, L200_time=12.5
+    )
+    print(f"  Fast finish (10.5s L200): {fast_finish.finish_speed_rating}/150")
+    print(f"  Slow finish (12.5s L200): {slow_finish.finish_speed_rating}/150")
+    assert fast_finish.finish_speed_rating > slow_finish.finish_speed_rating
+
+    print("\n✓ Sectional analyzer test PASSED\n")
+
+
+def test_pedigree_analyzer():
+    """Test pedigree analysis engine."""
+    print("=" * 70)
+    print("TEST 6: Pedigree Analysis Engine")
+    print("=" * 70)
+
+    analyzer = PedigreeAnalyzer()
+
+    # Test distance classification
+    print("\n✓ Testing distance classification:")
+    distances = [
+        (1000, "sprint"),
+        (1400, "mile"),
+        (1800, "middle"),
+        (2400, "staying"),
+    ]
+
+    for dist, expected in distances:
+        category = analyzer._classify_distance(dist)
+        print(f"  {dist:4d}m -> {category:8s} (expected: {expected})")
+        assert category == expected
+
+    # Test default rating creation
+    print("\n✓ Testing default pedigree rating:")
+    default = analyzer._default_rating("H_TEST", 1200)
+    print(f"  Sire rating: {default.sire_rating}")
+    print(f"  Dam rating: {default.dam_rating}")
+    print(f"  Overall score: {default.overall_pedigree_score}")
+    assert default.sire_rating == 70  # Neutral
+    assert default.overall_pedigree_score == 70
+
+    # Test suitability calculations
+    print("\n✓ Testing distance suitability:")
+    sprint_rating = analyzer._default_rating("H_SPRINT", 1200)
+    staying_rating = analyzer._default_rating("H_STAYING", 2400)
+    print(f"  Sprint (1200m): {sprint_rating.distance_category} - {sprint_rating.distance_suitability}% suited")
+    print(f"  Staying (2400m): {staying_rating.distance_category} - {staying_rating.distance_suitability}% suited")
+
+    print("\n✓ Pedigree analyzer test PASSED\n")
 
 
 def main():
@@ -224,6 +327,8 @@ def main():
         test_class_ratings()
         test_integration_with_database()
         test_edge_cases()
+        test_sectional_analyzer()
+        test_pedigree_analyzer()
 
         # Summary
         print("=" * 70)
@@ -232,6 +337,8 @@ def main():
         print("\nFeature Engineering Engines Ready:")
         print("  ✓ Speed ratings calculator")
         print("  ✓ Class ratings calculator")
+        print("  ✓ Sectional analyzer")
+        print("  ✓ Pedigree analyzer")
         print("  ✓ Database integration")
         print("  ✓ Edge case handling")
         print("\nNext: Integrate with ML pipeline (Week 3)")

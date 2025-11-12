@@ -9,7 +9,7 @@ Implements Category 19 from the quantitative pipeline:
 
 Usage:
     from src.features.class_ratings import ClassRatingsEngine
-    
+
     engine = ClassRatingsEngine()
     rating = engine.calculate_class_rating(race_id, horse_id)
 """
@@ -40,7 +40,7 @@ class ClassRating:
 class ClassRatingsEngine:
     """
     Calculate class ratings for horses.
-    
+
     Class ratings measure the quality of opposition faced:
     - Group 1: 140-150
     - Group 2: 130-139
@@ -74,16 +74,14 @@ class ClassRatingsEngine:
         """Initialize class ratings engine."""
         self.db_path = db_path
 
-    def calculate_class_rating(
-        self, race_id: str, horse_id: str
-    ) -> ClassRating:
+    def calculate_class_rating(self, race_id: str, horse_id: str) -> ClassRating:
         """
         Calculate class rating for a performance.
-        
+
         Args:
             race_id: Race identifier
             horse_id: Horse identifier
-            
+
         Returns:
             ClassRating object
         """
@@ -92,7 +90,7 @@ class ClassRatingsEngine:
         try:
             # Get race details
             query = """
-                SELECT 
+                SELECT
                     r.class_level,
                     r.prize_money,
                     r.field_size,
@@ -177,7 +175,7 @@ class ClassRatingsEngine:
     def _calculate_prize_adjustment(self, prize_money: int) -> float:
         """
         Calculate adjustment based on prize money.
-        
+
         Returns adjustment in range -5 to +5
         """
         if prize_money == 0:
@@ -200,7 +198,7 @@ class ClassRatingsEngine:
     def _calculate_field_quality(self, race_id: str) -> float:
         """
         Calculate field quality score (0-1).
-        
+
         Based on:
         - Number of previous winners
         - Average class of field
@@ -210,15 +208,13 @@ class ClassRatingsEngine:
         # For now, return neutral
         return 0.5
 
-    def get_horse_average_class(
-        self, horse_id: str, last_n_starts: int = 5
-    ) -> dict:
+    def get_horse_average_class(self, horse_id: str, last_n_starts: int = 5) -> dict:
         """Get average class rating over recent starts."""
         con = duckdb.connect(self.db_path, read_only=True)
 
         try:
             query = """
-                SELECT 
+                SELECT
                     r.race_id,
                     r.class_level,
                     r.prize_money,
