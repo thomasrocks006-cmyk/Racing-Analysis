@@ -255,7 +255,9 @@ def test_sectional_analyzer():
             L400_time=L400,
             L200_time=L200,
         )
-        print(f"  {style_name:10s} -> {profile.pace_profile:10s} (balance: {profile.sectional_balance:+.2f})")
+        print(
+            f"  {style_name:10s} -> {profile.pace_profile:10s} (balance: {profile.sectional_balance:+.2f})"
+        )
         assert profile.finish_speed_rating >= 0
         assert profile.finish_speed_rating <= 150
 
@@ -309,8 +311,12 @@ def test_pedigree_analyzer():
     print("\n✓ Testing distance suitability:")
     sprint_rating = analyzer._default_rating("H_SPRINT", 1200)
     staying_rating = analyzer._default_rating("H_STAYING", 2400)
-    print(f"  Sprint (1200m): {sprint_rating.distance_category} - {sprint_rating.distance_suitability}% suited")
-    print(f"  Staying (2400m): {staying_rating.distance_category} - {staying_rating.distance_suitability}% suited")
+    print(
+        f"  Sprint (1200m): {sprint_rating.distance_category} - {sprint_rating.distance_suitability}% suited"
+    )
+    print(
+        f"  Staying (2400m): {staying_rating.distance_category} - {staying_rating.distance_suitability}% suited"
+    )
 
     print("\n✓ Pedigree analyzer test PASSED\n")
 

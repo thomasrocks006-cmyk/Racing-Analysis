@@ -107,14 +107,10 @@ class SectionalAnalyzer:
         L200_speed = 200 / L200_time if L200_time and L200_time > 0 else None
 
         # Calculate finish speed rating (0-150 scale, 100 = average)
-        finish_speed_rating = self._calculate_finish_speed_rating(
-            L200_speed, distance
-        )
+        finish_speed_rating = self._calculate_finish_speed_rating(L200_speed, distance)
 
         # Determine pace profile
-        pace_profile = self._classify_pace_profile(
-            L600_speed, L400_speed, L200_speed
-        )
+        pace_profile = self._classify_pace_profile(L600_speed, L400_speed, L200_speed)
 
         # Calculate sectional balance (-1 = even pace, +1 = strong sprint finish)
         sectional_balance = self._calculate_sectional_balance(
@@ -523,7 +519,9 @@ if __name__ == "__main__":
     print(f"  L200: {profile.L200_speed:.2f} m/s ({profile.L200_time:.1f}s)")
     print(f"\nPace Profile: {profile.pace_profile.upper()}")
     print(f"Finish Speed Rating: {profile.finish_speed_rating}/150")
-    print(f"Sectional Balance: {profile.sectional_balance:+.2f} {'(sprint finish)' if profile.sectional_balance > 0 else '(even pace)'}")
+    print(
+        f"Sectional Balance: {profile.sectional_balance:+.2f} {'(sprint finish)' if profile.sectional_balance > 0 else '(even pace)'}"
+    )
 
     # Example 2: Compare different running styles
     print("\n\n2. Running Style Comparison:")

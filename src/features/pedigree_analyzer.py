@@ -131,9 +131,7 @@ class PedigreeAnalyzer:
             # Calculate overall pedigree score
             # Weighted: Sire 50%, Dam sire 30%, Dam 20%
             overall_score = int(
-                sire_rating * 0.50
-                + dam_sire_rating * 0.30
-                + dam_rating * 0.20
+                sire_rating * 0.50 + dam_sire_rating * 0.30 + dam_rating * 0.20
             )
 
             # Adjust for suitability
@@ -432,9 +430,7 @@ class PedigreeAnalyzer:
                 AND LOWER(ra.track_type) = ?
         """
 
-        result = conn.execute(
-            query, [sire_name, race_surface.lower()]
-        ).fetchone()
+        result = conn.execute(query, [sire_name, race_surface.lower()]).fetchone()
 
         if not result or result[0] < 3:
             return 60.0  # Neutral for synthetic with limited data
@@ -535,7 +531,9 @@ if __name__ == "__main__":
     print(f"  Dam: {rating.dam} (Rating: {rating.dam_rating}/150)")
     print(f"  Dam Sire: {rating.dam_sire} (Rating: {rating.dam_sire_rating}/150)")
     print(f"\nRace Suitability:")
-    print(f"  Distance: {rating.distance_category.upper()} ({rating.distance_suitability:.1f}% suited)")
+    print(
+        f"  Distance: {rating.distance_category.upper()} ({rating.distance_suitability:.1f}% suited)"
+    )
     print(f"  Surface: Turf ({rating.surface_suitability:.1f}% suited)")
     print(f"\nOverall Pedigree Score: {rating.overall_pedigree_score}/150")
 
