@@ -13,6 +13,7 @@
 3. **Tertiary**: Build reproducible backtesting framework with uncertainty quantification
 
 **Non-Negotiables**:
+
 - ✅ Strict event-time ordering (no data leakage)
 - ✅ Reproducible runs with versioning
 - ✅ Uncertainty quantification on all predictions
@@ -247,12 +248,14 @@
 ### **What is the Master Taxonomy?**
 
 The Master Taxonomy is a **comprehensive knowledge base** containing:
+
 - **21 racing prediction categories** (1-17 qualitative, 18-21 quantitative)
 - **3 integration matrices** (cross-category synergy rules & conflict resolution)
 - **Implementation roadmaps** (8-week Phase 1, 8-week Phase 2, 6-month Phase 3)
 - **16,926 lines of detailed specifications** with code examples
 
 **Key Documents:**
+
 - `TAXONOMY_OVERVIEW.md` - Quick reference (this is your starting point)
 - `docs/COMPREHENSIVE_TAXONOMY_MASTER/` - Full category details (18 parts)
 - `docs/qualitative-pipeline/` - Categories 1-17 implementation (5 parts)
@@ -317,6 +320,7 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 4. **🚀 Fusion Model** - FINAL (Bayesian LR integration, calibration)
 
 **Rationale:**
+
 - Taxonomy = Foundation (defines what data exists, how it integrates)
 - Qualitative = Contextual intelligence (hardest to replicate, competitive advantage)
 - Quantitative = Numerical predictions (complements qualitative, easier to validate)
@@ -327,9 +331,11 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 ## 📋 Implementation Phases
 
 ### **PHASE 0: Foundation** (Days 1-3) ⏳ CURRENT
+
 **Goal**: Set up development environment and core scaffolding
 
 **Tasks** (automated):
+
 - [x] Create comprehensive plan document
 - [ ] Set up repository structure
 - [ ] Create `.devcontainer` with Python 3.11, dependencies
@@ -339,9 +345,11 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 - [ ] Create basic test framework
 
 **Manual Tasks**: 🚨 **USER ACTION REQUIRED**
+
 - None for Phase 0 (all automated)
 
 **Deliverables**:
+
 - ✅ Working devcontainer
 - ✅ Database schema created
 - ✅ `make test` passes
@@ -350,52 +358,65 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 ---
 
 ### **PHASE 1: Data Layer** (Days 4-10)
+
 **Goal**: Ingest and store historical racing data
 
 #### 1.1 Database Schema Design
+
 **Automated**:
+
 - Core tables: races, runs, horses, jockeys, trainers
 - Market tables: prices, depth, traded_volume
 - Qualitative tables: stewards, gear, weather
 - Time-series indexes and partitioning
 
 **Manual Tasks**: 🚨 **USER ACTION REQUIRED**
-- [ ] **Sign up for Betfair API account** (https://developer.betfair.com/)
+
+- [ ] **Sign up for Betfair API account** (<https://developer.betfair.com/>)
   - Create app, get API key and session token
   - Add to `.env` file
-- [ ] **Sign up for weather API** (https://open-meteo.com/ - free)
+- [ ] **Sign up for weather API** (<https://open-meteo.com/> - free)
   - Get API key if rate limits needed
   - Add to `.env` file
 
 #### 1.2 Web Scrapers
+
 **Automated**:
+
 - Racing.com results scraper
 - Stewards reports scraper (Racing Victoria)
 - TAB price scraper (where available)
 - Gear change scraper
 
 **Manual Tasks**: 🚨 **USER ACTION REQUIRED**
+
 - [ ] **Test scrapers on first run** - check output quality
 - [ ] **Identify any site structure changes** - provide updated HTML samples if scrapers break
 
 #### 1.3 Betfair Integration
+
 **Automated**:
+
 - Historic data downloader
 - Stream API client (for live markets)
 - Price history parser
 
 **Manual Tasks**: 🚨 **USER ACTION REQUIRED**
+
 - [ ] **Download sample Betfair historic data** (manual download from Betfair site)
   - Place in `data/betfair_historic/` folder
   - Format: CSV or JSON as provided by Betfair
 
 #### 1.4 Data Validation
+
 **Automated**:
+
 - Schema validation (Pydantic)
 - Completeness checks
 - Anomaly detection
 
 **Deliverables**:
+
 - ✅ `make ingest date=2025-11-09` loads a full race card
 - ✅ DuckDB has 1000+ races with complete data
 - ✅ Data quality report shows >80% completeness on key fields
@@ -403,10 +424,13 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 ---
 
 ### **PHASE 2: Feature Engineering** (Days 11-17)
+
 **Goal**: Calculate predictive features from raw data
 
 #### 2.1 Core Features
+
 **Automated**:
+
 - Par-adjusted sectionals (L600/L400/L200)
 - Distance suitability curves (spline fits)
 - Going (wet/firm) elasticity curves
@@ -415,37 +439,47 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 - Career statistics and trajectories
 
 #### 2.2 Race Dynamics
+
 **Automated**:
+
 - Early speed classification (leader/presser/mid/back)
 - Simplified pace pressure (field-wide tempo)
 - Barrier advantage by track/distance
 - Field size effects
 
 #### 2.3 Context Features
+
 **Automated**:
+
 - Weather alignment (rain, wind, temp at jump time)
 - Track condition history
 - Gear changes (first-time flags, removals)
 - Stewards incidents (parsed and encoded)
 
 #### 2.4 Market Features
+
 **Automated**:
+
 - Price movements (T-60, T-15, T-2)
 - Market depth and liquidity
 - Overround normalization
 - SP vs BSP comparison
 
 #### 2.5 Feature Store
+
 **Automated**:
+
 - Parquet storage with partitioning
 - Feature versioning and lineage
 - Train/test split respecting time ordering
 
 **Manual Tasks**: 🚨 **USER ACTION REQUIRED**
+
 - [ ] **Review feature distributions** - check for bugs or anomalies
 - [ ] **Approve feature set** before modeling
 
 **Deliverables**:
+
 - ✅ `make features date=2025-11-09` computes 100+ features
 - ✅ Feature catalog document auto-generated
 - ✅ No data leakage (validated by time-split test)
@@ -453,30 +487,39 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 ---
 
 ### **PHASE 3: Modeling Core** (Days 18-28)
+
 **Goal**: Build, calibrate, and validate predictive models
 
 #### 3.1 Baseline Models
+
 **Automated**:
+
 - CatBoost classifier (win/place)
 - LightGBM classifier (win/place)
 - Feature importance analysis
 - Hyperparameter tuning (Optuna)
 
 #### 3.2 Calibration
+
 **Automated**:
+
 - Isotonic regression per track group
 - Temperature scaling fallback
 - Reliability diagrams
 - Brier score decomposition
 
 #### 3.3 Uncertainty Quantification
+
 **Automated**:
+
 - Conformal prediction sets
 - Stratified by going/distance/field_size
 - Coverage validation
 
 #### 3.4 Backtesting Framework
+
 **Automated**:
+
 - Walk-forward validation
 - Metrics: Brier, log-loss, AUC, calibration error
 - ROI simulation with commission/slippage
@@ -484,6 +527,7 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 - Performance by track/going/distance
 
 **Manual Tasks**: 🚨 **USER ACTION REQUIRED**
+
 - [ ] **Review backtest results** - validate no overfitting
 - [ ] **Approve model for Phase 4** - check metrics meet targets:
   - Brier score <0.20
@@ -491,6 +535,7 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
   - Simulated ROI >5% (conservative assumptions)
 
 **Deliverables**:
+
 - ✅ `make train` produces versioned model artifacts
 - ✅ `make backtest` runs 1000-race validation
 - ✅ Backtest report shows positive ROI and good calibration
@@ -498,16 +543,20 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 ---
 
 ### **PHASE 4: Qualitative Integration** (Days 29-35)
+
 **Goal**: Fuse Deep Research insights with quantitative predictions
 
 #### 4.1 Deep Research Pipeline
+
 **Automated**:
+
 - Pre-fetch overnight for next day's cards
 - Structured claim extraction (JSON schema)
 - Source quality scoring
 - Timestamp and recency decay
 
 **Manual Tasks**: 🚨 **USER ACTION REQUIRED**
+
 - [ ] **Set up ChatGPT Plus account** (if not already)
 - [ ] **Configure Deep Research agent** (or use API if available)
 - [ ] **Manual deep research workflow** (short-term):
@@ -517,7 +566,9 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
   4. System will auto-process
 
 #### 4.2 Claim Ontology
+
 **Automated**:
+
 - Coarse categories (5 types):
   1. Health (positive/neutral/negative)
   2. Fitness (peak/building/underdone)
@@ -526,24 +577,30 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
   5. Bias (inside/outside advantage)
 
 #### 4.3 Likelihood Ratio Learning
+
 **Automated**:
+
 - Start with domain expert priors
 - Hierarchical Bayesian updates from outcomes
 - Heavy regularization toward priors
 - Shadow mode logging for validation
 
 #### 4.4 Fusion Logic
+
 **Automated**:
+
 - Apply LRs post-calibration (Bayesian update)
 - Re-normalize probabilities
 - Track adjustments for audit trail
 
 **Manual Tasks**: 🚨 **USER ACTION REQUIRED**
+
 - [ ] **Set LR priors** (will provide template with suggested values)
 - [ ] **Review fusion outputs** - sanity check first 50 races
 - [ ] **Tune LR strength** - dial up/down based on validation
 
 **Deliverables**:
+
 - ✅ Qualitative claims ingested and parsed
 - ✅ LR fusion improves backtest Brier by ≥1%
 - ✅ Audit trail shows rationale for each adjustment
@@ -551,10 +608,13 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 ---
 
 ### **PHASE 5: Execution & API** (Days 36-42)
+
 **Goal**: Deploy prediction system with API and dashboard
 
 #### 5.1 Execution Simulator
+
 **Automated**:
+
 - Order book dynamics model
 - Partial fill simulation
 - Commission and slippage
@@ -562,14 +622,18 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 - Market impact estimation
 
 #### 5.2 FastAPI Backend
+
 **Automated**:
+
 - `/predict` endpoint (race_id → probabilities)
 - `/qualify` endpoint (trigger qual scan)
 - `/backtest` endpoint (historical performance)
 - `/meeting` endpoint (full card analysis)
 
 #### 5.3 Streamlit Dashboard
+
 **Automated**:
+
 - Race card selector
 - Probability table (win/place, fair odds)
 - Edge calculator (vs Betfair/TAB)
@@ -579,17 +643,21 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 - Backtest performance charts
 
 #### 5.4 Monitoring & Alerting
+
 **Automated**:
+
 - Model drift detection (PSI on features)
 - Performance tracking (live Brier vs backtest)
 - Data quality alerts
 - API health checks
 
 **Manual Tasks**: 🚨 **USER ACTION REQUIRED**
+
 - [ ] **Review dashboard UX** - request changes
 - [ ] **Test full workflow** - ingest → features → predict → display
 
 **Deliverables**:
+
 - ✅ `make serve` launches dashboard at localhost:8501
 - ✅ Full race card analysis in <10 seconds
 - ✅ All endpoints documented with examples
@@ -597,23 +665,30 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 ---
 
 ### **PHASE 6: Hardening & Production** (Days 43+)
+
 **Goal**: Prepare for live operation
 
 #### 6.1 Live Data Pipeline
+
 **Automated**:
+
 - Scheduled daily ingestion (cron/Prefect)
 - Real-time Betfair streaming (final 5 min)
 - Automatic retrain weekly
 - Model A/B testing framework
 
 #### 6.2 Paper Trading
+
 **Manual Tasks**: 🚨 **USER ACTION REQUIRED**
+
 - [ ] **Run paper trading for 50 races** - log predictions vs outcomes
 - [ ] **Validate performance** - compare to backtest expectations
 - [ ] **Approve for live use** - only after 50-race validation
 
 #### 6.3 Live Trading (Optional)
+
 **Manual Tasks**: 🚨 **USER ACTION REQUIRED**
+
 - [ ] **Set risk limits** (max stake, daily loss limit, drawdown stop)
 - [ ] **Implement kill switch** - manual override to stop all betting
 - [ ] **Start with minimum stakes** - 1/10th target size for first 100 bets
@@ -623,6 +698,7 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 ## 🔧 Technology Stack
 
 ### Core
+
 - **Language**: Python 3.11
 - **Database**: DuckDB (embedded analytical DB)
 - **Data Processing**: Polars (fast dataframes)
@@ -634,12 +710,14 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 - **Task Runner**: Make
 
 ### Data Sources
+
 - **Racing Data**: Racing.com, Racing Victoria (scraping)
 - **Market Data**: Betfair API (Historic + Stream)
 - **Weather**: Open-Meteo / BOM
 - **Qualitative**: ChatGPT Deep Research (manual initially)
 
 ### DevOps
+
 - **Environment**: VS Code Devcontainer
 - **Orchestration**: Prefect (later phases)
 - **Versioning**: Git + DVC (data version control)
@@ -650,18 +728,21 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 ## 📊 Success Metrics
 
 ### Model Performance (Backtests)
+
 - **Brier Score**: <0.20 (market baseline ~0.18-0.19)
 - **AUC**: >0.75 (rank discrimination)
 - **Calibration Error**: <3% at 90% confidence band
 - **ROI**: >5% after commission/slippage (1000-race test set)
 
 ### System Quality
+
 - **Data Completeness**: >80% on key features (sectionals, weather)
 - **API Latency**: <2s for `/predict` (excluding Deep Research)
 - **Uptime**: >99% during racing hours
 - **Test Coverage**: >80% code coverage
 
 ### Operational
+
 - **Backtest-Live Gap**: <10% difference in Brier score
 - **Max Drawdown**: <20% of bankroll (paper trading)
 - **Sharpe Ratio**: >1.5 (if live trading)
@@ -671,30 +752,36 @@ The Master Taxonomy is a **comprehensive knowledge base** containing:
 ## 🚨 Manual Task Summary
 
 ### **Phase 1: Data Layer**
+
 - [ ] Sign up for Betfair API (30 min)
 - [ ] Sign up for weather API (10 min)
 - [ ] Download sample Betfair historic data (1 hour)
 - [ ] Test scrapers and validate outputs (1 hour)
 
 ### **Phase 2: Feature Engineering**
+
 - [ ] Review feature distributions (30 min)
 - [ ] Approve feature set (15 min)
 
 ### **Phase 3: Modeling**
+
 - [ ] Review backtest results (1 hour)
 - [ ] Approve model for next phase (15 min)
 
 ### **Phase 4: Qualitative**
+
 - [ ] Set up ChatGPT Plus / Deep Research access (10 min)
 - [ ] Run manual deep research (daily: 30 min)
 - [ ] Set LR priors (30 min, one-time)
 - [ ] Review fusion outputs (30 min)
 
 ### **Phase 5: API & UI**
+
 - [ ] Review dashboard UX (30 min)
 - [ ] Test full workflow (1 hour)
 
 ### **Phase 6: Production**
+
 - [ ] Paper trading validation (50 races, ~1 week)
 - [ ] Set risk limits (30 min)
 - [ ] Approve for live use (decision point)
@@ -783,6 +870,7 @@ racing-analysis/
 ## 🔄 Development Workflow
 
 ### Daily Development
+
 ```bash
 # Start devcontainer in VS Code
 # Open terminal in container
@@ -804,6 +892,7 @@ make serve
 ```
 
 ### Weekly Workflow
+
 ```bash
 # Retrain models
 make train
@@ -819,6 +908,7 @@ make report
 ```
 
 ### Pre-Live Checklist
+
 ```bash
 # Run all tests
 make test
@@ -841,21 +931,25 @@ make review_logs
 ## ⚠️ Risk Management
 
 ### Model Risks
+
 - **Overfitting**: Walk-forward validation, regularization, ensemble diversity
 - **Concept Drift**: Weekly retraining, drift monitoring, automatic rollback
 - **Data Leakage**: Strict time-ordering, manual audits of feature creation
 
 ### Execution Risks
+
 - **Slippage**: Conservative assumptions (50% haircut on backtest ROI)
 - **Market Impact**: Position size limits, liquidity checks
 - **Latency**: Betfair Stream in final 5 min, <500ms order placement
 
 ### Operational Risks
+
 - **Data Outages**: Graceful degradation, manual data entry fallback
 - **API Rate Limits**: Request throttling, caching, retry logic
 - **Model Failures**: Health checks, automatic fallback to simpler model
 
 ### Financial Risks
+
 - **Drawdowns**: Kelly criterion with 1/4 to 1/2 fractional sizing
 - **Stop Losses**: Maximum daily loss limit, maximum drawdown kill switch
 - **Stake Limits**: Never exceed 5% of bankroll on single race
@@ -865,24 +959,28 @@ make review_logs
 ## 📈 Future Enhancements (Post-MVP)
 
 ### Advanced Modeling
+
 - Hierarchical Bayesian logistic regression
 - Full Monte Carlo pace simulation
 - Meeting-level bias detection (live)
 - Neural networks for non-linear interactions
 
 ### Data Expansion
+
 - International form integration (Japan, Europe)
 - Barrier trial data
 - Track work data (where available)
 - Jockey booking timing signals
 
 ### Qualitative Improvements
+
 - Automated Deep Research via API (when available)
 - LLM-based stewards report parsing
 - Parade ring video analysis (ML vision)
 - Social media sentiment (trainer/jockey confidence)
 
 ### Operations
+
 - Multi-market support (Hong Kong, UK)
 - Automated live trading
 - Portfolio optimization across multiple races
@@ -893,16 +991,19 @@ make review_logs
 ## 🎓 Learning Resources
 
 ### Racing Domain
+
 - [TimeformUS Speed Figures](https://www.timeform.com/)
 - [Betfair Trading Guide](https://betting.betfair.com/how-to-use-betfair/)
 - [Racing Victoria Stewards](https://www.racingvictoria.com.au/the-sport/stewards)
 
 ### Modeling
+
 - [Applied Predictive Modeling (Kuhn)](https://link.springer.com/book/10.1007/978-1-4614-6849-3)
 - [Conformal Prediction Tutorial](https://github.com/valeman/awesome-conformal-prediction)
 - [Calibration in Modern ML (Guo et al.)](https://arxiv.org/abs/1706.04599)
 
 ### Trading
+
 - [Kelly Criterion](https://en.wikipedia.org/wiki/Kelly_criterion)
 - [Execution Algorithms](https://www.quantstart.com/articles/)
 
@@ -913,6 +1014,7 @@ make review_logs
 **Phase**: 0 - Foundation
 **Progress**: 10% (plan created, ready to build)
 **Next Steps**:
+
 1. Create repository structure
 2. Set up devcontainer
 3. Initialize database schema

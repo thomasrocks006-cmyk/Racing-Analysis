@@ -9,7 +9,7 @@ This scraper extracts:
 
 Usage:
     from src.data.scrapers.racing_com import RacingComScraper
-    
+
     scraper = RacingComScraper()
     race_card = scraper.scrape_race("FLE", "2025-11-12", race_number=1)
 """
@@ -34,8 +34,8 @@ from src.data.models import (
     RaceCard,
     Run,
     SexType,
-    Trainer,
     TrackType,
+    Trainer,
 )
 
 logger = logging.getLogger(__name__)
@@ -44,7 +44,7 @@ logger = logging.getLogger(__name__)
 class RacingComScraper:
     """
     Scraper for Racing.com race card data.
-    
+
     Racing.com provides comprehensive race card information including:
     - Race details and conditions
     - Horse entries and form
@@ -61,7 +61,7 @@ class RacingComScraper:
     def __init__(self, delay_between_requests: float = 1.0):
         """
         Initialize scraper.
-        
+
         Args:
             delay_between_requests: Delay in seconds between requests (be polite!)
         """
@@ -74,15 +74,15 @@ class RacingComScraper:
     ) -> RaceCard:
         """
         Scrape a complete race card.
-        
+
         Args:
             venue: Venue code (e.g., 'FLE', 'RAN', 'CAU')
             race_date: Race date (YYYY-MM-DD or date object)
             race_number: Race number (1-12)
-            
+
         Returns:
             RaceCard object with all race data
-            
+
         Example:
             >>> scraper = RacingComScraper()
             >>> card = scraper.scrape_race("FLE", "2025-11-12", 1)
@@ -102,7 +102,9 @@ class RacingComScraper:
 
         # NOTE: This is a TEMPLATE showing the data structure
         # Real implementation will parse HTML/JSON from racing.com
-        race_card = self._create_sample_race_card(race_id, venue, race_date, race_number)
+        race_card = self._create_sample_race_card(
+            race_id, venue, race_date, race_number
+        )
 
         logger.info(
             f"Scraped {len(race_card.runs)} runners from {race_id} "
@@ -116,7 +118,7 @@ class RacingComScraper:
     ) -> RaceCard:
         """
         Create sample race card data structure.
-        
+
         This demonstrates the expected data format from racing.com.
         In production, this would parse actual HTML/JSON responses.
         """
@@ -145,8 +147,8 @@ class RacingComScraper:
         # Sample horses (in production, scraped from race card)
         horses = [
             Horse(
-                horse_id=f"H{1000+i}",
-                name=f"Sample Horse {i+1}",
+                horse_id=f"H{1000 + i}",
+                name=f"Sample Horse {i + 1}",
                 age=3 + (i % 3),
                 sex=SexType.COLT if i % 2 == 0 else SexType.FILLY,
                 sire="Sample Sire",
@@ -159,8 +161,8 @@ class RacingComScraper:
         # Sample jockeys
         jockeys = [
             Jockey(
-                jockey_id=f"J{100+i}",
-                name=f"Sample Jockey {i+1}",
+                jockey_id=f"J{100 + i}",
+                name=f"Sample Jockey {i + 1}",
                 apprentice=(i == 9),  # Last one is apprentice
                 claim_weight=Decimal("3.0") if i == 9 else None,
             )
@@ -170,8 +172,8 @@ class RacingComScraper:
         # Sample trainers
         trainers = [
             Trainer(
-                trainer_id=f"T{200+i}",
-                name=f"Sample Trainer {i+1}",
+                trainer_id=f"T{200 + i}",
+                name=f"Sample Trainer {i + 1}",
                 state="VIC",
             )
             for i in range(10)
@@ -236,13 +238,13 @@ class RacingComScraper:
     def scrape_upcoming_races(self, days_ahead: int = 1) -> list[tuple[str, date, int]]:
         """
         Scrape list of upcoming races.
-        
+
         Args:
             days_ahead: Number of days to look ahead
-            
+
         Returns:
             List of (venue, date, race_number) tuples
-            
+
         Note:
             This would parse racing.com calendar/schedule page
             Currently returns sample data

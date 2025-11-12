@@ -240,7 +240,7 @@ CREATE INDEX IF NOT EXISTS idx_gear_type ON gear(gear_type);
 
 -- Complete race card view (all runners with details)
 CREATE OR REPLACE VIEW v_race_card AS
-SELECT 
+SELECT
     r.race_id,
     r.date,
     r.venue,
@@ -271,7 +271,7 @@ WHERE runs.scratched = FALSE;
 
 -- Race results view (with sectionals)
 CREATE OR REPLACE VIEW v_race_results AS
-SELECT 
+SELECT
     r.race_id,
     r.date,
     r.venue,
@@ -305,11 +305,11 @@ ORDER BY r.race_id, res.finish_position;
 
 -- Check for races with missing critical data
 CREATE OR REPLACE VIEW v_incomplete_races AS
-SELECT 
+SELECT
     race_id,
     date,
     venue,
-    CASE 
+    CASE
         WHEN distance IS NULL THEN 'Missing distance'
         WHEN track_condition IS NULL THEN 'Missing track condition'
         WHEN class_level IS NULL THEN 'Missing class level'
@@ -323,10 +323,10 @@ WHERE is_complete = FALSE
 
 -- Check for runs with missing key data
 CREATE OR REPLACE VIEW v_incomplete_runs AS
-SELECT 
+SELECT
     run_id,
     race_id,
-    CASE 
+    CASE
         WHEN horse_id IS NULL THEN 'Missing horse'
         WHEN barrier IS NULL THEN 'Missing barrier'
         WHEN weight_carried IS NULL THEN 'Missing weight'

@@ -15,7 +15,7 @@ from decimal import Decimal
 
 import duckdb
 
-from src.data.models import Race, Horse, Jockey, Trainer, Run
+from src.data.models import Horse, Jockey, Race, Run, Trainer
 
 # Database path
 DB_PATH = "data/racing.duckdb"
@@ -47,7 +47,9 @@ def test_database_schema():
     print(f"Actual tables:   {len(tables & expected_tables)}")
 
     # Check views
-    views_query = "SELECT table_name FROM information_schema.tables WHERE table_type = 'VIEW'"
+    views_query = (
+        "SELECT table_name FROM information_schema.tables WHERE table_type = 'VIEW'"
+    )
     views = {row[0] for row in con.execute(views_query).fetchall()}
     expected_views = {
         "v_race_card",

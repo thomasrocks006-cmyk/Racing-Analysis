@@ -9,7 +9,7 @@ Extracts stewards' reports including:
 
 Usage:
     from src.data.scrapers.stewards import StewardsScraper
-    
+
     scraper = StewardsScraper()
     reports = scraper.scrape_race_reports("FLE", "2025-11-12", race_number=1)
 """
@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 class StewardsScraper:
     """
     Scraper for stewards' reports.
-    
+
     Sources:
     - Racing Victoria: https://www.rv.racing.com/form-hub/stewards-reports
     - Racing NSW: https://www.racingnsw.com.au/stewards-reports
@@ -53,12 +53,12 @@ class StewardsScraper:
     ) -> list[StewardsReport]:
         """
         Scrape stewards reports for a specific race.
-        
+
         Args:
             venue: Venue code (e.g., 'FLE', 'RAN')
             race_date: Race date
             race_number: Race number
-            
+
         Returns:
             List of StewardsReport objects
         """
@@ -114,10 +114,10 @@ class StewardsScraper:
     def scrape_daily_reports(self, report_date: date | str) -> list[StewardsReport]:
         """
         Scrape all stewards reports for a specific date.
-        
+
         Args:
             report_date: Date to scrape reports for
-            
+
         Returns:
             List of all stewards reports for that day
         """

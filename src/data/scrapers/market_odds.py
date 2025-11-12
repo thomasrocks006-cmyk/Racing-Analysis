@@ -10,7 +10,7 @@ Sources:
 
 Usage:
     from src.data.scrapers.market_odds import MarketOddsCollector
-    
+
     collector = MarketOddsCollector()
     odds = collector.collect_starting_prices("FLE", "2025-11-12", race_number=1)
 """
@@ -31,7 +31,7 @@ logger = logging.getLogger(__name__)
 class MarketOddsCollector:
     """
     Collector for market odds data.
-    
+
     Phase 1: Starting prices only
     Phase 2 (Week 2): Full Betfair integration with time-series data
     """
@@ -52,12 +52,12 @@ class MarketOddsCollector:
     ) -> list[MarketOdds]:
         """
         Collect starting prices for a race.
-        
+
         Args:
             venue: Venue code
             race_date: Race date
             race_number: Race number
-            
+
         Returns:
             List of MarketOdds objects (one per runner)
         """
@@ -94,7 +94,7 @@ class MarketOddsCollector:
         odds_list = []
         for i, sp in enumerate(sample_sp, 1):
             # Create run_id (would come from actual race card)
-            run_id = f"{race_id}-H{1000+i}"
+            run_id = f"{race_id}-H{1000 + i}"
 
             # Win odds
             odds_list.append(
@@ -112,7 +112,9 @@ class MarketOddsCollector:
 
             # Place odds (roughly 1/4 of win odds for top 3)
             if i <= 3:
-                place_odds = round(Decimal("1.0") + (sp - Decimal("1.0")) / Decimal("4.0"), 2)
+                place_odds = round(
+                    Decimal("1.0") + (sp - Decimal("1.0")) / Decimal("4.0"), 2
+                )
                 odds_list.append(
                     MarketOdds(
                         odds_id=f"ODDS-{run_id}-PLACE",
@@ -132,14 +134,14 @@ class MarketOddsCollector:
     ) -> list[MarketOdds]:
         """
         Collect Betfair exchange odds (time-series).
-        
+
         NOTE: Full implementation in Week 2 with Betfair API integration.
-        
+
         Args:
             venue: Venue code
             race_date: Race date
             race_number: Race number
-            
+
         Returns:
             List of MarketOdds objects with timestamp series
         """

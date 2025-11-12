@@ -10,7 +10,7 @@
 
 ## 🎯 Project Status
 
-**Current Phase:** Phase 0 Complete ✅ - Design & Architecture (100%)  
+**Current Phase:** Phase 0 Complete ✅ - Design & Architecture (100%)
 **Next Phase:** Phase 1 Starting - Data Layer Implementation (8 weeks)
 
 ### What We've Built
@@ -51,6 +51,7 @@ Likelihood Ratios (LRs)      Base Probabilities
 ```
 
 **Performance Targets:**
+
 - Brier Score: 0.16 (11% better than sequential fusion)
 - ROI: 7.2% after commission/slippage
 - Cost: $0.96/race ($0.66 qual + $0.30 fusion)
@@ -116,13 +117,13 @@ Likelihood Ratios (LRs)      Base Probabilities
    ```bash
    # Data collection
    pip install requests beautifulsoup4 selenium lxml
-   
-   # Data processing  
+
+   # Data processing
    pip install pandas polars pyarrow duckdb pydantic
-   
+
    # ML & feature engineering
    pip install scikit-learn catboost lightgbm xgboost optuna
-   
+
    # Calibration & uncertainty
    pip install mapie netcal
    ```
@@ -190,12 +191,14 @@ Likelihood Ratios (LRs)      Base Probabilities
 ### Pipelines (Production-Ready Designs)
 
 **1. Qualitative Pipeline** (Categories 1-17)
+
 - Multi-stage LLM chain: Gemini Flash 2.0 → GPT-5 → Claude Sonnet 4.5 → GPT-4o
 - Output: Likelihood Ratios (LRs) for each category
 - Cost: $0.66/race | Runtime: 5-7 minutes
 - Docs: [docs/qualitative-pipeline/](docs/qualitative-pipeline/) (5 parts)
 
 **2. Quantitative Pipeline** (Categories 18-21)
+
 - ML ensemble: CatBoost + LightGBM + XGBoost
 - Features: Speed ratings, class, sectionals, pedigree (100+)
 - Output: Calibrated base probabilities
@@ -203,6 +206,7 @@ Likelihood Ratios (LRs)      Base Probabilities
 - Docs: [docs/quantitative-pipeline/](docs/quantitative-pipeline/) (3 parts)
 
 **3. Fusion Model** (Concurrent Multi-Agent)
+
 - 15 concurrent agents via E2B forking
 - Bayesian integration of qualitative LRs + quantitative probabilities
 - Output: Final probabilities + confidence intervals
@@ -279,6 +283,7 @@ make test-cov
 ## 🔧 Configuration
 
 Key settings in `.env`:
+
 - `BETFAIR_APP_KEY`: Betfair API credentials
 - `WEATHER_API_KEY`: Weather data access
 - `MODEL_TYPE`: catboost, lightgbm, or ensemble
@@ -292,12 +297,14 @@ See `.env.example` for full configuration options.
 ## 📈 Performance Targets
 
 **Model Metrics** (Backtest):
+
 - Brier Score: <0.20
 - AUC: >0.75
 - Calibration Error: <3%
 - ROI: >5% (after commission/slippage)
 
 **System Quality**:
+
 - API Latency: <2s
 - Data Completeness: >80%
 - Test Coverage: >80%
@@ -332,12 +339,14 @@ This software is for **educational and personal use only**.
 ## 🎯 Performance Targets
 
 **Phase 1 (Baseline Quantitative):**
+
 - Brier Score: <0.22
 - Calibration Error: <5%
 - Feature Count: 50+
 - Coverage (90% CI): 85-95%
 
 **Phase 2+3 (Full System):**
+
 - Brier Score: 0.16 (fusion model)
 - ROI: 7.2% after commission
 - Calibration Error: <2%
@@ -348,6 +357,7 @@ This software is for **educational and personal use only**.
 ## 🛠️ Technology Stack
 
 **Data & ML:**
+
 - Python 3.11+
 - DuckDB (local warehouse)
 - CatBoost, LightGBM, XGBoost (ensemble)
@@ -356,6 +366,7 @@ This software is for **educational and personal use only**.
 - mapie, netcal (uncertainty)
 
 **Qualitative AI (Phase 2):**
+
 - Gemini Flash 2.0 (source planning)
 - GPT-5 Preview (deep reasoning)
 - Claude Sonnet 4.5 (synthesis)
@@ -363,12 +374,14 @@ This software is for **educational and personal use only**.
 - LangChain (orchestration)
 
 **Fusion (Phase 3):**
+
 - E2B Sandboxes (concurrent agents)
 - OpenHands Framework (micro-agents)
 - FastAPI (coordination)
 - Redis (state management)
 
 **Development:**
+
 - VS Code + Dev Containers
 - GitHub Copilot
 - Git version control
@@ -379,11 +392,13 @@ This software is for **educational and personal use only**.
 ## 📚 Documentation Index
 
 **Getting Started:**
+
 1. [README.md](README.md) - Project overview (you are here)
 2. [PHASE_0_COMPLETE.md](PHASE_0_COMPLETE.md) - Status & Phase 1 roadmap
 3. [MASTER_PLAN.md](MASTER_PLAN.md) - Complete system architecture
 
 **Architecture:**
+
 - [TAXONOMY_OVERVIEW.md](TAXONOMY_OVERVIEW.md) - 21 categories explained
 - [docs/DOCS_MANIFEST.md](docs/DOCS_MANIFEST.md) - Complete documentation index
 - [docs/qualitative-pipeline/](docs/qualitative-pipeline/) - LLM chain (5 parts)
@@ -391,6 +406,7 @@ This software is for **educational and personal use only**.
 - [docs/FUSION_MODEL_ARCHITECTURE.md](docs/FUSION_MODEL_ARCHITECTURE.md) - Concurrent fusion
 
 **Setup & Reference:**
+
 - [docs/setup/](docs/setup/) - API configuration guides
 - [docs/reference/](docs/reference/) - Model research & strategies
 
@@ -411,12 +427,14 @@ MIT License - Personal use only, no commercial application.
 ## 🙏 Acknowledgements
 
 **Data Sources:**
+
 - Betfair (market data API)
 - Racing.com (official form)
 - Racing Victoria (stewards reports)
 - Open-Meteo (weather data)
 
 **Technology:**
+
 - OpenAI (GPT-5, GPT-4o)
 - Anthropic (Claude Sonnet 4.5)
 - Google (Gemini Flash 2.0)

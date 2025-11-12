@@ -132,9 +132,7 @@ def test_integrated_scraping():
 
     # Get stewards reports
     with StewardsScraper() as stewards_scraper:
-        reports = stewards_scraper.scrape_race_reports(
-            "FLE", date.today(), 1
-        )
+        reports = stewards_scraper.scrape_race_reports("FLE", date.today(), 1)
 
     # Get odds
     with MarketOddsCollector() as odds_collector:

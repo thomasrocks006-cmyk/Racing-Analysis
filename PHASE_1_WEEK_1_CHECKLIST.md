@@ -1,7 +1,7 @@
 # Phase 1 - Week 1 Checklist
 
-**Date Started:** November 12, 2025  
-**Goal:** Database schema design + initial web scrapers  
+**Date Started:** November 12, 2025
+**Goal:** Database schema design + initial web scrapers
 **Target:** 50 races with 80%+ data completeness
 
 ---
@@ -53,9 +53,10 @@
 
 **Deliverable:** Working DuckDB database with proper schema
 
-**Reference:** 
+**Reference:**
+
 - `docs/quantitative-pipeline/PART_1_OVERVIEW_AND_CATEGORIES.md` (data requirements)
-- DuckDB docs: https://duckdb.org/docs/
+- DuckDB docs: <https://duckdb.org/docs/>
 
 ---
 
@@ -104,8 +105,9 @@
 **Deliverable:** Working scrapers that collect race data
 
 **Reference:**
-- Beautiful Soup docs: https://www.crummy.com/software/BeautifulSoup/
-- Selenium docs: https://selenium-python.readthedocs.io/
+
+- Beautiful Soup docs: <https://www.crummy.com/software/BeautifulSoup/>
+- Selenium docs: <https://selenium-python.readthedocs.io/>
 
 ---
 
@@ -149,6 +151,7 @@ By end of Week 1, you should have:
 5. ✅ **10+ races ingested** with 80%+ data completeness
 
 **Metrics:**
+
 - Data completeness: >80% (critical fields present)
 - Scraper success rate: >90% (successful requests)
 - Data quality: 0 validation errors
@@ -159,15 +162,17 @@ By end of Week 1, you should have:
 ## 📚 Key References
 
 **Documentation:**
+
 - [PHASE_0_COMPLETE.md](PHASE_0_COMPLETE.md) - Full Phase 1 roadmap
 - [docs/quantitative-pipeline/PART_1_OVERVIEW_AND_CATEGORIES.md](docs/quantitative-pipeline/PART_1_OVERVIEW_AND_CATEGORIES.md) - Data requirements
 - [docs/DOCS_MANIFEST.md](docs/DOCS_MANIFEST.md) - Complete doc index
 
 **External Resources:**
-- DuckDB: https://duckdb.org/docs/
-- Pydantic: https://docs.pydantic.dev/
-- Beautiful Soup: https://www.crummy.com/software/BeautifulSoup/
-- Selenium: https://selenium-python.readthedocs.io/
+
+- DuckDB: <https://duckdb.org/docs/>
+- Pydantic: <https://docs.pydantic.dev/>
+- Beautiful Soup: <https://www.crummy.com/software/BeautifulSoup/>
+- Selenium: <https://selenium-python.readthedocs.io/>
 
 ---
 
@@ -195,10 +200,12 @@ duckdb data/racing.duckdb "SELECT * FROM races ORDER BY date DESC LIMIT 10;"
 ## ⚠️ Important Notes
 
 **API Accounts Needed (Week 2):**
-- [ ] Betfair API account (https://developer.betfair.com/) - FREE
+
+- [ ] Betfair API account (<https://developer.betfair.com/>) - FREE
 - [ ] Weather API (open-meteo.com) - FREE, no key needed
 
 **Scraping Best Practices:**
+
 - ✅ Respect robots.txt
 - ✅ Rate limit (1-2 sec between requests)
 - ✅ Use descriptive User-Agent
@@ -206,6 +213,7 @@ duckdb data/racing.duckdb "SELECT * FROM races ORDER BY date DESC LIMIT 10;"
 - ✅ Cache responses where appropriate
 
 **Time-Ordered Data:**
+
 - ⚠️ CRITICAL: Only scrape historical data (no future data)
 - ⚠️ Add `scraped_at` timestamp to all tables
 - ⚠️ Ensure race date < scrape date (prevent data leakage)
@@ -217,6 +225,7 @@ duckdb data/racing.duckdb "SELECT * FROM races ORDER BY date DESC LIMIT 10;"
 **Right now, start with:**
 
 1. Create directory structure:
+
    ```bash
    mkdir -p src/data/scrapers
    mkdir -p scripts
@@ -228,6 +237,7 @@ duckdb data/racing.duckdb "SELECT * FROM races ORDER BY date DESC LIMIT 10;"
 3. Create `src/data/init_db.py` to initialize database
 
 4. Test database creation:
+
    ```bash
    python src/data/init_db.py
    duckdb data/racing.duckdb "SHOW TABLES;"
@@ -237,5 +247,5 @@ duckdb data/racing.duckdb "SELECT * FROM races ORDER BY date DESC LIMIT 10;"
 
 ---
 
-**Week 1 Status:** ⏳ In Progress (Started: 2025-11-12)  
+**Week 1 Status:** ⏳ In Progress (Started: 2025-11-12)
 **Next Review:** End of Week 1 (check success criteria)

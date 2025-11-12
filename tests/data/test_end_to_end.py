@@ -53,9 +53,7 @@ def test_ingest_5_races():
             if metrics["status"] == "success":
                 print(f"  ✓ SUCCESS")
                 print(f"    Runners: {metrics['scraped']['runners']}")
-                print(
-                    f"    Completeness: {metrics['validated']['completeness']:.1f}%"
-                )
+                print(f"    Completeness: {metrics['validated']['completeness']:.1f}%")
                 print(
                     f"    Inserted: {metrics['inserted']['runs']} runs, "
                     f"{metrics['inserted']['horses']} horses"
@@ -118,9 +116,7 @@ def test_ingest_5_races():
             print("=" * 70)
             print("\nKey Achievements:")
             print(f"  ✓ {successful}/{len(results)} races ingested successfully")
-            print(
-                f"  ✓ {quality['race_completeness']:.1f}% race data completeness"
-            )
+            print(f"  ✓ {quality['race_completeness']:.1f}% race data completeness")
             print(f"  ✓ {quality['run_completeness']:.1f}% run data completeness")
             print(f"  ✓ {quality['total_runs']} total runners in database")
             print("\nWeek 1 objectives COMPLETE! Ready for Week 2.")

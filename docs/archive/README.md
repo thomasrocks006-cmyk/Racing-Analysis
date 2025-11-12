@@ -1,7 +1,7 @@
 # Archive Documentation
 
-**Purpose:** Historical and superseded documentation retained for reference  
-**Status:** ARCHIVED - Not for implementation use  
+**Purpose:** Historical and superseded documentation retained for reference
+**Status:** ARCHIVED - Not for implementation use
 **Last Updated:** 2025-11-12
 
 ---
@@ -19,27 +19,32 @@ This directory contains documentation that has been superseded by newer, more co
 ## 🗂️ Archive Sections
 
 ### 1. Initial Taxonomy Exploration
-**Location:** `initial-taxonomy-exploration/`  
-**Files:** ~44 PART files (PART_1_ANALYSIS.md through PART_6D_ANALYSIS.md)  
-**Created:** Early November 2025  
-**Superseded By:** 
+
+**Location:** `initial-taxonomy-exploration/`
+**Files:** ~44 PART files (PART_1_ANALYSIS.md through PART_6D_ANALYSIS.md)
+**Created:** Early November 2025
+**Superseded By:**
+
 - `/TAXONOMY_OVERVIEW.md` (canonical 21-category taxonomy)
 - `/docs/qualitative-pipeline/` (implementation architecture)
 - `/docs/quantitative-pipeline/` (implementation architecture)
 
 **What Happened:**
+
 - Initial exploratory analysis breaking down racing information into categories
 - Iterative refinement across 44 parts (6 main sections, each with subsections A-D)
 - Final consolidation into 21 canonical categories with 3 integration matrices
 - Multi-part exploration led to comprehensive taxonomy now documented in TAXONOMY_OVERVIEW.md
 
 **Why Archived:**
+
 - Exploratory analysis complete
 - Final taxonomy established
 - These files show the evolution but are no longer needed for implementation
 - ~40,000+ lines of exploratory content
 
 **Retention Value:**
+
 - Shows reasoning behind category boundaries
 - Documents alternative categorizations considered
 - Demonstrates iterative design process
@@ -48,13 +53,16 @@ This directory contains documentation that has been superseded by newer, more co
 ---
 
 ### 2. Superseded Pipeline Documents
-**Location:** `superseded-pipeline-docs/`  
-**Files:** 
+
+**Location:** `superseded-pipeline-docs/`
+**Files:**
+
 - `QUALITATIVE_PIPELINE_ARCHITECTURE.md` (~1,330 lines)
 - `QUALITATIVE_SUMMARY.md` (~200 lines)
 
-**Created:** November 2025 (mid-design phase)  
+**Created:** November 2025 (mid-design phase)
 **Superseded By:**
+
 - `/docs/qualitative-pipeline/PART_1_OVERVIEW_AND_CATEGORIES_1-8.md`
 - `/docs/qualitative-pipeline/PART_2_CATEGORIES_9-17.md`
 - `/docs/qualitative-pipeline/PART_3_LLM_CHAIN_AND_SYNTHESIS.md`
@@ -62,6 +70,7 @@ This directory contains documentation that has been superseded by newer, more co
 - `/docs/qualitative-pipeline/PART_5_DEPLOYMENT_AND_INTEGRATION.md`
 
 **What Happened:**
+
 - Initial single-file qualitative pipeline design (~1,330 lines)
 - Summary document created for quick reference
 - Design grew too complex for single file
@@ -69,12 +78,14 @@ This directory contains documentation that has been superseded by newer, more co
 - Added integration matrices, LLM chain details, deployment specs
 
 **Why Archived:**
+
 - Single-file design was incomplete (lacked Matrix B, C, detailed LLM chain)
 - Summary document redundant (Part 5 now contains all deployment info)
 - Multi-part structure provides better organization and detail
 - Newer docs have production-ready implementation specs
 
 **Retention Value:**
+
 - Shows evolution from simple → comprehensive design
 - Contains some early design rationale not fully carried forward
 - Reference for understanding why multi-part split was necessary
@@ -85,18 +96,21 @@ This directory contains documentation that has been superseded by newer, more co
 ## ⚠️ Important Notes
 
 ### DO NOT Use Archive for Implementation
+
 - ❌ Archive files are **NOT** current
 - ❌ Archive files are **NOT** complete
 - ❌ Archive files may contain **outdated** decisions
 - ✅ **Always** use canonical docs from `/docs/DOCS_MANIFEST.md`
 
 ### When to Reference Archive
+
 - ✅ Understanding **why** a design decision was made
 - ✅ Seeing **how** the architecture evolved
 - ✅ Learning from **iterative** design process
 - ✅ Tracing **historical** context for current design
 
 ### Archive Maintenance
+
 - **Add to archive:** When superseding a document, move it here with explanation
 - **Update this README:** Document what was archived and why
 - **Never delete:** Archive files are historical record
@@ -181,6 +195,7 @@ Late Nov 2025 (Now)
 ## 📝 Archive Change Log
 
 ### 2025-11-12: Initial Archive Creation
+
 - **Added:** `initial-taxonomy-exploration/` with 44 PART files
 - **Added:** `superseded-pipeline-docs/` with 2 qualitative files
 - **Reason:** Documentation cleanup and organization

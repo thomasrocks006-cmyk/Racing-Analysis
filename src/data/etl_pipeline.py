@@ -14,7 +14,7 @@ Features:
 
 Usage:
     from src.data.etl_pipeline import RacingETL
-    
+
     etl = RacingETL()
     etl.ingest_race("FLE", "2025-11-12", race_number=1)
 """
@@ -37,7 +37,7 @@ logger = logging.getLogger(__name__)
 class RacingETL:
     """
     ETL pipeline for racing data.
-    
+
     Handles complete data flow:
     - Extract: Scrape from Racing.com, stewards, odds
     - Transform: Validate with Pydantic models
@@ -47,7 +47,7 @@ class RacingETL:
     def __init__(self, db_path: str | Path = "data/racing.duckdb"):
         """
         Initialize ETL pipeline.
-        
+
         Args:
             db_path: Path to DuckDB database
         """
@@ -63,17 +63,15 @@ class RacingETL:
 
         logger.info(f"ETL pipeline initialized with database: {db_path}")
 
-    def ingest_race(
-        self, venue: str, race_date: date | str, race_number: int
-    ) -> dict:
+    def ingest_race(self, venue: str, race_date: date | str, race_number: int) -> dict:
         """
         Ingest complete race data.
-        
+
         Args:
             venue: Venue code (e.g., 'FLE', 'RAN')
             race_date: Race date
             race_number: Race number
-            
+
         Returns:
             dict with ingestion metrics
         """
@@ -363,9 +361,7 @@ class RacingETL:
                 ],
             )
 
-    def _insert_stewards(
-        self, con: duckdb.DuckDBPyConnection, reports: list
-    ) -> None:
+    def _insert_stewards(self, con: duckdb.DuckDBPyConnection, reports: list) -> None:
         """Insert stewards reports."""
         for report in reports:
             # Keep lists as-is for DuckDB arrays
@@ -427,7 +423,7 @@ class RacingETL:
     def get_data_quality_report(self) -> dict:
         """
         Generate data quality report.
-        
+
         Returns:
             dict with quality metrics
         """
