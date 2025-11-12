@@ -189,6 +189,23 @@ download-betfair-sample: ## Download sample Betfair data (requires manual action
 # Utility
 # ============================================================================
 
+.PHONY: verify-glm
+verify-glm:
+	@echo "Verifying GLM API setup..."
+	python scripts/verify_glm_setup.py
+
+.PHONY: verify-copilot
+verify-copilot:
+	@echo "Verifying GitHub Copilot API setup..."
+	python scripts/verify_copilot_api.py
+
+.PHONY: verify-ai
+verify-ai: verify-glm verify-copilot
+	@echo ""
+	@echo "=========================================="
+	@echo "✅ All AI API verifications complete!"
+	@echo "=========================================="
+
 version: ## Show version info
 	@echo "${GREEN}Racing Analysis v0.1.0${RESET}"
 	@python --version

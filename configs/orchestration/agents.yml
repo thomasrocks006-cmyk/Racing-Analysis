@@ -1,0 +1,52 @@
+agents:
+  # GLM Agent - Zhipu AI
+  glm:
+    provider: glm
+    model: glm-4-plus
+    api_key: ${GLM_API_KEY}
+    max_tokens: 4096
+    temperature: 0.7
+    capabilities:
+      - code_generation
+      - analysis
+      - chinese_language
+    strengths:
+      - coding
+      - cost_effective
+      - large_context
+    enabled: true
+
+  # Claude Agent - Anthropic
+  claude:
+    provider: anthropic
+    model: claude-3-5-sonnet-20241022
+    api_key: ${ANTHROPIC_API_KEY}
+    max_tokens: 8192
+    temperature: 0.7
+    capabilities:
+      - analysis
+      - documentation
+      - architecture
+    strengths:
+      - reasoning
+      - long_context
+      - documentation
+    enabled: true
+
+  # GPT-4 Agent - OpenAI
+  gpt4:
+    provider: openai
+    model: gpt-4-turbo-preview
+    api_key: ${OPENAI_API_KEY}
+    max_tokens: 8192
+    temperature: 0.7
+    capabilities:
+      - general
+      - analysis
+      - reasoning
+      - research
+    strengths:
+      - natural_language
+      - problem_solving
+      - creative_tasks
+    enabled: true
