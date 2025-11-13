@@ -135,7 +135,7 @@ class MarketOddsCollector:
         """
         Collect Betfair exchange odds (time-series).
 
-        NOTE: Full implementation in Week 2 with Betfair API integration.
+        Uses the BetfairClient for real API integration.
 
         Args:
             venue: Venue code
@@ -145,22 +145,25 @@ class MarketOddsCollector:
         Returns:
             List of MarketOdds objects with timestamp series
         """
-        if isinstance(race_date, str):
-            race_date = date.fromisoformat(race_date)
+        try:
+            from src.data.scrapers.betfair_client import BetfairClient
 
-        race_id = f"{venue}-{race_date.isoformat()}-R{race_number}"
+            with BetfairClient() as client:
+                odds = client.get_race_odds(venue, race_date, race_number)
 
-        logger.info(f"Betfair odds collection for {race_id} - NOT YET IMPLEMENTED")
-        logger.info("Full Betfair integration scheduled for Week 2")
+                if odds:
+                    logger.info(f"✅ Collected Betfair odds for {len(odds)} runners")
+                    return odds
+                else:
+                    logger.warning("No Betfair odds available")
+                    return []
 
-        # TODO: Week 2 - Implement Betfair API integration
-        # Will collect:
-        # - Pre-race odds movements (5 min, 2 min, 1 min, jump)
-        # - Matched volumes
-        # - Back/lay prices
-        # - Market percentages
-
-        return []
+        except ImportError:
+            logger.error("BetfairClient not available - install betfairlightweight")
+            return []
+        except Exception as e:
+            logger.error(f"Error collecting Betfair odds: {e}")
+            return []
 
     def close(self):
         """Close session."""
