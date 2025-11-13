@@ -92,7 +92,7 @@ app = FastAPI(
     title="Racing Analysis API",
     description="Production API for horse racing predictions",
     version="1.0.0",
-    lifespan=lifespan
+    lifespan=lifespan,
 )
 
 
@@ -106,8 +106,8 @@ async def root():
             "health": "/health",
             "predict": "/predict",
             "metrics": "/metrics",
-            "prometheus": "/prometheus"
-        }
+            "prometheus": "/prometheus",
+        },
     }
 
 
@@ -117,8 +117,10 @@ async def health_check():
     return HealthResponse(
         status="healthy" if model is not None else "degraded",
         model_loaded=model is not None,
-        model_version=f"{model_metadata['name']}:{model_metadata['version']}" if model_metadata else None,
-        uptime_seconds=time.time() - start_time
+        model_version=f"{model_metadata['name']}:{model_metadata['version']}"
+        if model_metadata
+        else None,
+        uptime_seconds=time.time() - start_time,
     )
 
 
@@ -144,7 +146,7 @@ async def predict(request: PredictionRequest):
 
     try:
         # Get prediction and probability
-        if hasattr(model, 'predict_proba'):
+        if hasattr(model, "predict_proba"):
             proba = model.predict_proba(features)[0, 1]
             prediction = int(proba > 0.5)
         else:
@@ -159,24 +161,24 @@ async def predict(request: PredictionRequest):
                 prediction=prediction,
                 probability=proba,
                 latency=latency,
-                features=features[0]
+                features=features[0],
             )
 
         # Check for alerts
         if alert_manager and performance_tracker:
             metrics = performance_tracker.get_metrics()
-            if 'p99_latency_ms' in metrics:
+            if "p99_latency_ms" in metrics:
                 alert_manager.check_and_alert(
                     "latency_p99",
-                    metrics['p99_latency_ms'] / 1000,
-                    higher_is_better=False
+                    metrics["p99_latency_ms"] / 1000,
+                    higher_is_better=False,
                 )
 
         return PredictionResponse(
             prediction=prediction,
             probability=proba,
             latency_ms=latency * 1000,
-            model_version=f"{model_metadata['name']}:{model_metadata['version']}"
+            model_version=f"{model_metadata['name']}:{model_metadata['version']}",
         )
 
     except Exception as e:
@@ -192,7 +194,9 @@ async def get_metrics():
         Current performance metrics
     """
     if performance_tracker is None:
-        raise HTTPException(status_code=503, detail="Performance tracker not initialized")
+        raise HTTPException(
+            status_code=503, detail="Performance tracker not initialized"
+        )
 
     metrics = performance_tracker.get_metrics()
 
@@ -202,7 +206,7 @@ async def get_metrics():
         p95_latency_ms=metrics.get("p95_latency_ms", 0.0),
         p99_latency_ms=metrics.get("p99_latency_ms", 0.0),
         accuracy=metrics.get("accuracy"),
-        calibration_error=metrics.get("calibration_error")
+        calibration_error=metrics.get("calibration_error"),
     )
 
 
@@ -233,7 +237,7 @@ async def submit_feedback(race_id: str, runner_id: str, actual_result: int):
         "status": "received",
         "race_id": race_id,
         "runner_id": runner_id,
-        "result": actual_result
+        "result": actual_result,
     }
 
 
@@ -255,7 +259,7 @@ async def reload_model():
         return {
             "status": "success",
             "model": f"{model_metadata['name']}:{model_metadata['version']}",
-            "loaded_at": time.time()
+            "loaded_at": time.time(),
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to reload model: {str(e)}")
@@ -263,4 +267,5 @@ async def reload_model():
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port=8000)

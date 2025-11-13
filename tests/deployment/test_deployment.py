@@ -52,7 +52,7 @@ class TestModelRegistry:
             name="test_model",
             version="v1.0",
             metrics=metrics,
-            hyperparameters=hyperparameters
+            hyperparameters=hyperparameters,
         )
 
         assert model_id == "test_model:v1.0"
@@ -65,10 +65,7 @@ class TestModelRegistry:
 
         metrics = {"accuracy": 0.85}
         registry.register_model(
-            model=sample_model,
-            name="test_model",
-            version="v1.0",
-            metrics=metrics
+            model=sample_model, name="test_model", version="v1.0", metrics=metrics
         )
 
         loaded_model = registry.load_model("test_model", "v1.0")
@@ -91,7 +88,7 @@ class TestModelRegistry:
             name="test_model",
             version="v1.0",
             metrics=metrics,
-            set_active=True
+            set_active=True,
         )
 
         model, metadata = registry.get_active_model()
@@ -109,7 +106,7 @@ class TestModelRegistry:
             name="test_model",
             version="v1.0",
             metrics={"accuracy": 0.80},
-            set_active=True
+            set_active=True,
         )
 
         registry.register_model(
@@ -117,7 +114,7 @@ class TestModelRegistry:
             name="test_model",
             version="v2.0",
             metrics={"accuracy": 0.85},
-            set_active=False
+            set_active=False,
         )
 
         # Switch active version
@@ -132,14 +129,14 @@ class TestModelRegistry:
             model=sample_model,
             name="model_a",
             version="v1.0",
-            metrics={"accuracy": 0.80}
+            metrics={"accuracy": 0.80},
         )
 
         registry.register_model(
             model=sample_model,
             name="model_b",
             version="v1.0",
-            metrics={"accuracy": 0.85}
+            metrics={"accuracy": 0.85},
         )
 
         # List all models
@@ -159,19 +156,18 @@ class TestModelRegistry:
             model=sample_model,
             name="test_model",
             version="v1.0",
-            metrics={"accuracy": 0.80, "roi": 0.10}
+            metrics={"accuracy": 0.80, "roi": 0.10},
         )
 
         registry.register_model(
             model=sample_model,
             name="test_model",
             version="v2.0",
-            metrics={"accuracy": 0.85, "roi": 0.15}
+            metrics={"accuracy": 0.85, "roi": 0.15},
         )
 
         comparison = registry.compare_models(
-            ["test_model:v1.0", "test_model:v2.0"],
-            metric="accuracy"
+            ["test_model:v1.0", "test_model:v2.0"], metric="accuracy"
         )
 
         assert len(comparison) == 2
@@ -187,7 +183,7 @@ class TestModelRegistry:
             name="test_model",
             version="v1.0",
             metrics={"accuracy": 0.80},
-            set_active=False
+            set_active=False,
         )
 
         registry.delete_model("test_model", "v1.0")
@@ -201,12 +197,7 @@ class TestPerformanceTracker:
         """Test prediction tracking."""
         tracker = PerformanceTracker(window_size=100)
 
-        tracker.track_prediction(
-            prediction=1,
-            probability=0.75,
-            latency=0.01,
-            actual=1
-        )
+        tracker.track_prediction(prediction=1, probability=0.75, latency=0.01, actual=1)
 
         assert len(tracker.predictions) == 1
         assert len(tracker.actuals) == 1
@@ -223,7 +214,7 @@ class TestPerformanceTracker:
                 prediction=i % 2,
                 probability=0.6 + (i % 2) * 0.2,
                 latency=0.01 + i * 0.001,
-                actual=i % 2
+                actual=i % 2,
             )
 
         metrics = tracker.get_metrics()
@@ -260,7 +251,7 @@ class TestPerformanceTracker:
                 prediction=int(prob > 0.5),
                 probability=prob,
                 latency=0.01,
-                actual=actual
+                actual=actual,
             )
 
         ece = tracker._calculate_ece()
@@ -312,7 +303,7 @@ class TestAlertManager:
             message="Test alert",
             metric="accuracy",
             value=0.65,
-            threshold=0.70
+            threshold=0.70,
         )
 
         assert alert.severity == "warning"
@@ -376,7 +367,7 @@ class TestAlertManager:
             message="Test alert",
             metric="accuracy",
             value=0.65,
-            threshold=0.70
+            threshold=0.70,
         )
 
         manager.trigger_alert(alert)
@@ -395,7 +386,7 @@ class TestAlertManager:
                 message=f"Alert {i}",
                 metric="test",
                 value=0.5,
-                threshold=0.7
+                threshold=0.7,
             )
             manager.trigger_alert(alert)
 
@@ -418,7 +409,7 @@ class TestAlertManager:
                 message="Test log alert",
                 metric="accuracy",
                 value=0.65,
-                threshold=0.70
+                threshold=0.70,
             )
 
             channel.send(alert)
@@ -429,5 +420,5 @@ class TestAlertManager:
             assert "WARNING" in content
 
 
-if __name__ == '__main__':
-    pytest.main([__file__, '-v'])
+if __name__ == "__main__":
+    pytest.main([__file__, "-v"])

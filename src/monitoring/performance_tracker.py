@@ -46,21 +46,16 @@ class PerformanceTracker:
 
         # Prometheus metrics
         self.prediction_counter = Counter(
-            'racing_predictions_total',
-            'Total number of predictions made'
+            "racing_predictions_total", "Total number of predictions made"
         )
         self.prediction_latency = Histogram(
-            'racing_prediction_latency_seconds',
-            'Prediction latency in seconds',
-            buckets=[0.001, 0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1.0]
+            "racing_prediction_latency_seconds",
+            "Prediction latency in seconds",
+            buckets=[0.001, 0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1.0],
         )
-        self.accuracy_gauge = Gauge(
-            'racing_model_accuracy',
-            'Current model accuracy'
-        )
+        self.accuracy_gauge = Gauge("racing_model_accuracy", "Current model accuracy")
         self.calibration_gauge = Gauge(
-            'racing_model_calibration_error',
-            'Current calibration error (ECE)'
+            "racing_model_calibration_error", "Current calibration error (ECE)"
         )
 
         # Baseline statistics for drift detection
@@ -73,7 +68,7 @@ class PerformanceTracker:
         probability: float,
         latency: float,
         features: np.ndarray | None = None,
-        actual: int | None = None
+        actual: int | None = None,
     ):
         """
         Track a single prediction.
@@ -155,15 +150,21 @@ class PerformanceTracker:
             "total_predictions": len(self.predictions),
             "predictions_with_actuals": len(self.actuals),
             "mean_latency_ms": np.mean(self.latencies) * 1000 if self.latencies else 0,
-            "p95_latency_ms": np.percentile(self.latencies, 95) * 1000 if self.latencies else 0,
-            "p99_latency_ms": np.percentile(self.latencies, 99) * 1000 if self.latencies else 0,
+            "p95_latency_ms": np.percentile(self.latencies, 95) * 1000
+            if self.latencies
+            else 0,
+            "p99_latency_ms": np.percentile(self.latencies, 99) * 1000
+            if self.latencies
+            else 0,
         }
 
         if len(self.actuals) > 0:
-            metrics.update({
-                "accuracy": self._calculate_accuracy(),
-                "win_rate": np.mean(list(self.actuals)),
-            })
+            metrics.update(
+                {
+                    "accuracy": self._calculate_accuracy(),
+                    "win_rate": np.mean(list(self.actuals)),
+                }
+            )
 
         if len(self.actuals) > 10:
             metrics["calibration_error"] = self._calculate_ece()
@@ -192,16 +193,17 @@ class PerformanceTracker:
         if len(self.actuals) >= n:
             data["actual"] = list(self.actuals)[-n:]
             data["correct"] = [
-                p == a for p, a in zip(
-                    list(self.predictions)[-n:],
-                    list(self.actuals)[-n:],
-                    strict=True
+                p == a
+                for p, a in zip(
+                    list(self.predictions)[-n:], list(self.actuals)[-n:], strict=True
                 )
             ]
 
         return pd.DataFrame(data)
 
-    def detect_drift(self, features: np.ndarray, threshold: float = 3.0) -> dict[str, Any]:
+    def detect_drift(
+        self, features: np.ndarray, threshold: float = 3.0
+    ) -> dict[str, Any]:
         """
         Detect data drift using Z-score method.
 
@@ -215,7 +217,7 @@ class PerformanceTracker:
         if self.baseline_mean is None or self.baseline_std is None:
             return {
                 "drift_detected": False,
-                "message": "No baseline set for drift detection"
+                "message": "No baseline set for drift detection",
             }
 
         # Calculate Z-scores
@@ -227,7 +229,7 @@ class PerformanceTracker:
             "drift_detected": len(drift_features) > 0,
             "max_z_score": float(max_z_score),
             "drift_features": drift_features.tolist(),
-            "threshold": threshold
+            "threshold": threshold,
         }
 
     def set_baseline(self, features: np.ndarray):
@@ -253,17 +255,20 @@ class PerformanceTracker:
         if len(self.actuals) < 50:
             return {
                 "degradation_detected": False,
-                "message": "Insufficient data for degradation check"
+                "message": "Insufficient data for degradation check",
             }
 
         # Compare recent vs historical accuracy
         mid_point = len(self.actuals) // 2
         acts = list(self.actuals)
-        preds = list(self.predictions)[-len(acts):]
+        preds = list(self.predictions)[-len(acts) :]
 
-        historical_accuracy = sum(
-            p == a for p, a in zip(preds[:mid_point], acts[:mid_point], strict=True)
-        ) / mid_point
+        historical_accuracy = (
+            sum(
+                p == a for p, a in zip(preds[:mid_point], acts[:mid_point], strict=True)
+            )
+            / mid_point
+        )
 
         recent_accuracy = sum(
             p == a for p, a in zip(preds[mid_point:], acts[mid_point:], strict=True)
@@ -276,7 +281,7 @@ class PerformanceTracker:
             "historical_accuracy": historical_accuracy,
             "recent_accuracy": recent_accuracy,
             "accuracy_drop": accuracy_drop,
-            "threshold": accuracy_threshold
+            "threshold": accuracy_threshold,
         }
 
     def export_metrics_summary(self) -> str:

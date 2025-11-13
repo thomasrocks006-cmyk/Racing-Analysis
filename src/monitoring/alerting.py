@@ -25,7 +25,7 @@ class Alert:
         metric: str,
         value: float,
         threshold: float,
-        timestamp: datetime | None = None
+        timestamp: datetime | None = None,
     ):
         """
         Initialize alert.
@@ -53,7 +53,7 @@ class Alert:
             "metric": self.metric,
             "value": self.value,
             "threshold": self.threshold,
-            "timestamp": self.timestamp.isoformat()
+            "timestamp": self.timestamp.isoformat(),
         }
 
     def __repr__(self) -> str:
@@ -82,8 +82,10 @@ class LogAlertChannel(AlertChannel):
 
     def send(self, alert: Alert):
         """Log alert to file."""
-        with open(self.log_file, 'a') as f:
-            f.write(f"{alert.timestamp.isoformat()} [{alert.severity.upper()}] {alert.message}\n")
+        with open(self.log_file, "a") as f:
+            f.write(
+                f"{alert.timestamp.isoformat()} [{alert.severity.upper()}] {alert.message}\n"
+            )
 
 
 class EmailAlertChannel(AlertChannel):
@@ -96,7 +98,7 @@ class EmailAlertChannel(AlertChannel):
         from_addr: str,
         to_addrs: list[str],
         username: str | None = None,
-        password: str | None = None
+        password: str | None = None,
     ):
         """
         Initialize email alert channel.
@@ -128,9 +130,11 @@ class EmailAlertChannel(AlertChannel):
             f"Time: {alert.timestamp.isoformat()}"
         )
 
-        msg['Subject'] = f"[{alert.severity.upper()}] Racing Analysis Alert: {alert.metric}"
-        msg['From'] = self.from_addr
-        msg['To'] = ', '.join(self.to_addrs)
+        msg["Subject"] = (
+            f"[{alert.severity.upper()}] Racing Analysis Alert: {alert.metric}"
+        )
+        msg["From"] = self.from_addr
+        msg["To"] = ", ".join(self.to_addrs)
 
         try:
             with smtplib.SMTP(self.smtp_host, self.smtp_port) as server:
@@ -154,11 +158,7 @@ class WebhookAlertChannel(AlertChannel):
         import requests
 
         try:
-            requests.post(
-                self.webhook_url,
-                json=alert.to_dict(),
-                timeout=10
-            )
+            requests.post(self.webhook_url, json=alert.to_dict(), timeout=10)
         except Exception as e:
             print(f"Failed to send webhook alert: {e}")
 
@@ -212,10 +212,7 @@ class AlertManager:
             warning: Warning threshold
             critical: Critical threshold
         """
-        self.thresholds[metric] = {
-            "warning": warning,
-            "critical": critical
-        }
+        self.thresholds[metric] = {"warning": warning, "critical": critical}
 
     def check_metric(self, metric: str, value: float, higher_is_better: bool = True):
         """
@@ -263,7 +260,7 @@ class AlertManager:
                 message=message,
                 metric=metric,
                 value=value,
-                threshold=threshold_value
+                threshold=threshold_value,
             )
 
         return None
@@ -283,12 +280,7 @@ class AlertManager:
             except Exception as e:
                 print(f"Failed to send alert through {channel.__class__.__name__}: {e}")
 
-    def check_and_alert(
-        self,
-        metric: str,
-        value: float,
-        higher_is_better: bool = True
-    ):
+    def check_and_alert(self, metric: str, value: float, higher_is_better: bool = True):
         """
         Check metric and trigger alert if needed.
 
@@ -301,7 +293,9 @@ class AlertManager:
         if alert:
             self.trigger_alert(alert)
 
-    def get_recent_alerts(self, n: int = 10, severity: str | None = None) -> list[Alert]:
+    def get_recent_alerts(
+        self, n: int = 10, severity: str | None = None
+    ) -> list[Alert]:
         """
         Get recent alerts.
 
@@ -340,7 +334,7 @@ class AlertManager:
         """
         config = {"thresholds": self.thresholds}
 
-        with open(config_file, 'w') as f:
+        with open(config_file, "w") as f:
             json.dump(config, f, indent=2)
 
     def clear_history(self):

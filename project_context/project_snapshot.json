@@ -1,0 +1,1708 @@
+{
+  "generated_at": "2025-11-13T10:15:39.643290",
+  "project_name": "Racing Analysis System",
+  "version": "1.0",
+  "status": "Early Development - 10% implementation, 100% design",
+  "critical_warning": {
+    "message": "This project has EXCELLENT DOCUMENTATION but MINIMAL WORKING CODE",
+    "do_not_assume": [
+      "Scrapers are working (they return fake data)",
+      "System is production-ready (it's not)",
+      "Qualitative pipeline exists (it doesn't)",
+      "Fusion model is implemented (it's not)",
+      "We have real data (we have ~10 placeholder races)"
+    ]
+  },
+  "file_tree": {
+    "PHASE_0_COMPLETE.md": {
+      "size": 11694,
+      "extension": ".md",
+      "modified": "2025-11-12T18:58:03.068030"
+    },
+    "Makefile": {
+      "size": 8913,
+      "extension": "",
+      "modified": "2025-11-09T20:09:48.129102"
+    },
+    "README.md": {
+      "size": 12260,
+      "extension": ".md",
+      "modified": "2025-11-12T18:57:58.959030"
+    },
+    "PROJECT_TODO.md": {
+      "size": 15192,
+      "extension": ".md",
+      "modified": "2025-11-09T10:42:08.082641"
+    },
+    "DATA_SOURCE_MAPPING_AND_SCRAPING_ARCHITECTURE.md": {
+      "size": 39864,
+      "extension": ".md",
+      "modified": "2025-11-13T00:01:24.457877"
+    },
+    "MODEL_RESEARCH_2025.md": {
+      "size": 35275,
+      "extension": ".md",
+      "modified": "2025-11-08T14:33:16.500332"
+    },
+    "pyproject.toml": {
+      "size": 2852,
+      "extension": ".toml",
+      "modified": "2025-11-08T08:56:34.685303"
+    },
+    "Dockerfile": {
+      "size": 872,
+      "extension": "",
+      "modified": "2025-11-12T23:05:37.827115"
+    },
+    "demo_output.txt": {
+      "size": 7338,
+      "extension": ".txt",
+      "modified": "2025-11-12T23:18:19.319061"
+    },
+    "IMPLEMENTATION_REALITY_CHECK.md": {
+      "size": 7875,
+      "extension": ".md",
+      "modified": "2025-11-13T00:02:50.690871"
+    },
+    "DAY_1_2_COMPLETION_REPORT.md": {
+      "size": 8598,
+      "extension": ".md",
+      "modified": "2025-11-12T18:58:07.900030"
+    },
+    "END_TO_END_SYSTEM_OVERVIEW.md": {
+      "size": 16848,
+      "extension": ".md",
+      "modified": "2025-11-12T23:42:27.195958"
+    },
+    "demo_output.log": {
+      "size": 239,
+      "extension": ".log",
+      "modified": "2025-11-12T23:13:43.490081"
+    },
+    "TAXONOMY_OVERVIEW.md": {
+      "size": 17624,
+      "extension": ".md",
+      "modified": "2025-11-09T12:21:49.690918"
+    },
+    "TAXONOMY_COMPLETION_SUMMARY.md": {
+      "size": 7147,
+      "extension": ".md",
+      "modified": "2025-11-09T10:38:51.404632"
+    },
+    "requirements.txt": {
+      "size": 580,
+      "extension": ".txt",
+      "modified": "2025-11-12T23:05:37.620115"
+    },
+    "IMPLEMENTATION_SUMMARY.md": {
+      "size": 12882,
+      "extension": ".md",
+      "modified": "2025-11-12T22:06:18.764368"
+    },
+    "docker-compose.yml": {
+      "size": 1325,
+      "extension": ".yml",
+      "modified": "2025-11-12T23:05:37.872115"
+    },
+    "GLM_SETUP_COMPLETE.md": {
+      "size": 3656,
+      "extension": ".md",
+      "modified": "2025-11-09T14:12:17.444011"
+    },
+    "LICENSE": {
+      "size": 1442,
+      "extension": "",
+      "modified": "2025-11-08T08:56:45.777303"
+    },
+    "PHASE_1_WEEK_1_CHECKLIST.md": {
+      "size": 7395,
+      "extension": ".md",
+      "modified": "2025-11-12T18:58:03.739030"
+    },
+    "MASTER_PLAN.md": {
+      "size": 45300,
+      "extension": ".md",
+      "modified": "2025-11-12T18:57:58.046031"
+    },
+    "logs/alerts.log": {
+      "size": 275,
+      "extension": ".log",
+      "modified": "2025-11-12T23:03:29.581124"
+    },
+    "catboost_info/test_error.tsv": {
+      "size": 1674,
+      "extension": ".tsv",
+      "modified": "2025-11-12T22:03:36.868380"
+    },
+    "catboost_info/catboost_training.json": {
+      "size": 7963,
+      "extension": ".json",
+      "modified": "2025-11-12T22:03:36.867379"
+    },
+    "catboost_info/learn_error.tsv": {
+      "size": 925,
+      "extension": ".tsv",
+      "modified": "2025-11-12T22:03:36.867379"
+    },
+    "catboost_info/time_left.tsv": {
+      "size": 655,
+      "extension": ".tsv",
+      "modified": "2025-11-12T22:03:36.868380"
+    },
+    "catboost_info/learn/events.out.tfevents": {
+      "size": 3130,
+      "extension": ".tfevents",
+      "modified": "2025-11-12T22:03:36.867379"
+    },
+    "catboost_info/test/events.out.tfevents": {
+      "size": 5796,
+      "extension": ".tfevents",
+      "modified": "2025-11-12T22:03:36.868380"
+    },
+    "docs/FUSION_MODEL_CRITICAL_ANALYSIS.md": {
+      "size": 22034,
+      "extension": ".md",
+      "modified": "2025-11-12T17:26:34.575243"
+    },
+    "docs/DOCUMENTATION_INDEXING_CRITICAL_ANALYSIS.md": {
+      "size": 17369,
+      "extension": ".md",
+      "modified": "2025-11-12T17:52:50.758182"
+    },
+    "docs/PROGRESS.md": {
+      "size": 4854,
+      "extension": ".md",
+      "modified": "2025-11-08T08:56:46.562303"
+    },
+    "docs/GET_STARTED.md": {
+      "size": 9659,
+      "extension": ".md",
+      "modified": "2025-11-08T08:56:46.980303"
+    },
+    "docs/QUALITATIVE_SUMMARY.md": {
+      "size": 4951,
+      "extension": ".md",
+      "modified": "2025-11-13T10:14:15.205307"
+    },
+    "docs/DOCS_MANIFEST.md": {
+      "size": 13535,
+      "extension": ".md",
+      "modified": "2025-11-12T18:58:00.237030"
+    },
+    "docs/CHATGPT5_DEEP_RESEARCH_ANALYSIS.md": {
+      "size": 66150,
+      "extension": ".md",
+      "modified": "2025-11-13T10:14:19.687307"
+    },
+    "docs/QUICK_START.md": {
+      "size": 8938,
+      "extension": ".md",
+      "modified": "2025-11-09T21:30:22.715914"
+    },
+    "docs/PHASE_0_SUMMARY.md": {
+      "size": 5296,
+      "extension": ".md",
+      "modified": "2025-11-08T08:56:46.204303"
+    },
+    "docs/COMPREHENSIVE_INFORMATION_TAXONOMY.md": {
+      "size": 41508,
+      "extension": ".md",
+      "modified": "2025-11-08T15:37:38.351401"
+    },
+    "docs/FUSION_MODEL_ARCHITECTURE.md": {
+      "size": 53341,
+      "extension": ".md",
+      "modified": "2025-11-12T17:16:16.815267"
+    },
+    "docs/reference/MODEL_RESEARCH_2025.md": {
+      "size": 18161,
+      "extension": ".md",
+      "modified": "2025-11-08T12:23:32.927191"
+    },
+    "docs/reference/CORRECT_MODEL_INFO.md": {
+      "size": 3513,
+      "extension": ".md",
+      "modified": "2025-11-10T10:11:24.935691"
+    },
+    "docs/reference/CHATGPT5_DEEP_RESEARCH_ANALYSIS.md": {
+      "size": 66078,
+      "extension": ".md",
+      "modified": "2025-11-08T14:21:05.063318"
+    },
+    "docs/reference/INTELLIGENT_SEARCH_STRATEGY.md": {
+      "size": 27809,
+      "extension": ".md",
+      "modified": "2025-11-08T12:23:33.361192"
+    },
+    "docs/reference/CHATGPT5_METHODOLOGY_VERIFICATION.md": {
+      "size": 19912,
+      "extension": ".md",
+      "modified": "2025-11-08T13:59:16.832295"
+    },
+    "docs/reference/CRITICAL_CORRECTIONS.md": {
+      "size": 14942,
+      "extension": ".md",
+      "modified": "2025-11-08T11:47:39.395153"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_11_CATEGORY_17.md": {
+      "size": 21357,
+      "extension": ".md",
+      "modified": "2025-11-09T10:41:56.996640"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_06_CATEGORY_08.md": {
+      "size": 21181,
+      "extension": ".md",
+      "modified": "2025-11-09T10:41:52.508640"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_25_TROUBLESHOOTING.md": {
+      "size": 13275,
+      "extension": ".md",
+      "modified": "2025-11-09T10:42:06.894641"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_24_QUICK_REFERENCE.md": {
+      "size": 7613,
+      "extension": ".md",
+      "modified": "2025-11-09T10:42:06.240641"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_14_CATEGORY_20.md": {
+      "size": 30595,
+      "extension": ".md",
+      "modified": "2025-11-09T10:41:59.026640"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_01_CATEGORY_01_02.md": {
+      "size": 27420,
+      "extension": ".md",
+      "modified": "2025-11-09T10:41:49.462640"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_17_INTEGRATION_MATRIX_B.md": {
+      "size": 35246,
+      "extension": ".md",
+      "modified": "2025-11-09T10:42:01.057641"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_04_CATEGORY_05_06.md": {
+      "size": 11010,
+      "extension": ".md",
+      "modified": "2025-11-09T10:41:51.052640"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_09_CATEGORY_13_14.md": {
+      "size": 20702,
+      "extension": ".md",
+      "modified": "2025-11-09T10:41:55.340640"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_18_INTEGRATION_MATRIX_C.md": {
+      "size": 40147,
+      "extension": ".md",
+      "modified": "2025-11-09T10:42:01.813641"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_10_CATEGORY_15_16.md": {
+      "size": 23480,
+      "extension": ".md",
+      "modified": "2025-11-09T10:41:55.947640"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_19_UNIFIED_SCHEMAS.md": {
+      "size": 10519,
+      "extension": ".md",
+      "modified": "2025-11-09T10:42:02.487641"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_16_INTEGRATION_MATRIX_A.md": {
+      "size": 38436,
+      "extension": ".md",
+      "modified": "2025-11-09T10:42:00.401640"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_03_CATEGORY_04.md": {
+      "size": 18912,
+      "extension": ".md",
+      "modified": "2025-11-09T10:41:50.371640"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_26_FINAL_SUMMARY.md": {
+      "size": 12246,
+      "extension": ".md",
+      "modified": "2025-11-09T10:42:07.598641"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_07_CATEGORY_09_10.md": {
+      "size": 20774,
+      "extension": ".md",
+      "modified": "2025-11-09T10:41:53.127640"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_12_CATEGORY_18.md": {
+      "size": 18343,
+      "extension": ".md",
+      "modified": "2025-11-09T10:41:57.636640"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_13_CATEGORY_19.md": {
+      "size": 32577,
+      "extension": ".md",
+      "modified": "2025-11-09T10:41:58.348640"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_15_CATEGORY_21.md": {
+      "size": 33847,
+      "extension": ".md",
+      "modified": "2025-11-09T10:41:59.731640"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_05_CATEGORY_07.md": {
+      "size": 18368,
+      "extension": ".md",
+      "modified": "2025-11-09T10:41:51.882640"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_08_CATEGORY_11_12.md": {
+      "size": 20856,
+      "extension": ".md",
+      "modified": "2025-11-09T10:41:54.512640"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_22_PHASE3_ENHANCEMENTS.md": {
+      "size": 3657,
+      "extension": ".md",
+      "modified": "2025-11-09T10:42:04.631641"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_21_PHASE2_ROADMAP.md": {
+      "size": 33024,
+      "extension": ".md",
+      "modified": "2025-11-09T10:42:03.971641"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_02_CATEGORY_03.md": {
+      "size": 26056,
+      "extension": ".md",
+      "modified": "2025-11-09T10:41:49.966640"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_23_TESTING_METRICS.md": {
+      "size": 6447,
+      "extension": ".md",
+      "modified": "2025-11-09T10:42:05.457641"
+    },
+    "docs/COMPREHENSIVE_TAXONOMY_MASTER/PART_20_PHASE1_ROADMAP.md": {
+      "size": 35668,
+      "extension": ".md",
+      "modified": "2025-11-09T10:42:03.249640"
+    },
+    "docs/setup/COPILOT_API_COMPLETE_SUMMARY.md": {
+      "size": 13056,
+      "extension": ".md",
+      "modified": "2025-11-09T20:09:58.520101"
+    },
+    "docs/setup/AI_SETUP_COMPLETE.md": {
+      "size": 7535,
+      "extension": ".md",
+      "modified": "2025-11-09T21:30:21.145915"
+    },
+    "docs/setup/AI_ORCHESTRATION_ARCHITECTURE.md": {
+      "size": 14294,
+      "extension": ".md",
+      "modified": "2025-11-09T11:37:47.893795"
+    },
+    "docs/setup/GLM_SUBSCRIPTION_SETUP.md": {
+      "size": 3604,
+      "extension": ".md",
+      "modified": "2025-11-09T14:56:56.200135"
+    },
+    "docs/setup/FINAL_MULTI_AGENT_SOLUTION.md": {
+      "size": 6109,
+      "extension": ".md",
+      "modified": "2025-11-09T22:02:59.324440"
+    },
+    "docs/setup/GLM_SETUP_GUIDE.md": {
+      "size": 6224,
+      "extension": ".md",
+      "modified": "2025-11-09T14:12:14.080011"
+    },
+    "docs/setup/COPILOT_API_SETUP.md": {
+      "size": 9095,
+      "extension": ".md",
+      "modified": "2025-11-09T20:09:53.580101"
+    },
+    "docs/setup/AI_API_FINAL_SUMMARY.md": {
+      "size": 7034,
+      "extension": ".md",
+      "modified": "2025-11-09T21:30:22.374914"
+    },
+    "docs/setup/GITHUB_COPILOT_SETUP.md": {
+      "size": 8430,
+      "extension": ".md",
+      "modified": "2025-11-09T21:30:21.863914"
+    },
+    "docs/setup/COPILOT_MULTI_AGENT_OPTIONS.md": {
+      "size": 5933,
+      "extension": ".md",
+      "modified": "2025-11-09T22:02:57.951440"
+    },
+    "docs/setup/AI_API_OVERVIEW.md": {
+      "size": 7228,
+      "extension": ".md",
+      "modified": "2025-11-09T20:53:28.172000"
+    },
+    "docs/quantitative-pipeline/PART_2_FEATURE_ENGINEERING_AND_ML.md": {
+      "size": 35346,
+      "extension": ".md",
+      "modified": "2025-11-09T12:21:50.866918"
+    },
+    "docs/quantitative-pipeline/PART_3_INTEGRATION_AND_DEPLOYMENT.md": {
+      "size": 32386,
+      "extension": ".md",
+      "modified": "2025-11-09T12:21:51.897918"
+    },
+    "docs/quantitative-pipeline/PART_1_OVERVIEW_AND_CATEGORIES.md": {
+      "size": 50989,
+      "extension": ".md",
+      "modified": "2025-11-09T12:21:50.351918"
+    },
+    "docs/archive/README.md": {
+      "size": 7568,
+      "extension": ".md",
+      "modified": "2025-11-12T18:58:02.171030"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_4F_ANALYSIS.md": {
+      "size": 43822,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:40.044586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_1_ANALYSIS.md": {
+      "size": 42649,
+      "extension": ".md",
+      "modified": "2025-11-09T03:12:04.208585"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_4B_ANALYSIS.md": {
+      "size": 31679,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:38.863586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_5C_ANALYSIS.md": {
+      "size": 38461,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:41.003586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_3C_ANALYSIS.md": {
+      "size": 36367,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:37.730586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_4C_ANALYSIS.md": {
+      "size": 32532,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:39.160586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_5D_ANALYSIS.md": {
+      "size": 37730,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:41.356586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_2A_ANALYSIS.md": {
+      "size": 37193,
+      "extension": ".md",
+      "modified": "2025-11-09T03:27:39.849518"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_4A_ANALYSIS.md": {
+      "size": 35799,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:38.454586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_2B_ANALYSIS.md": {
+      "size": 30042,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:36.376586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_6D_ANALYSIS.md": {
+      "size": 35714,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:42.907586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_3A_ANALYSIS.md": {
+      "size": 35088,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:37.129586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_3D_ANALYSIS.md": {
+      "size": 44108,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:38.108586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_4E_ANALYSIS.md": {
+      "size": 70980,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:39.763586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_6B_ANALYSIS.md": {
+      "size": 41052,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:42.130586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_6A_ANALYSIS.md": {
+      "size": 32211,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:41.746586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_5B_ANALYSIS.md": {
+      "size": 30278,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:40.722586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_2C_ANALYSIS.md": {
+      "size": 38904,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:36.776586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_5A_ANALYSIS.md": {
+      "size": 35276,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:40.388586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_6C_ANALYSIS.md": {
+      "size": 35748,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:42.483586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_4D_ANALYSIS.md": {
+      "size": 37988,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:39.479586"
+    },
+    "docs/archive/initial-taxonomy-exploration/PART_3B_ANALYSIS.md": {
+      "size": 26137,
+      "extension": ".md",
+      "modified": "2025-11-09T06:16:37.418586"
+    },
+    "docs/archive/superseded-pipeline-docs/QUALITATIVE_SUMMARY.md": {
+      "size": 4959,
+      "extension": ".md",
+      "modified": "2025-11-08T11:04:14.371106"
+    },
+    "docs/archive/superseded-pipeline-docs/QUALITATIVE_PIPELINE_ARCHITECTURE.md": {
+      "size": 60968,
+      "extension": ".md",
+      "modified": "2025-11-09T03:12:03.826585"
+    },
+    "docs/qualitative-pipeline/PART_1_OVERVIEW_AND_CATEGORIES_1-8.md": {
+      "size": 21145,
+      "extension": ".md",
+      "modified": "2025-11-09T13:29:52.886893"
+    },
+    "docs/qualitative-pipeline/PART_2_CATEGORIES_9-17.md": {
+      "size": 29090,
+      "extension": ".md",
+      "modified": "2025-11-09T13:29:53.260893"
+    },
+    "docs/qualitative-pipeline/PART_4_INTEGRATION_MATRICES.md": {
+      "size": 28041,
+      "extension": ".md",
+      "modified": "2025-11-09T13:29:53.873893"
+    },
+    "docs/qualitative-pipeline/PART_5_DEPLOYMENT_AND_INTEGRATION.md": {
+      "size": 27073,
+      "extension": ".md",
+      "modified": "2025-11-09T13:29:54.415893"
+    },
+    "docs/qualitative-pipeline/PART_3_LLM_CHAIN_AND_SYNTHESIS.md": {
+      "size": 24407,
+      "extension": ".md",
+      "modified": "2025-11-09T13:29:53.550893"
+    },
+    "src/__init__.py": {
+      "size": 87,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:37.374303"
+    },
+    "src/orchestration/state_manager.py": {
+      "size": 4461,
+      "extension": ".py",
+      "modified": "2025-11-09T11:37:54.890796"
+    },
+    "src/orchestration/__init__.py": {
+      "size": 488,
+      "extension": ".py",
+      "modified": "2025-11-09T11:37:48.688796"
+    },
+    "src/orchestration/types.py": {
+      "size": 3606,
+      "extension": ".py",
+      "modified": "2025-11-09T22:06:51.559452"
+    },
+    "src/orchestration/agent_pool.py": {
+      "size": 7491,
+      "extension": ".py",
+      "modified": "2025-11-09T22:04:58.859446"
+    },
+    "src/orchestration/result_aggregator.py": {
+      "size": 4122,
+      "extension": ".py",
+      "modified": "2025-11-09T11:37:55.480796"
+    },
+    "src/orchestration/coordinator.py": {
+      "size": 6781,
+      "extension": ".py",
+      "modified": "2025-11-09T11:37:49.334796"
+    },
+    "src/orchestration/task_router.py": {
+      "size": 6369,
+      "extension": ".py",
+      "modified": "2025-11-09T11:37:53.541796"
+    },
+    "src/orchestration/executor.py": {
+      "size": 5442,
+      "extension": ".py",
+      "modified": "2025-11-09T11:37:54.285796"
+    },
+    "src/orchestration/agents/glm_agent.py": {
+      "size": 4417,
+      "extension": ".py",
+      "modified": "2025-11-09T22:04:07.627443"
+    },
+    "src/orchestration/agents/__init__.py": {
+      "size": 308,
+      "extension": ".py",
+      "modified": "2025-11-09T22:04:17.665444"
+    },
+    "src/orchestration/agents/gpt4_agent.py": {
+      "size": 3250,
+      "extension": ".py",
+      "modified": "2025-11-09T21:06:24.451970"
+    },
+    "src/orchestration/agents/gpt5_agent.py": {
+      "size": 3205,
+      "extension": ".py",
+      "modified": "2025-11-09T11:37:57.349796"
+    },
+    "src/orchestration/agents/claude_agent.py": {
+      "size": 3061,
+      "extension": ".py",
+      "modified": "2025-11-09T11:37:58.036796"
+    },
+    "src/orchestration/agents/base_agent.py": {
+      "size": 1860,
+      "extension": ".py",
+      "modified": "2025-11-09T11:37:56.700796"
+    },
+    "src/calibration/__init__.py": {
+      "size": 360,
+      "extension": ".py",
+      "modified": "2025-11-12T22:48:02.070190"
+    },
+    "src/calibration/calibrators.py": {
+      "size": 7683,
+      "extension": ".py",
+      "modified": "2025-11-12T22:48:02.070190"
+    },
+    "src/calibration/conformal.py": {
+      "size": 7196,
+      "extension": ".py",
+      "modified": "2025-11-12T22:48:02.071190"
+    },
+    "src/calibration/pipeline.py": {
+      "size": 14219,
+      "extension": ".py",
+      "modified": "2025-11-12T22:48:02.070190"
+    },
+    "src/utils/__init__.py": {
+      "size": 23,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:39.094303"
+    },
+    "src/utils/logging.py": {
+      "size": 1197,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:38.157303"
+    },
+    "src/utils/config.py": {
+      "size": 4867,
+      "extension": ".py",
+      "modified": "2025-11-09T14:56:57.181135"
+    },
+    "src/utils/metrics.py": {
+      "size": 6330,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:38.559303"
+    },
+    "src/execution/__init__.py": {
+      "size": 45,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:41.665303"
+    },
+    "src/features/class_ratings.py": {
+      "size": 7552,
+      "extension": ".py",
+      "modified": "2025-11-12T21:15:14.169586"
+    },
+    "src/features/speed_ratings.py": {
+      "size": 13251,
+      "extension": ".py",
+      "modified": "2025-11-12T21:15:11.615586"
+    },
+    "src/features/sectional_analyzer.py": {
+      "size": 18495,
+      "extension": ".py",
+      "modified": "2025-11-12T21:32:24.977513"
+    },
+    "src/features/__init__.py": {
+      "size": 34,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:40.371303"
+    },
+    "src/features/pedigree_analyzer.py": {
+      "size": 19548,
+      "extension": ".py",
+      "modified": "2025-11-12T21:32:26.352512"
+    },
+    "src/backtesting/__init__.py": {
+      "size": 408,
+      "extension": ".py",
+      "modified": "2025-11-12T22:58:09.369147"
+    },
+    "src/backtesting/strategies.py": {
+      "size": 6247,
+      "extension": ".py",
+      "modified": "2025-11-12T22:58:09.369147"
+    },
+    "src/backtesting/metrics.py": {
+      "size": 8675,
+      "extension": ".py",
+      "modified": "2025-11-12T22:58:09.369147"
+    },
+    "src/backtesting/backtester.py": {
+      "size": 8832,
+      "extension": ".py",
+      "modified": "2025-11-12T22:58:09.122147"
+    },
+    "src/data/init_db.py": {
+      "size": 8455,
+      "extension": ".py",
+      "modified": "2025-11-12T18:58:05.860030"
+    },
+    "src/data/schema.sql": {
+      "size": 16470,
+      "extension": ".sql",
+      "modified": "2025-11-12T18:58:04.341030"
+    },
+    "src/data/models.py": {
+      "size": 11022,
+      "extension": ".py",
+      "modified": "2025-11-12T18:58:05.226030"
+    },
+    "src/data/etl_pipeline.py": {
+      "size": 18114,
+      "extension": ".py",
+      "modified": "2025-11-12T19:23:17.040972"
+    },
+    "src/data/scrapers/racing_com.py": {
+      "size": 8946,
+      "extension": ".py",
+      "modified": "2025-11-12T19:23:12.424972"
+    },
+    "src/data/scrapers/stewards.py": {
+      "size": 5103,
+      "extension": ".py",
+      "modified": "2025-11-12T19:23:13.269972"
+    },
+    "src/data/scrapers/__init__.py": {
+      "size": 476,
+      "extension": ".py",
+      "modified": "2025-11-12T19:23:15.504972"
+    },
+    "src/data/scrapers/market_odds.py": {
+      "size": 5686,
+      "extension": ".py",
+      "modified": "2025-11-12T19:23:14.831972"
+    },
+    "src/fusion/__init__.py": {
+      "size": 34,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:41.311303"
+    },
+    "src/etl/__init__.py": {
+      "size": 27,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:39.987303"
+    },
+    "src/connectors/__init__.py": {
+      "size": 43,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:39.511303"
+    },
+    "src/optimization/__init__.py": {
+      "size": 199,
+      "extension": ".py",
+      "modified": "2025-11-12T22:58:09.122147"
+    },
+    "src/optimization/hyperparameter_tuner.py": {
+      "size": 9785,
+      "extension": ".py",
+      "modified": "2025-11-12T22:58:09.369147"
+    },
+    "src/dashboard/__init__.py": {
+      "size": 26,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:42.393303"
+    },
+    "src/models/__init__.py": {
+      "size": 30,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:40.909303"
+    },
+    "src/models/model_trainer.py": {
+      "size": 6366,
+      "extension": ".py",
+      "modified": "2025-11-12T21:58:55.569400"
+    },
+    "src/models/feature_builder.py": {
+      "size": 2301,
+      "extension": ".py",
+      "modified": "2025-11-12T21:52:14.066428"
+    },
+    "src/models/base_models.py": {
+      "size": 9483,
+      "extension": ".py",
+      "modified": "2025-11-12T21:57:32.009405"
+    },
+    "src/monitoring/__init__.py": {
+      "size": 222,
+      "extension": ".py",
+      "modified": "2025-11-12T23:05:37.912115"
+    },
+    "src/monitoring/performance_tracker.py": {
+      "size": 9686,
+      "extension": ".py",
+      "modified": "2025-11-12T23:05:37.912115"
+    },
+    "src/monitoring/alerting.py": {
+      "size": 9978,
+      "extension": ".py",
+      "modified": "2025-11-12T23:05:37.912115"
+    },
+    "src/deployment/api_server.py": {
+      "size": 7758,
+      "extension": ".py",
+      "modified": "2025-11-12T23:05:37.912115"
+    },
+    "src/deployment/__init__.py": {
+      "size": 172,
+      "extension": ".py",
+      "modified": "2025-11-12T23:05:37.872115"
+    },
+    "src/deployment/model_registry.py": {
+      "size": 10036,
+      "extension": ".py",
+      "modified": "2025-11-12T23:05:37.912115"
+    },
+    "src/api/web_search.py": {
+      "size": 7389,
+      "extension": ".py",
+      "modified": "2025-11-09T20:53:25.868000"
+    },
+    "src/api/task_executor.py": {
+      "size": 9341,
+      "extension": ".py",
+      "modified": "2025-11-09T21:30:20.545915"
+    },
+    "src/api/github_models_api.py": {
+      "size": 5677,
+      "extension": ".py",
+      "modified": "2025-11-09T22:02:58.721440"
+    },
+    "src/api/__init__.py": {
+      "size": 26,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:42.042303"
+    },
+    "src/api/copilot_vscode_bridge.js": {
+      "size": 4446,
+      "extension": ".js",
+      "modified": "2025-11-09T21:30:23.294914"
+    },
+    "src/api/copilot_api.py": {
+      "size": 10997,
+      "extension": ".py",
+      "modified": "2025-11-09T21:30:20.107915"
+    },
+    "src/api/vscode_copilot_bridge.py": {
+      "size": 5816,
+      "extension": ".py",
+      "modified": "2025-11-10T10:11:21.189692"
+    },
+    "src/api/github_copilot_premium.py": {
+      "size": 3448,
+      "extension": ".py",
+      "modified": "2025-11-09T21:30:21.465914"
+    },
+    "src/api/claude_skills.py": {
+      "size": 3996,
+      "extension": ".py",
+      "modified": "2025-11-09T20:53:23.251000"
+    },
+    "examples/copilot_racing_integration.py": {
+      "size": 6387,
+      "extension": ".py",
+      "modified": "2025-11-09T20:09:57.244101"
+    },
+    "examples/advanced_ai_features.py": {
+      "size": 6014,
+      "extension": ".py",
+      "modified": "2025-11-09T21:30:20.895915"
+    },
+    "examples/copilot_api_example.py": {
+      "size": 4889,
+      "extension": ".py",
+      "modified": "2025-11-09T20:09:52.974101"
+    },
+    "configs/database.yml": {
+      "size": 13232,
+      "extension": ".yml",
+      "modified": "2025-11-08T08:56:36.392303"
+    },
+    "configs/orchestration/agents.yml": {
+      "size": 1027,
+      "extension": ".yml",
+      "modified": "2025-11-09T22:05:35.208448"
+    },
+    "data/racing.duckdb": {
+      "size": 27537408,
+      "extension": ".duckdb",
+      "modified": "2025-11-12T19:04:18.587016"
+    },
+    "scripts/simple_data_demo.py": {
+      "size": 16556,
+      "extension": ".py",
+      "modified": "2025-11-12T23:42:27.149958"
+    },
+    "scripts/verify_copilot_api.py": {
+      "size": 3524,
+      "extension": ".py",
+      "modified": "2025-11-09T20:39:46.133032"
+    },
+    "scripts/generate_project_snapshot.py": {
+      "size": 13701,
+      "extension": ".py",
+      "modified": "2025-11-13T10:15:34.578308"
+    },
+    "scripts/end_to_end_demo.py": {
+      "size": 28294,
+      "extension": ".py",
+      "modified": "2025-11-12T23:42:27.195958"
+    },
+    "scripts/activate_extension.py": {
+      "size": 2782,
+      "extension": ".py",
+      "modified": "2025-11-10T10:11:24.490691"
+    },
+    "scripts/verify_glm_setup.py": {
+      "size": 8951,
+      "extension": ".py",
+      "modified": "2025-11-09T14:56:55.824135"
+    },
+    "scripts/reload_extension.py": {
+      "size": 625,
+      "extension": ".py",
+      "modified": "2025-11-10T10:26:28.677656"
+    },
+    "scripts/check_extension.py": {
+      "size": 3695,
+      "extension": ".py",
+      "modified": "2025-11-10T10:11:23.850691"
+    },
+    "scripts/trial_multi_agent.py": {
+      "size": 2945,
+      "extension": ".py",
+      "modified": "2025-11-10T10:11:22.064692"
+    },
+    "scripts/test_copilot_bridge.py": {
+      "size": 5358,
+      "extension": ".py",
+      "modified": "2025-11-10T10:26:27.932657"
+    },
+    "scripts/setup_db.py": {
+      "size": 4484,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:36.954303"
+    },
+    "scripts/verify_github_copilot.py": {
+      "size": 7270,
+      "extension": ".py",
+      "modified": "2025-11-09T21:30:22.088915"
+    },
+    "racing_analysis.egg-info/SOURCES.txt": {
+      "size": 558,
+      "extension": ".txt",
+      "modified": "2025-11-08T11:09:23.258111"
+    },
+    "racing_analysis.egg-info/PKG-INFO": {
+      "size": 7126,
+      "extension": "",
+      "modified": "2025-11-08T11:09:23.244112"
+    },
+    "racing_analysis.egg-info/dependency_links.txt": {
+      "size": 1,
+      "extension": ".txt",
+      "modified": "2025-11-08T11:09:23.245111"
+    },
+    "racing_analysis.egg-info/entry_points.txt": {
+      "size": 40,
+      "extension": ".txt",
+      "modified": "2025-11-08T11:09:23.245111"
+    },
+    "racing_analysis.egg-info/requires.txt": {
+      "size": 699,
+      "extension": ".txt",
+      "modified": "2025-11-08T11:09:23.247111"
+    },
+    "racing_analysis.egg-info/top_level.txt": {
+      "size": 4,
+      "extension": ".txt",
+      "modified": "2025-11-08T11:09:23.247111"
+    },
+    "models/trained/test_model.pkl": {
+      "size": 332846,
+      "extension": ".pkl",
+      "modified": "2025-11-12T21:59:28.376397"
+    },
+    "models/trained/test_model_metadata.json": {
+      "size": 1156,
+      "extension": ".json",
+      "modified": "2025-11-12T21:59:28.376397"
+    },
+    "project_context/MASTER_CONTEXT.md": {
+      "size": 13835,
+      "extension": ".md",
+      "modified": "2025-11-13T10:14:32.464307"
+    },
+    "tests/conftest.py": {
+      "size": 1189,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:42.844303"
+    },
+    "tests/calibration/test_calibration.py": {
+      "size": 14813,
+      "extension": ".py",
+      "modified": "2025-11-12T22:48:02.071190"
+    },
+    "tests/features/test_feature_engines.py": {
+      "size": 11645,
+      "extension": ".py",
+      "modified": "2025-11-12T21:32:23.763513"
+    },
+    "tests/data/test_end_to_end.py": {
+      "size": 4820,
+      "extension": ".py",
+      "modified": "2025-11-12T19:23:18.318972"
+    },
+    "tests/data/test_database.py": {
+      "size": 9707,
+      "extension": ".py",
+      "modified": "2025-11-12T18:58:06.625030"
+    },
+    "tests/data/test_scrapers.py": {
+      "size": 6999,
+      "extension": ".py",
+      "modified": "2025-11-12T19:23:16.011972"
+    },
+    "tests/optimization/test_optimization.py": {
+      "size": 13152,
+      "extension": ".py",
+      "modified": "2025-11-12T22:58:09.418147"
+    },
+    "tests/unit/test_config.py": {
+      "size": 700,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:43.433303"
+    },
+    "tests/unit/test_metrics.py": {
+      "size": 2512,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:43.818303"
+    },
+    "tests/models/test_ml_pipeline.py": {
+      "size": 2257,
+      "extension": ".py",
+      "modified": "2025-11-12T22:02:16.235385"
+    },
+    "tests/integration/test_database.py": {
+      "size": 1040,
+      "extension": ".py",
+      "modified": "2025-11-08T08:56:44.178303"
+    },
+    "tests/deployment/test_deployment.py": {
+      "size": 13293,
+      "extension": ".py",
+      "modified": "2025-11-12T23:05:37.924115"
+    },
+    "htmlcov/z_f0e24b7f04f99860_web_search_py.html": {
+      "size": 64420,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:35.987162"
+    },
+    "htmlcov/z_b3acaa3a5b8b054b_agent_pool_py.html": {
+      "size": 67973,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.389162"
+    },
+    "htmlcov/z_bd453a8bba67ded2___init___py.html": {
+      "size": 4736,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.180162"
+    },
+    "htmlcov/z_7e59030e81f28a31_glm_agent_py.html": {
+      "size": 41789,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.414162"
+    },
+    "htmlcov/status.json": {
+      "size": 19430,
+      "extension": ".json",
+      "modified": "2025-11-12T23:03:30.354124"
+    },
+    "htmlcov/z_defad1a87623d8bf_base_models_py.html": {
+      "size": 88270,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.322162"
+    },
+    "htmlcov/index.html": {
+      "size": 22384,
+      "extension": ".html",
+      "modified": "2025-11-12T23:03:30.352124"
+    },
+    "htmlcov/z_1e32fe08d28c36fb_conformal_py.html": {
+      "size": 58979,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.145162"
+    },
+    "htmlcov/z_defad1a87623d8bf_model_trainer_py.html": {
+      "size": 59373,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.343162"
+    },
+    "htmlcov/z_f1b38b22aeb65474_config_py.html": {
+      "size": 39412,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.519162"
+    },
+    "htmlcov/z_f1b38b22aeb65474_logging_py.html": {
+      "size": 14194,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.522162"
+    },
+    "htmlcov/z_f0e24b7f04f99860_copilot_api_py.html": {
+      "size": 95115,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:35.915162"
+    },
+    "htmlcov/z_6a8dff3dbcb4fb34_backtester_py.html": {
+      "size": 76041,
+      "extension": ".html",
+      "modified": "2025-11-12T23:03:12.739125"
+    },
+    "htmlcov/style_cb_6b508a39.css": {
+      "size": 15643,
+      "extension": ".css",
+      "modified": "2025-11-12T23:03:30.261124"
+    },
+    "htmlcov/z_1e32fe08d28c36fb_calibrators_py.html": {
+      "size": 72799,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.128162"
+    },
+    "htmlcov/z_e3d496e5189f5be2_speed_ratings_py.html": {
+      "size": 107665,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.294162"
+    },
+    "htmlcov/z_7530dad8cd1eb93b_performance_tracker_py.html": {
+      "size": 91549,
+      "extension": ".html",
+      "modified": "2025-11-12T23:03:30.340124"
+    },
+    "htmlcov/z_f0e24b7f04f99860___init___py.html": {
+      "size": 4734,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:35.880162"
+    },
+    "htmlcov/z_f0e24b7f04f99860_github_copilot_premium_py.html": {
+      "size": 26289,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:35.922162"
+    },
+    "htmlcov/z_f0e24b7f04f99860_github_models_api_py.html": {
+      "size": 53276,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:35.936162"
+    },
+    "htmlcov/z_b3acaa3a5b8b054b_coordinator_py.html": {
+      "size": 58700,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.446162"
+    },
+    "htmlcov/z_b3acaa3a5b8b054b_executor_py.html": {
+      "size": 49221,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.459162"
+    },
+    "htmlcov/z_1e32fe08d28c36fb___init___py.html": {
+      "size": 7192,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.106162"
+    },
+    "htmlcov/z_e3d496e5189f5be2_pedigree_analyzer_py.html": {
+      "size": 144804,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.235162"
+    },
+    "htmlcov/z_ee084cf03f94dcff_api_server_py.html": {
+      "size": 73524,
+      "extension": ".html",
+      "modified": "2025-11-12T23:03:12.803125"
+    },
+    "htmlcov/z_defad1a87623d8bf___init___py.html": {
+      "size": 4740,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.297162"
+    },
+    "htmlcov/z_6a8dff3dbcb4fb34_strategies_py.html": {
+      "size": 54936,
+      "extension": ".html",
+      "modified": "2025-11-12T23:03:12.777125"
+    },
+    "htmlcov/z_7530dad8cd1eb93b___init___py.html": {
+      "size": 6566,
+      "extension": ".html",
+      "modified": "2025-11-12T23:03:12.839125"
+    },
+    "htmlcov/z_0ad638a30794c61f___init___py.html": {
+      "size": 4755,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.179162"
+    },
+    "htmlcov/z_ee084cf03f94dcff___init___py.html": {
+      "size": 6209,
+      "extension": ".html",
+      "modified": "2025-11-12T23:03:12.782125"
+    },
+    "htmlcov/z_b3acaa3a5b8b054b_types_py.html": {
+      "size": 39552,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.507162"
+    },
+    "htmlcov/z_7e59030e81f28a31_gpt4_agent_py.html": {
+      "size": 32687,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.422162"
+    },
+    "htmlcov/z_6a8dff3dbcb4fb34_metrics_py.html": {
+      "size": 85685,
+      "extension": ".html",
+      "modified": "2025-11-12T23:03:12.763125"
+    },
+    "htmlcov/z_44aba63adc9fc65d___init___py.html": {
+      "size": 4725,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.181162"
+    },
+    "htmlcov/z_7e59030e81f28a31___init___py.html": {
+      "size": 7342,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.391162"
+    },
+    "htmlcov/z_b3acaa3a5b8b054b_state_manager_py.html": {
+      "size": 45220,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.481162"
+    },
+    "htmlcov/z_7530dad8cd1eb93b_alerting_py.html": {
+      "size": 89742,
+      "extension": ".html",
+      "modified": "2025-11-12T23:03:30.307124"
+    },
+    "htmlcov/z_42e4620a1ab18ccc_hyperparameter_tuner_py.html": {
+      "size": 84725,
+      "extension": ".html",
+      "modified": "2025-11-12T23:03:12.918125"
+    },
+    "htmlcov/favicon_32_cb_58284776.png": {
+      "size": 1732,
+      "extension": ".png",
+      "modified": "2025-11-12T23:03:30.262124"
+    },
+    "htmlcov/z_b3acaa3a5b8b054b_result_aggregator_py.html": {
+      "size": 40704,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.469162"
+    },
+    "htmlcov/z_7e59030e81f28a31_base_agent_py.html": {
+      "size": 22062,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.396162"
+    },
+    "htmlcov/z_b3acaa3a5b8b054b_task_router_py.html": {
+      "size": 57916,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.496162"
+    },
+    "htmlcov/z_e3d496e5189f5be2___init___py.html": {
+      "size": 4752,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.184162"
+    },
+    "htmlcov/z_e3d496e5189f5be2_class_ratings_py.html": {
+      "size": 68705,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.200162"
+    },
+    "htmlcov/z_ee084cf03f94dcff_model_registry_py.html": {
+      "size": 90706,
+      "extension": ".html",
+      "modified": "2025-11-12T23:03:22.283125"
+    },
+    "htmlcov/z_defad1a87623d8bf_feature_builder_py.html": {
+      "size": 21817,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.327162"
+    },
+    "htmlcov/z_145eef247bfb46b6___init___py.html": {
+      "size": 5250,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:35.879162"
+    },
+    "htmlcov/function_index.html": {
+      "size": 181170,
+      "extension": ".html",
+      "modified": "2025-11-12T23:03:30.406124"
+    },
+    "htmlcov/z_b3acaa3a5b8b054b___init___py.html": {
+      "size": 9137,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.370162"
+    },
+    "htmlcov/z_f1b38b22aeb65474___init___py.html": {
+      "size": 4715,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.508162"
+    },
+    "htmlcov/z_17be295380ffb959___init___py.html": {
+      "size": 4748,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.296162"
+    },
+    "htmlcov/z_f1b38b22aeb65474_metrics_py.html": {
+      "size": 60631,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.541162"
+    },
+    "htmlcov/coverage_html_cb_6fb7b396.js": {
+      "size": 25474,
+      "extension": ".js",
+      "modified": "2025-11-12T23:03:30.261124"
+    },
+    "htmlcov/z_e3d496e5189f5be2_sectional_analyzer_py.html": {
+      "size": 140234,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.269162"
+    },
+    "htmlcov/z_7e59030e81f28a31_claude_agent_py.html": {
+      "size": 31121,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.404162"
+    },
+    "htmlcov/z_1e32fe08d28c36fb_pipeline_py.html": {
+      "size": 115897,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.177162"
+    },
+    "htmlcov/z_6a8dff3dbcb4fb34___init___py.html": {
+      "size": 8397,
+      "extension": ".html",
+      "modified": "2025-11-12T23:03:12.715126"
+    },
+    "htmlcov/z_f0e24b7f04f99860_claude_skills_py.html": {
+      "size": 35651,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:35.888162"
+    },
+    "htmlcov/z_7e59030e81f28a31_gpt5_agent_py.html": {
+      "size": 32490,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.431162"
+    },
+    "htmlcov/keybd_closed_cb_ce680311.png": {
+      "size": 9004,
+      "extension": ".png",
+      "modified": "2025-11-12T23:03:30.262124"
+    },
+    "htmlcov/z_f0e24b7f04f99860_vscode_copilot_bridge_py.html": {
+      "size": 46923,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:35.969162"
+    },
+    "htmlcov/z_42e4620a1ab18ccc___init___py.html": {
+      "size": 6296,
+      "extension": ".html",
+      "modified": "2025-11-12T23:03:12.894125"
+    },
+    "htmlcov/class_index.html": {
+      "size": 65580,
+      "extension": ".html",
+      "modified": "2025-11-12T23:03:30.410124"
+    },
+    "htmlcov/z_2ecaf0337b5ea060___init___py.html": {
+      "size": 4755,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:36.183162"
+    },
+    "htmlcov/z_f0e24b7f04f99860_task_executor_py.html": {
+      "size": 74382,
+      "extension": ".html",
+      "modified": "2025-11-12T22:54:35.956162"
+    }
+  },
+  "documentation_summary": {
+    "MASTER_PLAN.md": {
+      "exists": true,
+      "lines": 1039,
+      "size_kb": 39,
+      "first_100_chars": "# Racing Analysis System - Master Implementation Plan  **Created**: November 8, 2025 **Status**: Pha"
+    },
+    "IMPLEMENTATION_REALITY_CHECK.md": {
+      "exists": true,
+      "lines": 265,
+      "size_kb": 7,
+      "first_100_chars": "# 🚨 IMPLEMENTATION REALITY CHECK  **Date:** November 12, 2025   **Purpose:** Honest assessment of wh"
+    },
+    "DATA_SOURCE_MAPPING_AND_SCRAPING_ARCHITECTURE.md": {
+      "exists": true,
+      "lines": 1205,
+      "size_kb": 38,
+      "first_100_chars": "# 🌐 DATA SOURCE MAPPING & SCRAPING ARCHITECTURE  **Created:** November 12, 2025   **Purpose:** Map a"
+    },
+    "docs/FUSION_MODEL_ARCHITECTURE.md": {
+      "exists": true,
+      "lines": 1530,
+      "size_kb": 50,
+      "first_100_chars": "# Fusion Model Architecture - Concurrent Multi-Agent Bayesian Integration  **Created:** November 10,"
+    },
+    "docs/COMPREHENSIVE_INFORMATION_TAXONOMY.md": {
+      "exists": true,
+      "lines": 919,
+      "size_kb": 39,
+      "first_100_chars": "# Comprehensive Racing Analysis Information Taxonomy **Date**: 2025-01-19 **Purpose**: Complete taxo"
+    },
+    "project_context/MASTER_CONTEXT.md": {
+      "exists": true,
+      "lines": 445,
+      "size_kb": 13,
+      "first_100_chars": "# 🎯 MASTER CONTEXT - Racing Analysis System  **Last Updated:** November 13, 2025   **Purpose:** Sing"
+    }
+  },
+  "implementation_status": {
+    "database": {
+      "schema_exists": true,
+      "init_exists": true,
+      "estimated_completeness": "90%",
+      "issues": [
+        "Only ~10 placeholder races in database"
+      ]
+    },
+    "scrapers": {
+      "racing_com": {
+        "file_exists": true,
+        "live_scraping": false,
+        "placeholder_only": true,
+        "needs_rebuild": true
+      },
+      "stewards": {
+        "file_exists": true,
+        "live_scraping": false,
+        "placeholder_only": true,
+        "needs_rebuild": true
+      },
+      "market_odds": {
+        "file_exists": true,
+        "live_scraping": false,
+        "placeholder_only": true,
+        "needs_rebuild": true
+      },
+      "betfair_api": {
+        "file_exists": false,
+        "implementation_status": "0%",
+        "priority": "CRITICAL"
+      },
+      "estimated_completeness": "5%",
+      "issues": [
+        "All scrapers return fake data",
+        "No live web scraping",
+        "No Betfair API"
+      ]
+    },
+    "features": {
+      "directory_exists": true,
+      "speed_ratings": true,
+      "class_ratings": true,
+      "sectional_analyzer": true,
+      "pedigree_analyzer": true,
+      "estimated_completeness": "40%",
+      "issues": [
+        "Code exists but trained on placeholder data only"
+      ]
+    },
+    "models": {
+      "directory_exists": true,
+      "has_ml_code": true,
+      "estimated_completeness": "40%",
+      "issues": [
+        "Cannot validate without real data"
+      ]
+    },
+    "calibration": {
+      "directory_exists": true,
+      "has_code": true,
+      "estimated_completeness": "40%",
+      "issues": [
+        "Cannot validate without real data"
+      ]
+    },
+    "qualitative_pipeline": {
+      "directory_exists": false,
+      "stage_1_source_planning": false,
+      "stage_2_parallel_scraping": false,
+      "stage_3_content_extraction": false,
+      "stage_4_deep_reasoning": false,
+      "stage_5_synthesis": false,
+      "stage_6_quality_verification": false,
+      "estimated_completeness": "0%",
+      "issues": [
+        "Directory doesn't exist",
+        "No stages implemented"
+      ]
+    },
+    "fusion_model": {
+      "directory_exists": true,
+      "has_bayesian_lr_logic": false,
+      "has_e2b_integration": false,
+      "has_openhands_integration": false,
+      "has_15_agent_system": false,
+      "has_consensus_synthesis": false,
+      "estimated_completeness": "0%",
+      "issues": [
+        "Only __init__.py with docstring",
+        "No actual fusion code"
+      ]
+    },
+    "deployment": {
+      "docker_exists": true,
+      "api_exists": true,
+      "estimated_completeness": "100%",
+      "issues": []
+    }
+  },
+  "architectural_state": {
+    "core_architecture": "Dual pipeline + Fusion model",
+    "pipelines": {
+      "qualitative": {
+        "categories": "1-17",
+        "stages": 6,
+        "output": "Likelihood Ratios (LRs)",
+        "cost_per_race": "$0.62",
+        "runtime": "5-7 minutes",
+        "implementation_status": "0%"
+      },
+      "quantitative": {
+        "categories": "18-21",
+        "models": [
+          "LightGBM",
+          "XGBoost",
+          "CatBoost"
+        ],
+        "output": "Base probabilities",
+        "cost_per_race": "<$0.01",
+        "runtime": "10-30 seconds",
+        "implementation_status": "40%"
+      }
+    },
+    "fusion_model": {
+      "architecture": "15 concurrent agents",
+      "technology": [
+        "E2B sandboxes",
+        "OpenHands orchestration"
+      ],
+      "algorithm": "Bayesian Likelihood Ratio",
+      "runtime": "30-60 seconds (parallel)",
+      "implementation_status": "0%"
+    },
+    "data_sources": {
+      "required_per_race": "15-40 sources",
+      "current_working": "0 sources",
+      "critical_missing": [
+        "Betfair API",
+        "Racing.com live",
+        "40+ scrapers"
+      ]
+    },
+    "expected_performance": {
+      "brier_score": "<0.16",
+      "roi": ">7.2%",
+      "calibration_error": "<2%"
+    },
+    "validation_status": "Cannot validate - no real data"
+  },
+  "critical_files_to_read": [
+    "project_context/MASTER_CONTEXT.md",
+    "MASTER_PLAN.md",
+    "IMPLEMENTATION_REALITY_CHECK.md",
+    "DATA_SOURCE_MAPPING_AND_SCRAPING_ARCHITECTURE.md",
+    "docs/FUSION_MODEL_ARCHITECTURE.md",
+    "src/data/init_db.py",
+    "src/data/schema.sql",
+    "src/data/scrapers/racing_com.py",
+    "src/fusion/__init__.py"
+  ],
+  "current_priorities": {
+    "phase_1_data_foundation": {
+      "priority": "CRITICAL",
+      "timeline": "Weeks 1-4",
+      "tasks": [
+        "Rewrite racing.com scraper with real scraping",
+        "Integrate Betfair API",
+        "Build weather API integration",
+        "Populate 100+ historical races",
+        "Build stewards/trials/gear scrapers",
+        "Target: 500+ historical races"
+      ]
+    },
+    "phase_2_qualitative_pipeline": {
+      "priority": "HIGH",
+      "timeline": "Weeks 5-8",
+      "tasks": [
+        "Stage 1: Source Planning (Gemini)",
+        "Stage 2: Parallel Scraping (15-40 sources)",
+        "Stage 3: Content Extraction (Gemini)",
+        "Stage 4: Deep Reasoning (GPT-5)",
+        "Stage 5: Synthesis (Claude Sonnet 4.5)",
+        "Stage 6: Quality Verification (GPT-4o)"
+      ]
+    },
+    "phase_3_fusion_model": {
+      "priority": "HIGH",
+      "timeline": "Weeks 9-12",
+      "tasks": [
+        "E2B sandbox integration",
+        "Bayesian LR algorithm implementation",
+        "15-agent concurrent execution",
+        "OpenHands orchestration",
+        "Consensus synthesis"
+      ]
+    }
+  },
+  "design_principles": [
+    "No data leakage - strict event-time ordering",
+    "Dual pipeline architecture - do NOT simplify",
+    "Multi-agent fusion - 15 agents by design",
+    "21-category taxonomy - do NOT skip categories",
+    "Uncertainty quantification - always include confidence"
+  ],
+  "common_mistakes_to_avoid": [
+    "Claiming we built 60% of the system (we built ~10%)",
+    "Suggesting we simplify the architecture (it's correct as designed)",
+    "Assuming scrapers work (they return placeholder data)",
+    "Claiming qualitative pipeline exists (it doesn't)",
+    "Saying fusion model is implemented (it's not)"
+  ],
+  "verification_required": {
+    "before_claiming_implemented": [
+      "Read actual source file",
+      "Check for placeholder/fake data returns",
+      "Verify imports and dependencies",
+      "Check if directory exists",
+      "Search for actual logic (not just comments)"
+    ]
+  }
+}

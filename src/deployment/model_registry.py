@@ -50,7 +50,7 @@ class ModelRegistry:
 
     def _save_metadata(self):
         """Save registry metadata to disk."""
-        with open(self.metadata_file, 'w') as f:
+        with open(self.metadata_file, "w") as f:
             json.dump(self.metadata, f, indent=2, default=str)
 
     def _compute_checksum(self, model_path: Path) -> str:
@@ -69,7 +69,7 @@ class ModelRegistry:
         metrics: dict[str, float],
         hyperparameters: dict[str, Any] | None = None,
         metadata: dict[str, Any] | None = None,
-        set_active: bool = True
+        set_active: bool = True,
     ) -> str:
         """
         Register a new model version.
@@ -92,7 +92,7 @@ class ModelRegistry:
 
         # Save model
         model_path = model_dir / f"{version}.pkl"
-        with open(model_path, 'wb') as f:
+        with open(model_path, "wb") as f:
             pickle.dump(model, f)
 
         # Compute checksum
@@ -108,7 +108,7 @@ class ModelRegistry:
             "metrics": metrics,
             "hyperparameters": hyperparameters or {},
             "metadata": metadata or {},
-            "size_bytes": model_path.stat().st_size
+            "size_bytes": model_path.stat().st_size,
         }
 
         if set_active:
@@ -151,7 +151,7 @@ class ModelRegistry:
         if current_checksum != model_info["checksum"]:
             raise ValueError(f"Checksum mismatch for {model_id}")
 
-        with open(model_path, 'rb') as f:
+        with open(model_path, "rb") as f:
             return pickle.load(f)
 
     def get_active_model(self) -> tuple[Any, dict[str, Any]]:
@@ -199,15 +199,17 @@ class ModelRegistry:
         models = []
         for model_id, info in self.metadata["models"].items():
             if name is None or info["name"] == name:
-                models.append({
-                    "model_id": model_id,
-                    "name": info["name"],
-                    "version": info["version"],
-                    "registered_at": info["registered_at"],
-                    "size_mb": info["size_bytes"] / 1024 / 1024,
-                    "is_active": model_id == self.metadata.get("active"),
-                    **info["metrics"]
-                })
+                models.append(
+                    {
+                        "model_id": model_id,
+                        "name": info["name"],
+                        "version": info["version"],
+                        "registered_at": info["registered_at"],
+                        "size_mb": info["size_bytes"] / 1024 / 1024,
+                        "is_active": model_id == self.metadata.get("active"),
+                        **info["metrics"],
+                    }
+                )
 
         return pd.DataFrame(models)
 
@@ -228,12 +230,14 @@ class ModelRegistry:
                 continue
 
             info = self.metadata["models"][model_id]
-            comparisons.append({
-                "model_id": model_id,
-                "version": info["version"],
-                "registered_at": info["registered_at"],
-                **info["metrics"]
-            })
+            comparisons.append(
+                {
+                    "model_id": model_id,
+                    "version": info["version"],
+                    "registered_at": info["registered_at"],
+                    **info["metrics"],
+                }
+            )
 
         df = pd.DataFrame(comparisons)
         if metric in df.columns:
