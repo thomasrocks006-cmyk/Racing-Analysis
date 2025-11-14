@@ -50,6 +50,8 @@ dependencies = [
     "lxml>=4.9.0",
     "requests>=2.31.0",
     "selenium>=4.15.0",
+    "pdfplumber>=0.10.0",
+    "PyPDF2>=3.0.0",
     
     # Dashboard
     "streamlit>=1.28.0",

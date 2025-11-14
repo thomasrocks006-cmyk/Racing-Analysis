@@ -338,3 +338,109 @@ class RaceResult(BaseModel):
     def validate_results(cls, v: list[Result]) -> list[Result]:
         """Ensure results are ordered by finish position"""
         return sorted(v, key=lambda x: x.finish_position or 999)
+
+
+class BarrierTrial(BaseModel):
+    """Barrier trial model"""
+
+    model_config = ConfigDict(str_strip_whitespace=True)
+
+    trial_id: str = Field(..., min_length=1, max_length=100)
+    horse_id: str = Field(..., min_length=1, max_length=50)
+    trial_date: date
+    venue: str = Field(..., min_length=2, max_length=50)
+    distance: int = Field(..., ge=400, le=1600)
+    time: Decimal | None = Field(None, gt=0)  # Time in seconds
+    margin: Decimal | None = Field(None, ge=0)  # Margin in lengths
+    position: int | None = Field(None, ge=1)
+    field_size: int | None = Field(None, ge=2)
+    comments: str | None = None
+    jockey_id: str | None = None
+    trial_type: str | None = None  # 'official', 'jump-out', 'barrier'
+    track_condition: str | None = None
+    scraped_at: datetime = Field(default_factory=datetime.now)
+    data_source: str = "racing.com"
+
+    @field_validator("trial_date")
+    @classmethod
+    def validate_trial_date(cls, v: date) -> date:
+        """Ensure trial date is not in the future"""
+        if v > date.today():
+            raise ValueError(f"Trial date {v} cannot be in the future")
+        return v
+
+
+class JockeyStat(BaseModel):
+    """Jockey statistics model"""
+
+    model_config = ConfigDict(str_strip_whitespace=True)
+
+    jockey_id: str = Field(..., min_length=1, max_length=50)
+    stat_date: date  # Date these stats were calculated
+    lookback_days: int = Field(..., ge=1)  # Period covered by stats
+
+    # Overall statistics
+    total_rides: int = Field(..., ge=0)
+    total_wins: int = Field(..., ge=0)
+    total_places: int = Field(..., ge=0)
+    win_rate: Decimal = Field(..., ge=0, le=1)
+    place_rate: Decimal = Field(..., ge=0, le=1)
+    strike_rate: Decimal = Field(..., ge=0, le=1)
+
+    # Recent form (last 14 days)
+    recent_rides: int = Field(..., ge=0)
+    recent_wins: int = Field(..., ge=0)
+    recent_win_rate: Decimal = Field(..., ge=0, le=1)
+
+    # Venue-specific (optional, can be stored as JSON)
+    venue_stats: dict[str, dict] | None = None  # {venue: {rides, wins, win_rate}}
+
+    # Distance-specific
+    distance_stats: dict[str, dict] | None = None  # {distance_range: {rides, wins}}
+
+    # Track specialization (venues where win_rate > overall win_rate)
+    specialist_venues: list[str] | None = None
+
+    calculated_at: datetime = Field(default_factory=datetime.now)
+
+    @field_validator("win_rate", "place_rate", "strike_rate", "recent_win_rate")
+    @classmethod
+    def validate_rate(cls, v: Decimal) -> Decimal:
+        """Ensure rates are between 0 and 1"""
+        if not (0 <= v <= 1):
+            raise ValueError(f"Rate must be between 0 and 1, got {v}")
+        return v
+
+
+class TrainerStat(BaseModel):
+    """Trainer statistics model"""
+
+    model_config = ConfigDict(str_strip_whitespace=True)
+
+    trainer_id: str = Field(..., min_length=1, max_length=50)
+    stat_date: date
+    lookback_days: int = Field(..., ge=1)
+
+    # Overall statistics
+    total_runners: int = Field(..., ge=0)
+    total_wins: int = Field(..., ge=0)
+    total_places: int = Field(..., ge=0)
+    win_rate: Decimal = Field(..., ge=0, le=1)
+    place_rate: Decimal = Field(..., ge=0, le=1)
+    strike_rate: Decimal = Field(..., ge=0, le=1)
+
+    # Recent form
+    recent_runners: int = Field(..., ge=0)
+    recent_wins: int = Field(..., ge=0)
+    recent_win_rate: Decimal = Field(..., ge=0, le=1)
+
+    # Jockey combinations
+    jockey_combos: dict[str, dict] | None = None  # {jockey_id: {rides, wins, win_rate}}
+
+    # Venue performance
+    venue_stats: dict[str, dict] | None = None
+
+    # Track specialization
+    specialist_venues: list[str] | None = None
+
+    calculated_at: datetime = Field(default_factory=datetime.now)
