@@ -31,16 +31,16 @@ from typing import Any
 import requests
 
 from src.data.models import (
-    Gear,
     GearType,
-    Horse,
-    Jockey,
     Race,
-    RaceCard,
-    Run,
+    ScrapedGear,
+    ScrapedHorse,
+    ScrapedJockey,
+    ScrapedRaceCard,
+    ScrapedRun,
+    ScrapedTrainer,
     SexType,
     TrackType,
-    Trainer,
 )
 
 logger = logging.getLogger(__name__)
@@ -133,7 +133,7 @@ class RacingComGraphQLScraper:
 
     def scrape_race(
         self, venue: str, race_date: date | str, race_number: int
-    ) -> RaceCard:
+    ) -> ScrapedRaceCard:
         """
         Scrape a complete race card from Racing.com GraphQL API.
 
@@ -213,7 +213,7 @@ class RacingComGraphQLScraper:
             )
 
             # Build race card
-            race_card = RaceCard(
+            race_card = ScrapedRaceCard(
                 race=race,
                 runs=runs,
                 horses=horses,
@@ -292,7 +292,7 @@ class RacingComGraphQLScraper:
 
     def _parse_entries(
         self, entries: list[dict], race_id: str
-    ) -> tuple[list[Horse], list[Jockey], list[Trainer], list[Run], list[Gear]]:
+    ) -> tuple[list[ScrapedHorse], list[ScrapedJockey], list[ScrapedTrainer], list[ScrapedRun], list[ScrapedGear]]:
         """
         Parse race entries into model instances.
 
@@ -314,48 +314,48 @@ class RacingComGraphQLScraper:
             horse_data = entry.get("horse", {})
             horse_name = horse_data.get("name", "Unknown")
             
-            sex = SexType.UNKNOWN
+            sex = None  # Default to None if not recognized
             sex_str = horse_data.get("sex", "").upper()
             if sex_str in ["G", "GELDING"]:
                 sex = SexType.GELDING
             elif sex_str in ["M", "MARE"]:
                 sex = SexType.MARE
             elif sex_str in ["H", "HORSE"]:
-                sex = SexType.HORSE
+                sex = SexType.STALLION  # "Horse" typically means stallion in racing context
             elif sex_str in ["C", "COLT"]:
                 sex = SexType.COLT
             elif sex_str in ["F", "FILLY"]:
                 sex = SexType.FILLY
 
-            horse = Horse(
+            horse = ScrapedHorse(
                 name=horse_name,
                 age=self._parse_int(horse_data.get("age")),
                 sex=sex,
-                colour=horse_data.get("colour"),
+                color=horse_data.get("colour"),
                 sire=horse_data.get("sire"),
                 dam=horse_data.get("dam"),
             )
             horses.append(horse)
 
             # Parse jockey
-            jockey_data = entry.get("jockey", {})
+            jockey_data = entry.get("jockey") or {}
             jockey_name = jockey_data.get("name") or jockey_data.get("surname", "Unknown")
             
-            jockey = Jockey(name=jockey_name)
+            jockey = ScrapedJockey(name=jockey_name)
             jockeys.append(jockey)
 
             # Parse trainer
-            trainer_data = entry.get("trainer", {})
+            trainer_data = entry.get("trainer") or {}
             trainer_name = trainer_data.get("name") or trainer_data.get("surname", "Unknown")
             
-            trainer = Trainer(name=trainer_name)
+            trainer = ScrapedTrainer(name=trainer_name)
             trainers.append(trainer)
 
             # Parse run
             barrier = self._parse_int(entry.get("barrierNumber"))
             weight = self._parse_decimal(entry.get("weight"))
             
-            run = Run(
+            run = ScrapedRun(
                 race_id=race_id,
                 horse_name=horse_name,
                 jockey_name=jockey_name,
@@ -370,11 +370,17 @@ class RacingComGraphQLScraper:
 
             # Parse gear
             if entry.get("gearList"):
-                gear_str = entry.get("gearList", "")
+                gear_data = entry.get("gearList", "")
+                # Handle if gearList is a list or string
+                if isinstance(gear_data, list):
+                    gear_str = ", ".join(str(g) for g in gear_data if g)
+                else:
+                    gear_str = str(gear_data)
+                
                 gear_changes = entry.get("gearChanges", "")
                 has_changes = entry.get("gearHasChanges", False)
                 
-                gear = Gear(
+                gear = ScrapedGear(
                     race_id=race_id,
                     horse_name=horse_name,
                     gear_type=self._parse_gear_type(gear_str),
@@ -400,11 +406,11 @@ class RacingComGraphQLScraper:
 
     def _parse_decimal(self, value: str | float | None) -> Decimal | None:
         """Parse string/float to Decimal."""
-        if value is None:
+        if value is None or value == "":
             return None
         try:
             return Decimal(str(value))
-        except (ValueError, TypeError):
+        except (ValueError, TypeError, Exception):
             return None
 
     def _parse_int(self, value: str | int | None) -> int | None:

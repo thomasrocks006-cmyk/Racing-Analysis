@@ -55,7 +55,9 @@ class ReportType(str, Enum):
 class GearType(str, Enum):
     """Gear/equipment types"""
 
+    NONE = "none"
     BLINKERS = "blinkers"
+    VISOR = "visor"
     TONGUE_TIE = "tongue-tie"
     LUGGING_BIT = "lugging-bit"
     PACIFIERS = "pacifiers"
@@ -65,6 +67,7 @@ class GearType(str, Enum):
     NOSE_ROLL = "nose-roll"
     CROSS_OVER_NOSE_BAND = "cross-over-nose-band"
     BAR_PLATES = "bar-plates"
+    OTHER = "other"
 
 
 # ============================================================================
@@ -338,3 +341,103 @@ class RaceResult(BaseModel):
     def validate_results(cls, v: list[Result]) -> list[Result]:
         """Ensure results are ordered by finish position"""
         return sorted(v, key=lambda x: x.finish_position or 999)
+
+
+# ============================================================================
+# SIMPLIFIED SCRAPED DATA MODELS (No IDs required)
+# ============================================================================
+
+
+class ScrapedHorse(BaseModel):
+    """Simplified horse model for scraped data (no ID required)"""
+
+    model_config = ConfigDict(str_strip_whitespace=True)
+
+    name: str = Field(..., min_length=1, max_length=100)
+    age: int | None = Field(None, ge=2, le=15)
+    sex: SexType | None = None
+    color: str | None = None
+    sire: str | None = None
+    dam: str | None = None
+
+
+class ScrapedJockey(BaseModel):
+    """Simplified jockey model for scraped data (no ID required)"""
+
+    model_config = ConfigDict(str_strip_whitespace=True)
+
+    name: str = Field(..., min_length=1, max_length=100)
+    apprentice: bool = False
+    claim_weight: Decimal | None = Field(None, ge=0, le=5.0)
+
+
+class ScrapedTrainer(BaseModel):
+    """Simplified trainer model for scraped data (no ID required)"""
+
+    model_config = ConfigDict(str_strip_whitespace=True)
+
+    name: str = Field(..., min_length=1, max_length=100)
+    stable_location: str | None = None
+
+
+class ScrapedRun(BaseModel):
+    """Simplified run model for scraped data (no IDs required)"""
+
+    model_config = ConfigDict(str_strip_whitespace=True)
+
+    race_id: str = Field(..., min_length=5, max_length=50)
+    horse_name: str = Field(..., min_length=1, max_length=100)
+    jockey_name: str = Field(..., min_length=1, max_length=100)
+    trainer_name: str = Field(..., min_length=1, max_length=100)
+    barrier: int | None = Field(None, ge=1, le=24)
+    weight: Decimal | None = Field(None, ge=48.0, le=72.0)
+    handicap_rating: int | None = None
+    emergency: bool = False
+    emergency_number: int | None = None
+    scratched: bool = False
+
+
+class ScrapedGear(BaseModel):
+    """Simplified gear model for scraped data (no IDs required)"""
+
+    model_config = ConfigDict(str_strip_whitespace=True)
+
+    race_id: str = Field(..., min_length=5, max_length=50)
+    horse_name: str = Field(..., min_length=1, max_length=100)
+    gear_type: GearType
+    gear_description: str | None = None
+    is_first_time: bool = False
+    gear_changes: str | None = None
+
+
+class ScrapedRaceCard(BaseModel):
+    """Complete race card using scraped data models (no IDs required)"""
+
+    race: Race
+    runs: list[ScrapedRun]
+    horses: list[ScrapedHorse]
+    jockeys: list[ScrapedJockey]
+    trainers: list[ScrapedTrainer]
+    gear: list[ScrapedGear] | None = None
+
+    def validate_completeness(self) -> float:
+        """Calculate data completeness percentage"""
+        total_fields = 0
+        filled_fields = 0
+
+        # Check race critical fields
+        race_critical = ["distance", "track_condition", "class_level", "field_size"]
+        for field in race_critical:
+            total_fields += 1
+            if getattr(self.race, field) is not None:
+                filled_fields += 1
+
+        # Check runs critical fields
+        runs_critical = ["barrier", "weight"]
+        for run in self.runs:
+            for field in runs_critical:
+                total_fields += 1
+                if getattr(run, field) is not None:
+                    filled_fields += 1
+
+        return (filled_fields / total_fields * 100) if total_fields > 0 else 0.0
