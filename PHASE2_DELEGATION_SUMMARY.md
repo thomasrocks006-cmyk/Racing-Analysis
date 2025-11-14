@@ -9,7 +9,7 @@
 Delegating implementation of the 6-stage **Qualitative Intelligence Pipeline** to three parallel agents:
 
 - **Cloud Copilot SWE Agent**: Stage 1 (Source Planning)
-- **Copilot Chat**: Stages 2-3 (Content Extraction + Synthesis)  
+- **Copilot Chat**: Stages 2-3 (Content Extraction + Synthesis)
 - **Claude/Codex**: Stages 4-6 (LR Generation + Calibration + Fusion Prep)
 
 **Critical Prerequisite**: Must backfill database with 200+ historical races first (currently only ~10 races)
@@ -19,14 +19,17 @@ Delegating implementation of the 6-stage **Qualitative Intelligence Pipeline** t
 ## 🎯 Three Agent Tasks
 
 ### **Agent 1: Cloud Copilot SWE** 🔥🔥🔥
+
 **Task**: Build Stage 1 - Source Planning Agent (Days 29-30)
 
 **Deliverables**:
+
 - `src/pipelines/qualitative/stage1_source_planner.py` (300+ lines)
 - Gemini API integration for Categories 1-17 discovery
 - `tests/pipelines/test_stage1_source_planner.py` (18+ test cases)
 
 **Key Responsibilities**:
+
 - Implement `SourcePlanningAgent` class
 - Method: `plan_sources(race_context) → list[str]` (15-25 sources)
 - Gemini prompt engineering for category mapping
@@ -45,14 +48,17 @@ Delegating implementation of the 6-stage **Qualitative Intelligence Pipeline** t
 ---
 
 ### **Agent 2: Copilot Chat** 🔥🔥
+
 **Task**: Build Stages 2-3 - Content Extraction & Synthesis (Days 31-34)
 
 **Deliverables**:
+
 - `src/pipelines/qualitative/stage2_content_extractor.py` (250+ lines)
 - `src/pipelines/qualitative/stage3_synthesis.py` (300+ lines)
 - `tests/pipelines/test_stage2_3_pipelines.py` (15+ test cases)
 
 **Stage 2 - Content Extraction**:
+
 - Input: Source URLs from Stage 1
 - Extract: Article text, quotes, key points, sentiment
 - Output: Structured content with metadata
@@ -63,6 +69,7 @@ Delegating implementation of the 6-stage **Qualitative Intelligence Pipeline** t
   - Sentiment analysis (positive/neutral/negative)
 
 **Stage 3 - Information Synthesis**:
+
 - Input: 15-25 extracted sources per horse
 - Use GPT-4 to synthesize consensus
 - Output: 5-7 key insights, strengths, concerns, assessment
@@ -80,21 +87,25 @@ Delegating implementation of the 6-stage **Qualitative Intelligence Pipeline** t
 ---
 
 ### **Agent 3: Claude/Codex** 🔥
+
 **Task**: Build Stages 4-6 - LR Generation, Calibration, Fusion Prep (Days 35-39)
 
 **Deliverables**:
+
 - `src/pipelines/qualitative/stage4_lr_generation.py` (200+ lines)
 - `src/pipelines/qualitative/stage5_calibration.py` (180+ lines)
 - `src/pipelines/qualitative/stage6_fusion_prep.py` (150+ lines)
 - `tests/pipelines/test_stage4_5_6_lrs.py` (20+ test cases)
 
 **Stage 4 - LR Generation**:
+
 - Input: Synthesis from Stage 3
 - For each category (1-21): Generate LR (0.70-1.30)
 - Use GPT-4 to convert qualitative → quantitative
 - Output: `{category: (lr, reasoning, confidence), ...}`
 
 **Stage 5 - Confidence Calibration**:
+
 - Input: LRs from Stage 4
 - Adjust confidence based on:
   - Source reliability
@@ -104,12 +115,14 @@ Delegating implementation of the 6-stage **Qualitative Intelligence Pipeline** t
 - Output: Calibrated confidence scores
 
 **Stage 6 - Fusion Preparation**:
+
 - Input: Calibrated LRs from Stage 5
 - Format for Bayesian fusion
 - Calculate weights: `confidence × category_importance × source_agreement`
 - Output: Fusion-ready dictionary
 
 **Success Metrics**:
+
 - LR validity: 95%+
 - Calibration accuracy: 85%+
 - Fusion format: 100% valid
@@ -186,6 +199,7 @@ Output: Ready for Bayesian Fusion (Phase 3)
 **Backfill Script**: `scripts/backfill_historical.py`
 
 **How to Run**:
+
 ```bash
 # Sample backfill (20 races for testing)
 python scripts/backfill_historical.py --sample
@@ -198,6 +212,7 @@ python scripts/backfill_historical.py --venue flemington --start 2024-10-01 --en
 ```
 
 **Target**: 200+ races from Spring Carnival 2024
+
 - Flemington: 50 races
 - Caulfield: 40 races
 - Moonee Valley: 30 races
@@ -211,14 +226,17 @@ python scripts/backfill_historical.py --venue flemington --start 2024-10-01 --en
 ## 📝 API & Credential Requirements
 
 **Cloud Agent (Stage 1)**:
+
 - Google Gemini API key (set `GOOGLE_API_KEY` env var)
 - Already integrated: `google.generativeai` library
 
 **Chat Agent (Stages 2-3)**:
+
 - GPT-4 API access via `openai` library
 - Already integrated: BeautifulSoup, NLP libraries
 
 **Codex (Stages 4-6)**:
+
 - GPT-4 API access (same as Chat Agent)
 - Historical accuracy data (in database after backfill)
 
@@ -227,17 +245,20 @@ python scripts/backfill_historical.py --venue flemington --start 2024-10-01 --en
 ## 🎓 Key Concepts
 
 **Likelihood Ratio (LR)**:
+
 - Measures evidence strength: `P(evidence|hypothesis) / P(evidence|¬hypothesis)`
 - Range: 0.70 (strong negative) to 1.30 (strong positive)
 - 1.0 = neutral (no effect)
 - Example: LR=1.25 means evidence increases win probability by 25%
 
 **Bayesian Fusion**:
+
 - Combines qualitative + quantitative LRs
 - Final probability = market odds × Π(qualitative_LRs) × Π(quantitative_LRs)
 - Confidence weighting: higher confidence LRs weighted more
 
 **Categories 1-21**:
+
 - **1-17**: Qualitative (from articles, tips, analysis)
 - **18-21**: Quantitative (from speed ratings, weight, barrier, history)
 
@@ -246,6 +267,7 @@ python scripts/backfill_historical.py --venue flemington --start 2024-10-01 --en
 ## 🚨 Known Dependencies & Risks
 
 **Critical Path**:
+
 1. Backfill historical data (2-3 days) - **BLOCKING**
 2. Stage 1 (Cloud Agent) - must complete before Stage 2
 3. Stage 2 (Chat Agent) - must complete before Stage 3
@@ -254,6 +276,7 @@ python scripts/backfill_historical.py --venue flemington --start 2024-10-01 --en
 6. E2E Integration (All) - final validation
 
 **Risk Mitigation**:
+
 - Start backfill TODAY (don't wait for agent handoff)
 - Cloud Agent can start Stage 1 while backfill runs in parallel
 - Chat Agent and Codex can prepare/review specs while waiting
@@ -288,12 +311,14 @@ python scripts/backfill_historical.py --venue flemington --start 2024-10-01 --en
 ## 📞 Support & Communication
 
 **Weekly Sync**: Every Friday @ 5pm UTC
+
 - Cloud Agent: Report Stage 1 progress
 - Chat Agent: Report Stages 2-3 progress
 - Codex: Report Stages 4-6 progress
 - Discuss blockers, dependency issues
 
 **Escalation Path**:
+
 1. Agent → Lead Copilot
 2. Lead Copilot → Project Owner
 3. Async updates in `#racing-analysis-dev` Slack channel
@@ -303,24 +328,28 @@ python scripts/backfill_historical.py --venue flemington --start 2024-10-01 --en
 ## 🎯 Next Action Items
 
 **For Lead/Project Owner**:
+
 - [ ] Review and approve delegation plan
 - [ ] Execute backfill script (start TODAY)
 - [ ] Confirm Gemini API key for Cloud Agent
 - [ ] Confirm GPT-4 access for Chat Agent and Codex
 
 **For Cloud Agent**:
+
 - [ ] Review Stage 1 spec
 - [ ] Set up local dev environment
 - [ ] Clone repo and create feature branch
 - [ ] Begin implementation
 
 **For Chat Agent**:
+
 - [ ] Review Stages 2-3 spec
 - [ ] Familiarize with Stage 1 output format
 - [ ] Prepare implementation plan
 - [ ] Wait for Stage 1 completion before starting
 
 **For Codex**:
+
 - [ ] Review Stages 4-6 spec
 - [ ] Familiarize with Stage 3 output format
 - [ ] Research historical accuracy metrics

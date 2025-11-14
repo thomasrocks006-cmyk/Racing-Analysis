@@ -20,22 +20,26 @@ Implement the 6-stage Qualitative Pipeline for intelligent multi-source informat
 ## 👥 Agent Delegation
 
 ### **Agent 1: Cloud Copilot SWE Agent** 🔥🔥🔥
+
 **Task**: Stage 1 - Source Planning Agent (Days 29-30)
 **Dependencies**: None (starts immediately)
 
 **Deliverables**:
+
 - `src/pipelines/qualitative/stage1_source_planner.py`
 - Gemini API integration
 - Category 1-17 prompt engineering
 - Unit tests (test_stage1_source_planner.py)
 
 **Key Files to Reference**:
+
 - `IMPLEMENTATION_PLAN_FORWARD.md` lines 461-500
 - `src/data/models.py` - Race/Horse/Jockey models
 
 **PR Target**: `pr/copilot-qualitative-stage1`
 
 **Instructions**:
+
 ```
 Build the Source Planning Agent using Google Gemini API:
 
@@ -67,16 +71,19 @@ Target: 90%+ successful source identification
 ---
 
 ### **Agent 2: Copilot Chat** 🔥🔥
+
 **Task**: Stage 2 & 3 - Content Extraction + Synthesis (Days 31-34)
 **Dependencies**: Stage 1 (source list output)
 
 **Deliverables**:
+
 - `src/pipelines/qualitative/stage2_content_extractor.py`
 - `src/pipelines/qualitative/stage3_synthesis.py`
 - Integration with GPT-4 for synthesis
 - Unit tests (test_stage2_3_pipelines.py)
 
 **Key Files to Reference**:
+
 - `IMPLEMENTATION_PLAN_FORWARD.md` lines 515-570
 - BeautifulSoup for parsing
 - NLP libraries for sentiment/quotes
@@ -84,6 +91,7 @@ Target: 90%+ successful source identification
 **PR Target**: `pr/copilot-qualitative-stages2-3`
 
 **Instructions**:
+
 ```
 Build Content Extraction and Synthesis stages:
 
@@ -137,16 +145,19 @@ Target: 85%+ synthesis accuracy (vs manual review)
 ---
 
 ### **Agent 3: Claude/Codex** 🔥
+
 **Task**: Stage 4, 5, 6 - LR Generation, Calibration, Fusion Prep (Days 35-39)
 **Dependencies**: Stages 2-3 (synthesis output)
 
 **Deliverables**:
+
 - `src/pipelines/qualitative/stage4_lr_generation.py`
 - `src/pipelines/qualitative/stage5_calibration.py`
 - `src/pipelines/qualitative/stage6_fusion_prep.py`
 - Unit tests (test_stage4_5_6_lrs.py)
 
 **Key Files to Reference**:
+
 - `IMPLEMENTATION_PLAN_FORWARD.md` lines 575-638
 - `src/data/models.py` - Likelihood Ratio model
 - Historical race results for calibration
@@ -154,6 +165,7 @@ Target: 85%+ synthesis accuracy (vs manual review)
 **PR Target**: `pr/codex-qualitative-stages4-6`
 
 **Instructions**:
+
 ```
 Build Likelihood Ratio generation pipeline:
 
@@ -228,26 +240,33 @@ Week 6:
 ## 🔗 Integration Points
 
 **Stage 1 Input**:
+
 - Racing.com race details (from GraphQL scraper)
 - Current market odds (from Betfair scraper)
 
 **Stage 2 Input**:
+
 - Source list from Stage 1
 
 **Stage 3 Input**:
+
 - Extracted content from Stage 2
 
 **Stage 4 Input**:
+
 - Synthesis from Stage 3
 
 **Stage 5 Input**:
+
 - LRs from Stage 4
 - Historical accuracy metrics (from past races)
 
 **Stage 6 Input**:
+
 - Calibrated LRs from Stage 5
 
 **Final Output**:
+
 - Ready for Bayesian Fusion (Phase 3)
 
 ---
@@ -279,11 +298,13 @@ Week 6:
 ## 🚨 Dependencies & Blockers
 
 **BLOCKER**: Database must have 100+ historical races populated first!
+
 - Current status: ~10 races
 - **ACTION REQUIRED**: Run backfill script from Phase 1 FIRST
 - Script: `scripts/backfill_historical.py`
 
 Once database is populated:
+
 - All three agents can start working in parallel (within dependency constraints)
 - Stage 1 can start immediately (no database dependency)
 - Stage 2-3 need Stage 1 output
@@ -294,18 +315,22 @@ Once database is populated:
 ## 📊 Monitoring & Checkpoints
 
 **Checkpoint 1 (Day 30)**: Stage 1 delivers source lists
+
 - PR review on 5 test races
 - Source quality assessment
 
 **Checkpoint 2 (Day 34)**: Stages 2-3 deliver synthesis
+
 - PR review on same 5 races
 - Compare synthesis quality across stages
 
 **Checkpoint 3 (Day 39)**: Stages 4-6 deliver LRs
+
 - PR review on same 5 races
 - Verify LR ranges, calibration, fusion format
 
 **Checkpoint 4 (Day 42)**: E2E Integration
+
 - All 6 stages connected
 - 10 races tested end-to-end
 - Metrics validation
@@ -317,12 +342,14 @@ Once database is populated:
 **Reference Implementation**: `IMPLEMENTATION_PLAN_FORWARD.md` (lines 461-638)
 
 **Key Concepts**:
+
 - Likelihood Ratios: `LR = P(evidence|hypothesis) / P(evidence|not_hypothesis)`
 - Bayesian Fusion: Combine qualitative + quantitative LRs via Bayes theorem
 - Confidence Calibration: Adjust confidence based on historical accuracy
 - Source Weighting: Prioritize reliable sources over unreliable ones
 
 **Testing Framework**:
+
 - Use pytest for all unit tests
 - Mock external APIs (Gemini, GPT-4) for reproducibility
 - Include integration tests with real API calls
@@ -332,6 +359,7 @@ Once database is populated:
 ## 💾 Database Requirement
 
 **Must have before starting**: 100+ historical races with:
+
 - Complete race records
 - All runner details
 - Historical odds
@@ -339,6 +367,7 @@ Once database is populated:
 - Jockey/trainer stats
 
 **Backfill Script**: `scripts/backfill_historical.py`
+
 - Populates Oct-Nov 2024 Spring Carnival races
 - Should take 2-3 days to run
 
