@@ -1,0 +1,311 @@
+{
+  "data": {
+    "__schema": {
+      "types": [
+        {
+          "name": "Query"
+        },
+        {
+          "name": "DoEvent"
+        },
+        {
+          "name": "String"
+        },
+        {
+          "name": "AWSJSON"
+        },
+        {
+          "name": "AWSDateTime"
+        },
+        {
+          "name": "Int"
+        },
+        {
+          "name": "Meet"
+        },
+        {
+          "name": "MeetTip"
+        },
+        {
+          "name": "ID"
+        },
+        {
+          "name": "Tipster"
+        },
+        {
+          "name": "Boolean"
+        },
+        {
+          "name": "BestRaceEntryItem"
+        },
+        {
+          "name": "RaceEntryItem"
+        },
+        {
+          "name": "BestBets"
+        },
+        {
+          "name": "FaisHighlight"
+        },
+        {
+          "name": "HorseFinish"
+        },
+        {
+          "name": "Horse"
+        },
+        {
+          "name": "BlackBookHorseItem"
+        },
+        {
+          "name": "AWSTimestamp"
+        },
+        {
+          "name": "AWSDate"
+        },
+        {
+          "name": "HorseForm"
+        },
+        {
+          "name": "HorseStat"
+        },
+        {
+          "name": "Trainer"
+        },
+        {
+          "name": "HorseTags"
+        },
+        {
+          "name": "SectionalStarItem"
+        },
+        {
+          "name": "Race"
+        },
+        {
+          "name": "BestBetsRace"
+        },
+        {
+          "name": "Exotic"
+        },
+        {
+          "name": "RaceEntryTimes"
+        },
+        {
+          "name": "Float"
+        },
+        {
+          "name": "Jockey"
+        },
+        {
+          "name": "RaceEntryTimeItem"
+        },
+        {
+          "name": "RaceEntrySplitTimeItem"
+        },
+        {
+          "name": "Venue"
+        },
+        {
+          "name": "Track"
+        },
+        {
+          "name": "RaceTip"
+        },
+        {
+          "name": "RaceTipEntryItem"
+        },
+        {
+          "name": "Video"
+        },
+        {
+          "name": "RaceStewardsReport"
+        },
+        {
+          "name": "SpeedRank"
+        },
+        {
+          "name": "FastestHorse"
+        },
+        {
+          "name": "RaceEntryOdds"
+        },
+        {
+          "name": "BettingFluctuation"
+        },
+        {
+          "name": "BetEasyMeetTip"
+        },
+        {
+          "name": "BetEasyBestItem"
+        },
+        {
+          "name": "QuaddieTip"
+        },
+        {
+          "name": "QuaddieLeg"
+        },
+        {
+          "name": "QuaddieRunner"
+        },
+        {
+          "name": "BlackBookTip"
+        },
+        {
+          "name": "GetOn"
+        },
+        {
+          "name": "BBBestBet"
+        },
+        {
+          "name": "MeetingTrackCondition"
+        },
+        {
+          "name": "MeetingRailPosition"
+        },
+        {
+          "name": "Club"
+        },
+        {
+          "name": "GetRacesForMeet"
+        },
+        {
+          "name": "GetRacesForMeetItem"
+        },
+        {
+          "name": "DetailedHorse"
+        },
+        {
+          "name": "GetVenueUpcomingRacesGroupedType"
+        },
+        {
+          "name": "RaceStandardTimes"
+        },
+        {
+          "name": "TrainerStats"
+        },
+        {
+          "name": "AllStats"
+        },
+        {
+          "name": "SeasonAllStats"
+        },
+        {
+          "name": "JockeyStats"
+        },
+        {
+          "name": "HorseStats"
+        },
+        {
+          "name": "HorsesTrainer"
+        },
+        {
+          "name": "HorseStatus"
+        },
+        {
+          "name": "GetJockeyUpcomingRacesGroupedType"
+        },
+        {
+          "name": "GetHorseUpcomingRacesGroupedType"
+        },
+        {
+          "name": "GetTrainerUpcomingRacesGroupedType"
+        },
+        {
+          "name": "BetEasyQuaddieTip"
+        },
+        {
+          "name": "BetEasyQuaddieLeg"
+        },
+        {
+          "name": "BetEasyQuaddieRunner"
+        },
+        {
+          "name": "BetEasyRaceTip"
+        },
+        {
+          "name": "BetEasyRaceTipEntryItem"
+        },
+        {
+          "name": "BetEasyKeyStats"
+        },
+        {
+          "name": "BetEasyKeyStatsItem"
+        },
+        {
+          "name": "BetEasyMeetKeyStats"
+        },
+        {
+          "name": "BetEasyHighlightTip"
+        },
+        {
+          "name": "BetEasyHighlight"
+        },
+        {
+          "name": "GetParticipantRaceData"
+        },
+        {
+          "name": "ParticipantRaceData"
+        },
+        {
+          "name": "ParticipantFilters"
+        },
+        {
+          "name": "JockeyPremiershipStatList"
+        },
+        {
+          "name": "GetJockeyPremiershipStat"
+        },
+        {
+          "name": "TrainerPremiershipStatList"
+        },
+        {
+          "name": "GetTrainerPremiershipStat"
+        },
+        {
+          "name": "HorsePremiershipStatList"
+        },
+        {
+          "name": "GetHorsePremiershipStat"
+        },
+        {
+          "name": "getVenuDetails"
+        },
+        {
+          "name": "RaceStatusList"
+        },
+        {
+          "name": "DpdsRaceStatus"
+        },
+        {
+          "name": "JSON"
+        },
+        {
+          "name": "TrainerAllStats"
+        },
+        {
+          "name": "__Schema"
+        },
+        {
+          "name": "__Type"
+        },
+        {
+          "name": "__TypeKind"
+        },
+        {
+          "name": "__Field"
+        },
+        {
+          "name": "__InputValue"
+        },
+        {
+          "name": "__EnumValue"
+        },
+        {
+          "name": "__Directive"
+        },
+        {
+          "name": "__DirectiveLocation"
+        }
+      ]
+    }
+  }
+}
