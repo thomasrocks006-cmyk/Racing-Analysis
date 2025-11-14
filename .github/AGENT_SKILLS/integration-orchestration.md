@@ -1,9 +1,11 @@
 # Agent Skill: Integration & Orchestration
 
 ## Purpose
+
 Handle system integration tasks: pipeline orchestration, API integration, data flow coordination, and cross-module communication.
 
 ## When to Use
+
 - "Use integration-orchestration skill: Connect the..."
 - "Use integration-orchestration skill: Build pipeline for..."
 - "Use integration-orchestration skill: Integrate API..."
@@ -54,22 +56,22 @@ class RacingPipeline:
         self.scraper = RacingComGraphQLScraper()
         self.features = FeatureBuilder()
         self.model = ModelPredictor()
-    
+
     def process_race(self, venue, date, race_num):
         """End-to-end race processing."""
         try:
             # Step 1: Scrape
             race_card = self.scraper.scrape_race(venue, date, race_num)
             logger.info(f"Scraped {race_card.race.race_id}")
-            
+
             # Step 2: Feature engineering
             features = self.features.build(race_card)
             logger.info(f"Generated {len(features)} features")
-            
+
             # Step 3: Predict
             predictions = self.model.predict(features)
             logger.info(f"Generated predictions for {len(predictions)} runners")
-            
+
             return predictions
         except Exception as e:
             logger.error(f"Pipeline failed: {e}", exc_info=True)
@@ -87,6 +89,7 @@ def fetch_race_data_with_retry(venue, date, race_num):
 ```
 
 ## Key Files
+
 - `src/` - Main application modules
 - `ARCHITECTURE.md` - System design and data flow
 - `END_TO_END_SYSTEM_OVERVIEW.md` - Complete pipeline overview
@@ -97,6 +100,7 @@ def fetch_race_data_with_retry(venue, date, race_num):
 ## Common Tasks
 
 ### Create Data Pipeline
+
 - [ ] Define data sources and destinations
 - [ ] Implement each stage with error handling
 - [ ] Add logging at critical points
@@ -104,6 +108,7 @@ def fetch_race_data_with_retry(venue, date, race_num):
 - [ ] Document data contracts between modules
 
 ### Integrate New API
+
 - [ ] Add API client wrapper in appropriate scraper
 - [ ] Implement rate limiting
 - [ ] Add error handling for common failures
@@ -111,6 +116,7 @@ def fetch_race_data_with_retry(venue, date, race_num):
 - [ ] Update pipeline to use new data
 
 ### Fix Data Flow Issue
+
 - [ ] Trace data through pipeline stages
 - [ ] Identify bottleneck or failure point
 - [ ] Review logs for error patterns
@@ -118,6 +124,7 @@ def fetch_race_data_with_retry(venue, date, race_num):
 - [ ] Document root cause and prevention
 
 ### Orchestrate Batch Job
+
 - [ ] Define job parameters (dates, venues, etc.)
 - [ ] Implement parallel processing where possible
 - [ ] Add progress tracking and checkpointing
@@ -125,6 +132,7 @@ def fetch_race_data_with_retry(venue, date, race_num):
 - [ ] Log job completion and metrics
 
 ## Success Criteria
+
 - ✅ Data flows smoothly through all pipeline stages
 - ✅ Errors are caught and handled gracefully
 - ✅ System recovers from transient failures automatically

@@ -20,11 +20,13 @@ Do NOT start coding yet.
 ## 💡 USE SKILLS
 
 **Format:**
+
 ```
 Use [skill-name] skill: [task description]
 ```
 
 **Available Skills:**
+
 - `data-engineering` - Scrapers, validation, ETL
 - `model-development` - Features, training, optimization
 - `analysis-insights` - EDA, statistics, reporting
@@ -32,6 +34,7 @@ Use [skill-name] skill: [task description]
 - `testing-qa` - Tests, code quality, performance
 
 **Examples:**
+
 ```
 Use data-engineering skill: Create a scraper for Betfair live odds
 
@@ -74,6 +77,7 @@ Update dev/SESSION_NOTES.md:
 ## ⚡ TIPS & TRICKS
 
 ### Get a Plan First
+
 ```
 Use [skill] skill: [task]
 
@@ -81,11 +85,13 @@ Show me a 5-step plan first. I'll say "OK" before you make changes.
 ```
 
 ### Ask Before Big Changes
+
 ```
 Can you show me what would change? I want to review before you proceed.
 ```
 
 ### Combine Multiple Skills
+
 ```
 First, use analysis-insights skill: Analyze X
 Then, use model-development skill: Build features for Y
@@ -93,11 +99,13 @@ Then, use testing-qa skill: Write tests
 ```
 
 ### Maintain Context
+
 ```
 Refer back to dev/SESSION_NOTES.md to remind yourself of constraints and decisions.
 ```
 
 ### Force Incremental Changes
+
 ```
 Make ONE change at a time. Show me the diff. I'll approve before next change.
 ```
@@ -119,15 +127,17 @@ Make ONE change at a time. Show me the diff. I'll approve before next change.
 ## 📊 WORKFLOWS
 
 ### Add New Feature
+
 ```
 1. Use analysis-insights skill: Understand the problem
-2. Use model-development skill: Design the feature  
+2. Use model-development skill: Design the feature
 3. Use testing-qa skill: Plan the tests
 4. Use data-engineering skill: Build data layer
 5. Use integration-orchestration skill: Connect everything
 ```
 
 ### Fix Bug
+
 ```
 1. Use integration-orchestration skill: Trace the data flow
 2. Use analysis-insights skill: Find where it breaks
@@ -137,6 +147,7 @@ Make ONE change at a time. Show me the diff. I'll approve before next change.
 ```
 
 ### Debug Failing Code
+
 ```
 Use testing-qa skill: Debug the failing test
 
@@ -149,18 +160,19 @@ Keep going until test passes.
 
 ## 📌 OPERATING PRINCIPLES
 
-✅ **Always plan before acting** - "Show me a plan first"  
-✅ **Show diffs and explain** - "Why did we make that change?"  
-✅ **Make small changes** - "One file at a time"  
-✅ **Update session notes** - Keep context alive  
-✅ **Use the right skill** - Different tasks, different patterns  
-✅ **Ask for approval** - "Is this approach OK?"  
+✅ **Always plan before acting** - "Show me a plan first"
+✅ **Show diffs and explain** - "Why did we make that change?"
+✅ **Make small changes** - "One file at a time"
+✅ **Update session notes** - Keep context alive
+✅ **Use the right skill** - Different tasks, different patterns
+✅ **Ask for approval** - "Is this approach OK?"
 
 ---
 
 ## 🎯 SUCCESS CHECKLIST
 
 Before ending a session:
+
 - [ ] Updated dev/SESSION_NOTES.md with completed work
 - [ ] Marked completed TODOs as ✅
 - [ ] Noted any new TODOs discovered
@@ -174,26 +186,31 @@ Before ending a session:
 ## 💬 COMMON PHRASES
 
 **Request a plan:**
+
 ```
 Show me a [number]-step plan first. Wait for my "OK" before making changes.
 ```
 
 **Before refactoring:**
+
 ```
 What would this refactor affect? Show me the scope before proceeding.
 ```
 
 **For incrementalism:**
+
 ```
 Make one small change. Show the diff. I'll approve before the next change.
 ```
 
 **To fix context:**
+
 ```
 Refer back to dev/SESSION_NOTES.md to remember our constraints and decisions.
 ```
 
 **To force patience:**
+
 ```
 This is complex. Let's break it into steps. Show each step before implementing.
 ```

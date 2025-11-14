@@ -1,9 +1,11 @@
 # Agent Skill: Testing & Quality Assurance
 
 ## Purpose
+
 Handle testing, validation, and quality assurance tasks: unit tests, integration tests, performance testing, and code quality.
 
 ## When to Use
+
 - "Use testing-qa skill: Write tests for..."
 - "Use testing-qa skill: Debug failing test..."
 - "Use testing-qa skill: Add integration tests..."
@@ -67,7 +69,7 @@ def test_scrape_race_end_to_end():
     """Test complete race scraping workflow."""
     scraper = RacingComGraphQLScraper()
     race_card = scraper.scrape_race("flemington", "2025-11-14", 1)
-    
+
     assert race_card.race.race_id is not None
     assert len(race_card.runs) > 0
     assert race_card.validate_completeness() > 0
@@ -85,6 +87,7 @@ def test_parse_sex(scraper, input, expected):
 ```
 
 ## Key Files
+
 - `tests/` - Test directory with organized test modules
 - `test_*.py` - Root-level integration tests
 - `pyproject.toml` - Test configuration (pytest settings)
@@ -94,6 +97,7 @@ def test_parse_sex(scraper, input, expected):
 ## Common Tasks
 
 ### Write Unit Tests
+
 - [ ] Test single function/method in isolation
 - [ ] Mock external dependencies (APIs, databases)
 - [ ] Test normal, boundary, and error cases
@@ -101,6 +105,7 @@ def test_parse_sex(scraper, input, expected):
 - [ ] Aim for >80% line coverage
 
 ### Write Integration Tests
+
 - [ ] Test multiple components working together
 - [ ] Use real data when possible (or fixtures)
 - [ ] Test end-to-end workflows
@@ -108,6 +113,7 @@ def test_parse_sex(scraper, input, expected):
 - [ ] Mark with `@pytest.mark.integration`
 
 ### Debug Failing Test
+
 - [ ] Run test with verbose output (`-vv` flag)
 - [ ] Add print statements or debugger breakpoints
 - [ ] Isolate the issue with minimal test case
@@ -115,6 +121,7 @@ def test_parse_sex(scraper, input, expected):
 - [ ] Review recent changes that might have broken it
 
 ### Code Quality Review
+
 - [ ] Run linters: `pylint src/`, `flake8 src/`
 - [ ] Check types: `mypy src/`
 - [ ] Check coverage: `coverage run -m pytest && coverage report`
@@ -122,6 +129,7 @@ def test_parse_sex(scraper, input, expected):
 - [ ] Suggest improvements with rationale
 
 ### Performance Testing
+
 - [ ] Measure execution time of critical paths
 - [ ] Profile memory usage
 - [ ] Test with realistic data volumes
@@ -129,6 +137,7 @@ def test_parse_sex(scraper, input, expected):
 - [ ] Document performance benchmarks
 
 ## Success Criteria
+
 - ✅ All tests pass consistently (no flakiness)
 - ✅ Coverage is >80% for critical paths
 - ✅ Tests are fast (<5s per test, <30s total)

@@ -1,9 +1,11 @@
 # Agent Skill: Security & Risk Management
 
 ## Purpose
+
 Identify security vulnerabilities, assess risks, implement protections, and maintain security posture: threat modeling, attack surface analysis, vulnerability scanning, and secure-by-design practices.
 
 ## When to Use
+
 - "Use security-risk skill: Assess security vulnerabilities in..."
 - "Use security-risk skill: Threat model this component"
 - "Use security-risk skill: Identify attack vectors for..."
@@ -42,6 +44,7 @@ Identify security vulnerabilities, assess risks, implement protections, and main
 ## Security Analysis Framework
 
 ### Assets to Protect
+
 ```
 ┌─────────────────────────────────┐
 │  Racing Data (Scraped)          │ ← Confidentiality & Integrity
@@ -99,11 +102,11 @@ def validate_venue_name(venue: str) -> str:
     # Prevent injection attacks
     if not venue or not isinstance(venue, str):
         raise ValueError("Invalid venue")
-    
+
     # Only allow alphanumeric + space
     if not all(c.isalnum() or c == ' ' for c in venue):
         raise ValueError("Invalid characters in venue")
-    
+
     return venue.strip().lower()
 
 # Security: Parameterized queries (DuckDB)
@@ -120,7 +123,7 @@ from time import sleep
 class RateLimitedScraper:
     def __init__(self, requests_per_second: float = 0.5):
         self.delay = 1.0 / requests_per_second
-    
+
     def scrape(self, url):
         """Rate-limited request to prevent abuse."""
         sleep(self.delay)
@@ -163,6 +166,7 @@ def decrypt_sensitive_data(encrypted: str, key: bytes) -> str:
 ## Common Security Vulnerabilities to Check
 
 ### Secrets Management
+
 - [ ] No hardcoded API keys, passwords, credentials
 - [ ] Secrets loaded from environment variables
 - [ ] .env file exists and is in .gitignore
@@ -170,33 +174,39 @@ def decrypt_sensitive_data(encrypted: str, key: bytes) -> str:
 - [ ] Rotating keys documented
 
 ### Input Validation
+
 - [ ] All user input validated
 - [ ] SQL injection prevention (parameterized queries)
 - [ ] Command injection prevention
 - [ ] Path traversal prevention
 
 ### Authentication & Authorization
+
 - [ ] API keys properly restricted in scope
 - [ ] Access control enforced at module boundaries
 - [ ] Audit logging for sensitive operations
 
 ### Data Protection
+
 - [ ] Sensitive data encrypted at rest
 - [ ] Secure transport (HTTPS/TLS)
 - [ ] Sensitive data not logged
 - [ ] Data retention policy documented
 
 ### Error Handling
+
 - [ ] Generic errors to users (don't leak details)
 - [ ] Full errors logged securely
 - [ ] Stack traces not exposed
 
 ### Dependencies
+
 - [ ] Regular dependency updates
 - [ ] Vulnerability scanning (bandit, safety)
 - [ ] Known vulnerable packages identified
 
 ### Network Security
+
 - [ ] Rate limiting on APIs
 - [ ] Timeouts on external requests
 - [ ] DDoS protection considerations
@@ -256,6 +266,7 @@ def decrypt_sensitive_data(encrypted: str, key: bytes) -> str:
 ## Common Security Tasks
 
 ### Threat Model Component
+
 - [ ] Identify assets this component accesses
 - [ ] List potential threat actors
 - [ ] Brainstorm attack vectors
@@ -264,6 +275,7 @@ def decrypt_sensitive_data(encrypted: str, key: bytes) -> str:
 - [ ] Document decisions
 
 ### Security Audit Code
+
 - [ ] Check for hardcoded secrets
 - [ ] Review input validation
 - [ ] Check query parameterization
@@ -271,6 +283,7 @@ def decrypt_sensitive_data(encrypted: str, key: bytes) -> str:
 - [ ] Review dependencies
 
 ### Design Secure Feature
+
 - [ ] Threat model the feature
 - [ ] Identify high-risk operations
 - [ ] Implement security controls
@@ -278,6 +291,7 @@ def decrypt_sensitive_data(encrypted: str, key: bytes) -> str:
 - [ ] Test security properties
 
 ### Respond to Vulnerability
+
 - [ ] Assess impact
 - [ ] Determine if exploited
 - [ ] Implement fix
@@ -285,6 +299,7 @@ def decrypt_sensitive_data(encrypted: str, key: bytes) -> str:
 - [ ] Post-incident review
 
 ## Success Criteria
+
 - ✅ Threats identified for all high-value assets
 - ✅ Risk assessment completed
 - ✅ High-severity risks have mitigations

@@ -1,9 +1,11 @@
 # Agent Skill: Model Development
 
 ## Purpose
+
 Handle machine learning tasks: feature engineering, model training, evaluation, and optimization.
 
 ## When to Use
+
 - "Use model-development skill: Create features for..."
 - "Use model-development skill: Train a model for..."
 - "Use model-development skill: Evaluate model performance..."
@@ -48,7 +50,7 @@ Handle machine learning tasks: feature engineering, model training, evaluation, 
 import duckdb
 conn = duckdb.connect('data/racing.duckdb')
 features = conn.execute("""
-    SELECT 
+    SELECT
         race_id,
         AVG(barrier) as avg_barrier,
         MAX(weight) as max_weight
@@ -73,6 +75,7 @@ print(f"Accuracy: {accuracy_score(y_test, preds)}")
 ```
 
 ## Key Files
+
 - `src/features/` - Feature engineering modules
 - `src/models/` - Model training and prediction
 - `models/trained/` - Saved model artifacts
@@ -82,6 +85,7 @@ print(f"Accuracy: {accuracy_score(y_test, preds)}")
 ## Common Tasks
 
 ### Create New Feature
+
 - [ ] Write feature calculation in `src/features/`
 - [ ] Add validation tests
 - [ ] Document calculation and rationale
@@ -89,6 +93,7 @@ print(f"Accuracy: {accuracy_score(y_test, preds)}")
 - [ ] Test on full dataset
 
 ### Train New Model
+
 - [ ] Prepare train/val/test splits
 - [ ] Configure CatBoost parameters
 - [ ] Train with eval set for early stopping
@@ -96,6 +101,7 @@ print(f"Accuracy: {accuracy_score(y_test, preds)}")
 - [ ] Save model with metadata (date, metrics, params)
 
 ### Optimize Model
+
 - [ ] Run hyperparameter grid search
 - [ ] Compare model variants
 - [ ] Analyze feature importance
@@ -103,6 +109,7 @@ print(f"Accuracy: {accuracy_score(y_test, preds)}")
 - [ ] Update model documentation
 
 ## Success Criteria
+
 - ✅ Features are well-documented and validated
 - ✅ Model metrics meet or exceed baseline
 - ✅ Code is reproducible (seeded RNG, documented params)

@@ -1,9 +1,11 @@
 # Agent Skill: Data Engineering
 
 ## Purpose
+
 Handle data pipeline tasks: scraping, validation, transformation, and storage.
 
 ## When to Use
+
 - "Use data-engineering skill: Create a new scraper for..."
 - "Use data-engineering skill: Add data validation for..."
 - "Use data-engineering skill: Refactor the data pipeline..."
@@ -55,6 +57,7 @@ logger.info(f"Processing {venue} on {date}")
 ```
 
 ## Key Files
+
 - `src/data/scrapers/racing_com_graphql.py` - Production scraper reference
 - `src/data/models.py` - Data model definitions
 - `test_racing_graphql.py` - Test suite reference
@@ -63,6 +66,7 @@ logger.info(f"Processing {venue} on {date}")
 ## Common Tasks
 
 ### Add a New Scraper
+
 - [ ] Create `src/data/scrapers/new_scraper.py`
 - [ ] Implement error handling and rate limiting
 - [ ] Create `test_new_scraper.py`
@@ -70,18 +74,21 @@ logger.info(f"Processing {venue} on {date}")
 - [ ] Document in README
 
 ### Validate Data Quality
+
 - [ ] Check for missing fields
 - [ ] Verify data types
 - [ ] Test edge cases (empty results, API errors)
 - [ ] Document completeness percentage
 
 ### Update Data Models
+
 - [ ] Modify `src/data/models.py`
 - [ ] Update scrapers to match new schema
 - [ ] Add migration notes in ARCHITECTURE.md
 - [ ] Update tests
 
 ## Success Criteria
+
 - ✅ Scraper handles all documented APIs
 - ✅ Error handling with graceful fallbacks
 - ✅ Data validation tests pass

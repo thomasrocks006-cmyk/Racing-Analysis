@@ -11,6 +11,7 @@ A complete system to make GitHub Copilot in your workspace behave like Claude So
 **File:** `.github/COPILOT_INSTRUCTIONS.md`
 
 Tells Copilot to:
+
 - Summarize requests before acting
 - Propose plans before making changes
 - Show BEFORE/AFTER code diffs
@@ -21,6 +22,7 @@ Tells Copilot to:
 - Make incremental changes, not huge refactors
 
 **How to use:**
+
 - Paste into chat at start of session, OR
 - Reference: "Read .github/COPILOT_INSTRUCTIONS.md and follow throughout this session"
 
@@ -33,6 +35,7 @@ Tells Copilot to:
 ### 5 Domain-Specific Skills
 
 Each skill file contains:
+
 - Purpose and when to use it
 - Typical workflow (step-by-step)
 - Code patterns specific to that domain
@@ -51,11 +54,13 @@ Each skill file contains:
 ### How to Use Skills
 
 Format:
+
 ```
 Use [skill-name] skill: [task description]
 ```
 
 Examples:
+
 ```
 Use data-engineering skill: Create scraper for Betfair odds API
 
@@ -77,6 +82,7 @@ Use analysis-insights skill: Analyze impact of gear changes on performance
 **File:** `dev/SESSION_NOTES.md`
 
 A persistent "project brain" that the agent refers to for:
+
 - Current sprint goal and focus
 - Active TODO list
 - Design decisions and constraints
@@ -85,11 +91,13 @@ A persistent "project brain" that the agent refers to for:
 - Next steps for future sessions
 
 **Why it matters:**
+
 - Agent maintains context across sessions (not just within one chat)
 - You have a project dashboard in one file
 - New teammates can understand the project state quickly
 
 **How to maintain:**
+
 - At START of session: "Read dev/SESSION_NOTES.md to understand context"
 - At END of session: Update completed tasks, new TODOs, decisions made
 - Keeps context alive between coding sessions
@@ -99,14 +107,18 @@ A persistent "project brain" that the agent refers to for:
 ## Part 4: Setup Guides ✅
 
 ### COPILOT_SETUP_GUIDE.md
+
 Complete walkthrough:
+
 - How to use each component
 - Recommended workflows
 - Example sessions
 - Troubleshooting tips
 
 ### AGENT_SKILLS_ARCHITECTURE.md
+
 Deep dive on:
+
 - Why this design works
 - How skills align with your project
 - How to extend the system
@@ -118,6 +130,7 @@ Deep dive on:
 ## Your New Workflow
 
 ### Start of Session
+
 ```
 "Read .github/COPILOT_INSTRUCTIONS.md and follow those throughout this session.
 Then read dev/SESSION_NOTES.md to understand current context.
@@ -131,6 +144,7 @@ Brief me on:
 ```
 
 ### During Coding
+
 ```
 Use [skill-name] skill: [task description]
 
@@ -138,6 +152,7 @@ Use [skill-name] skill: [task description]
 ```
 
 ### End of Session
+
 ```
 Update dev/SESSION_NOTES.md with:
 - Completed TODOs (mark ✅)
@@ -152,28 +167,32 @@ Update dev/SESSION_NOTES.md with:
 ## Key Benefits
 
 ### Claude-Like Behavior
-✅ Announces plans before acting  
-✅ Shows reasoning (WHY not just WHAT)  
-✅ Explains tradeoffs and constraints  
-✅ Incremental changes, not surprises  
+
+✅ Announces plans before acting
+✅ Shows reasoning (WHY not just WHAT)
+✅ Explains tradeoffs and constraints
+✅ Incremental changes, not surprises
 
 ### Domain Expertise
-✅ Knows your project's patterns  
-✅ References similar code in codebase  
-✅ Includes appropriate error handling  
-✅ Follows your project conventions  
+
+✅ Knows your project's patterns
+✅ References similar code in codebase
+✅ Includes appropriate error handling
+✅ Follows your project conventions
 
 ### Persistent Context
-✅ Remembers sprint goals  
-✅ Tracks completed vs pending work  
-✅ Maintains design decisions  
-✅ Knows constraints and blockers  
+
+✅ Remembers sprint goals
+✅ Tracks completed vs pending work
+✅ Maintains design decisions
+✅ Knows constraints and blockers
 
 ### Composability
-✅ Skills work independently  
-✅ Can combine multiple skills for complex tasks  
-✅ Easy to extend with new skills  
-✅ Evolve as your project grows  
+
+✅ Skills work independently
+✅ Can combine multiple skills for complex tasks
+✅ Easy to extend with new skills
+✅ Evolve as your project grows
 
 ---
 
@@ -209,23 +228,27 @@ Update dev/SESSION_NOTES.md with:
 ## Next Steps
 
 ### Immediate (Today)
+
 1. Read `COPILOT_SETUP_GUIDE.md` for complete context
 2. Try your first session with the new instructions
 3. Use a skill when you have a task
 
 ### Short Term (This Week)
+
 1. Experiment with different skills
 2. Notice how agent behavior changes with skills
 3. Update `dev/SESSION_NOTES.md` at end of each session
 4. Give feedback on what works/doesn't work
 
 ### Medium Term (This Month)
+
 1. Customize instructions/skills to your preferences
 2. Add new skills as you discover patterns
 3. Create mini-playbooks for common workflows
 4. Document your team's best practices in skills
 
 ### Long Term
+
 1. Skills become institutional knowledge
 2. New team members reference skills to understand patterns
 3. Skills evolve as project matures
@@ -236,13 +259,14 @@ Update dev/SESSION_NOTES.md with:
 ## Quick Reference
 
 ### The "Magic" Prompt (Start Every Session)
+
 ```
 Read .github/COPILOT_INSTRUCTIONS.md and follow those throughout this session.
 Then read dev/SESSION_NOTES.md.
 
 Give me:
 1. One-paragraph project overview
-2. Current sprint goal  
+2. Current sprint goal
 3. Five specific TODOs for today
 4. Any blockers or decisions needed
 
@@ -250,6 +274,7 @@ Do NOT start coding yet.
 ```
 
 ### The "Task" Prompt (During Session)
+
 ```
 Use [skill-name] skill: [task description]
 
@@ -257,6 +282,7 @@ Show me a plan first. I'll say "OK" before you make changes.
 ```
 
 ### The "End Session" Prompt (End of Day)
+
 ```
 Update dev/SESSION_NOTES.md:
 - Mark completed TODOs as ✅
@@ -302,7 +328,7 @@ Update dev/SESSION_NOTES.md:
 
 All files are created, documented, and pushed to your repository.
 
-**Branch:** `pr/copilot-swe-agent/2`  
+**Branch:** `pr/copilot-swe-agent/2`
 **Ready to merge:** Yes
 
 ---

@@ -1,9 +1,11 @@
 # Agent Skill: Creativity & Innovation
 
 ## Purpose
+
 Handle creative problem-solving and innovative thinking: brainstorming alternatives, finding novel approaches, challenging assumptions, and thinking outside conventional patterns.
 
 ## When to Use
+
 - "Use creativity skill: Brainstorm alternative architectures for..."
 - "Use creativity skill: Challenge our assumptions about..."
 - "Use creativity skill: Find creative solutions to..."
@@ -39,6 +41,7 @@ Handle creative problem-solving and innovative thinking: brainstorming alternati
 ## Creative Techniques to Apply
 
 ### SCAMPER Method
+
 - **Substitute** - Replace a component with something else
 - **Combine** - Merge with another concept or technology
 - **Adapt** - Adjust for a different purpose or context
@@ -48,6 +51,7 @@ Handle creative problem-solving and innovative thinking: brainstorming alternati
 - **Reverse** - Invert the process or relationships
 
 ### Cross-Domain Thinking
+
 - Borrow patterns from biology (evolution, adaptation)
 - Apply game theory concepts
 - Use storytelling approaches
@@ -55,6 +59,7 @@ Handle creative problem-solving and innovative thinking: brainstorming alternati
 - Learn from nature's solutions (biomimicry)
 
 ### Constraint Relaxation
+
 - "What if we had unlimited budget?"
 - "What if latency didn't matter?"
 - "What if we could store unlimited data?"
@@ -70,13 +75,13 @@ class ExperimentalApproach:
     def __init__(self, hypothesis):
         self.hypothesis = hypothesis
         self.results = {}
-    
+
     def test(self, data, conditions):
         """Run quick experiment to validate."""
         result = self._execute(data, conditions)
         self.results[conditions] = result
         return result
-    
+
     def assess(self):
         """Evaluate if hypothesis holds."""
         return self._score_results()
@@ -85,15 +90,15 @@ class ExperimentalApproach:
 def find_unconventional_solution(problem, search_space):
     """Search for non-obvious solutions."""
     candidates = []
-    
+
     # Try standard approaches
     candidates.extend(standard_solutions(problem))
-    
+
     # Try cross-domain solutions
     candidates.extend(biomimicry_solutions(problem))
     candidates.extend(game_theory_solutions(problem))
     candidates.extend(chaos_theory_solutions(problem))
-    
+
     # Score by novelty AND feasibility
     return rank_by_novelty_and_feasibility(candidates)
 ```
@@ -111,6 +116,7 @@ def find_unconventional_solution(problem, search_space):
 ## Common Creative Tasks
 
 ### Brainstorm Alternative Architectures
+
 - [ ] List all current architectural assumptions
 - [ ] Question each assumption (why do we do it this way?)
 - [ ] Propose 3-5 completely different architectures
@@ -119,6 +125,7 @@ def find_unconventional_solution(problem, search_space):
 - [ ] Prototype the most promising alternative
 
 ### Challenge Technical Assumptions
+
 - [ ] What assumptions underlie this design?
 - [ ] Are they still valid?
 - [ ] What if we removed this constraint?
@@ -126,6 +133,7 @@ def find_unconventional_solution(problem, search_space):
 - [ ] What emerging tech could change this trade-off?
 
 ### Find Novel Solutions to Bottlenecks
+
 - [ ] Analyze the bottleneck from first principles
 - [ ] Apply creative techniques to generate alternatives
 - [ ] Consider non-technical solutions
@@ -133,12 +141,14 @@ def find_unconventional_solution(problem, search_space):
 - [ ] Evaluate for unexpected side benefits
 
 ### Innovate Feature Design
+
 - [ ] What would make this 10x better?
 - [ ] What adjacent features become possible?
 - [ ] How might a user use this in unexpected ways?
 - [ ] What emerging patterns could inspire this?
 
 ## Success Criteria
+
 - ✅ At least 5-10 genuinely different alternatives generated
 - ✅ Non-obvious approaches included (not just variations)
 - ✅ Cross-domain thinking applied

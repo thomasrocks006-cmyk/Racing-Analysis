@@ -5,10 +5,13 @@ This guide explains how to use the specialized agent instructions and skills in 
 ## 1. Operating Instructions
 
 ### Location
+
 `.github/COPILOT_INSTRUCTIONS.md`
 
 ### What It Does
+
 This file contains standing instructions for GitHub Copilot to follow throughout your session. It tells the agent to:
+
 - Summarize requests before acting
 - Propose a plan before making changes
 - Show BEFORE/AFTER for code changes
@@ -22,12 +25,14 @@ Copy the content of `.github/COPILOT_INSTRUCTIONS.md` and paste it into a new Co
 
 **Option B: Reference in Workspace (Recommended)**
 At the start of a new chat, paste this one-liner:
+
 ```
-Read .github/COPILOT_INSTRUCTIONS.md and follow those instructions throughout this session. 
+Read .github/COPILOT_INSTRUCTIONS.md and follow those instructions throughout this session.
 Then read dev/SESSION_NOTES.md and brief me on current context.
 ```
 
 This tells the agent to:
+
 1. Load the operating instructions
 2. Review the session notes
 3. Brief you on the current project state
@@ -35,6 +40,7 @@ This tells the agent to:
 ## 2. Specialized Agent Skills
 
 ### Location
+
 `.github/AGENT_SKILLS/` (5 specialized skill files)
 
 ### Available Skills
@@ -48,11 +54,13 @@ This tells the agent to:
 ### How to Use
 
 **Format:**
+
 ```
 Use [SKILL_NAME] skill: [TASK_DESCRIPTION]
 ```
 
 **Examples:**
+
 ```
 Use data-engineering skill: Create a new scraper for Betfair odds
 
@@ -66,6 +74,7 @@ Use analysis-insights skill: Analyze which gear changes improve performance
 ```
 
 **Multiple Skills in One Session:**
+
 ```
 First, use data-engineering skill: Create new scraper for [source]
 Then, use testing-qa skill: Add unit and integration tests
@@ -76,10 +85,13 @@ Finally, use analysis-insights skill: Create report on data quality
 ## 3. Session Notes Brain File
 
 ### Location
+
 `dev/SESSION_NOTES.md`
 
 ### What It Does
+
 Acts as your project's "session brain" - a persistent memory file that the agent refers to for:
+
 - Current sprint goals
 - Active TODO list
 - Design decisions and constraints
@@ -89,6 +101,7 @@ Acts as your project's "session brain" - a persistent memory file that the agent
 ### How to Update
 
 At the end of each session:
+
 ```
 Update dev/SESSION_NOTES.md with:
 - Completed tasks (move to "Completed Tasks")
@@ -98,6 +111,7 @@ Update dev/SESSION_NOTES.md with:
 ```
 
 At the start of each session:
+
 ```
 Read dev/SESSION_NOTES.md to understand:
 - What we're working on
@@ -112,22 +126,24 @@ Read dev/SESSION_NOTES.md to understand:
 
 1. Open GitHub Copilot chat
 2. Paste:
+
    ```
    Read .github/COPILOT_INSTRUCTIONS.md and follow those throughout this session.
    Then read dev/SESSION_NOTES.md to understand project context.
-   
+
    Based on the session notes, give me:
    - 1-paragraph project overview
    - Current sprint goal
    - 5 specific TODOs we should tackle today
    - Any blockers or decisions needed
-   
+
    Do NOT start coding yet. I'll review this first.
    ```
 
 3. Review the agent's summary
 4. Agree on which TODOs to tackle
 5. As you work, reference skills:
+
    ```
    Use [SKILL_NAME] skill: [TASK]
    ```
@@ -135,6 +151,7 @@ Read dev/SESSION_NOTES.md to understand:
 ### End Session
 
 Before closing, update `dev/SESSION_NOTES.md`:
+
 ```
 Update dev/SESSION_NOTES.md:
 - Mark completed TODOs as ✅
@@ -147,6 +164,7 @@ Update dev/SESSION_NOTES.md:
 ## 5. Example Session
 
 ### Start
+
 ```
 Agent: Read .github/COPILOT_INSTRUCTIONS.md and follow those throughout this session.
 Then read dev/SESSION_NOTES.md and brief me on current context.
@@ -164,6 +182,7 @@ Decisions needed: Should we cache scraper results?
 ```
 
 ### During Session
+
 ```
 Use data-engineering skill: Add gear change parsing to racing_com_graphql.py
 
@@ -179,6 +198,7 @@ Use integration-orchestration skill: Connect gear changes to feature pipeline
 ```
 
 ### End Session
+
 ```
 Update dev/SESSION_NOTES.md with completed work and next steps.
 ```
@@ -186,6 +206,7 @@ Update dev/SESSION_NOTES.md with completed work and next steps.
 ## 6. Tips for Best Results
 
 ### ✅ Do This
+
 - Be specific: "Create the event_scheduler.py module with..." instead of "Build the scheduler"
 - Use skills: Reference the specialized skills for domain-specific knowledge
 - Ask for plans: "Show me a plan first, then we'll approve before coding"
@@ -193,6 +214,7 @@ Update dev/SESSION_NOTES.md with completed work and next steps.
 - Update session notes: Keep the "brain file" current for context continuity
 
 ### ❌ Don't Do This
+
 - Vague requests: "Fix the pipeline" → instead "Fix the race data validation in pipeline"
 - Skip plans: Don't ask agent to code immediately, get a plan first
 - Ignore skills: Each skill has best practices and patterns you should follow
@@ -204,16 +226,19 @@ Update dev/SESSION_NOTES.md with completed work and next steps.
 The instructions and skills are templates. You can:
 
 ### Modify COPILOT_INSTRUCTIONS.md for your preferences
+
 - Change planning steps
 - Add/remove communication preferences
 - Adjust the style guidance
 
 ### Create new agent skills
+
 - Add skills for common patterns in your project
 - Document domain-specific patterns and practices
 - Share across team
 
 ### Update SESSION_NOTES.md frequently
+
 - Use it as your project dashboard
 - Reference it in every chat
 - Keep it in sync with actual work
@@ -221,18 +246,23 @@ The instructions and skills are templates. You can:
 ## 8. Troubleshooting
 
 ### Agent isn't following instructions
+
 → Paste the instructions directly into the chat instead of referencing the file
 
 ### Agent keeps jumping ahead without planning
+
 → Add this to your request: "First, propose a 5-step plan. Wait for 'OK' before making any changes."
 
 ### Agent forgets context between messages
+
 → Reference `dev/SESSION_NOTES.md` again: "Refer back to SESSION_NOTES.md to remind yourself of constraints"
 
 ### Skills don't seem to apply
+
 → Make sure you're using the exact format: "Use [skill-name] skill: [task]"
 
 ### Changed too many files at once
+
 → Use "Roll back to plan and make ONE change at a time" or check git diff
 
 ## 9. Next Steps
@@ -241,10 +271,12 @@ The instructions and skills are templates. You can:
 2. ✅ You have 5 specialized agent skills ready
 3. ✅ You have a session brain file to maintain context
 4. Start your first session with the new setup:
+
    ```
    Read .github/COPILOT_INSTRUCTIONS.md and follow those throughout this session.
    Then read dev/SESSION_NOTES.md.
    ```
+
 5. Reference skills as you work
 6. Update session notes at end of day
 

@@ -1,9 +1,11 @@
 # Agent Skill: Architecture & System Design
 
 ## Purpose
+
 Design, evaluate, and refactor system architecture: making strategic trade-offs, ensuring scalability, maintaining coherence across components, and documenting decisions for long-term maintainability.
 
 ## When to Use
+
 - "Use architecture-design skill: Design the scraper architecture"
 - "Use architecture-design skill: Evaluate alternative architectures"
 - "Use architecture-design skill: Refactor for scalability"
@@ -48,6 +50,7 @@ Design, evaluate, and refactor system architecture: making strategic trade-offs,
 ## Architecture Design Patterns
 
 ### Layered Architecture
+
 ```
 ┌─────────────────────────────────────┐
 │      Presentation/API Layer         │
@@ -60,10 +63,11 @@ Design, evaluate, and refactor system architecture: making strategic trade-offs,
 └─────────────────────────────────────┘
 ```
 
-**Pros:** Easy to understand, organize, test  
+**Pros:** Easy to understand, organize, test
 **Cons:** Can become monolithic, not ideal for distribution
 
 ### Modular Monolith
+
 ```
 ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
 │  Scraper     │  │  Features    │  │  Models      │
@@ -76,10 +80,11 @@ Design, evaluate, and refactor system architecture: making strategic trade-offs,
 └─────────────────────────────────────────────────┘
 ```
 
-**Pros:** Clear module boundaries, testable, can become distributed  
+**Pros:** Clear module boundaries, testable, can become distributed
 **Cons:** Shared infrastructure can become bottleneck
 
 ### Event-Driven Architecture
+
 ```
 ┌──────────────┐
 │  Scraper     │─┐
@@ -94,7 +99,7 @@ Design, evaluate, and refactor system architecture: making strategic trade-offs,
 └──────────────┘
 ```
 
-**Pros:** Loose coupling, scalable, reactive  
+**Pros:** Loose coupling, scalable, reactive
 **Cons:** Complex, hard to debug, eventual consistency
 
 ## Architecture Decision Record (ADR) Template
@@ -145,23 +150,23 @@ from src.models.predictor import ModelPredictor
 
 class RacingAnalysisPipeline:
     """Orchestrate data flow across modules."""
-    
+
     def __init__(self):
         self.scraper = RacingComGraphQLScraper()
         self.feature_builder = FeatureBuilder()
         self.predictor = ModelPredictor()
-    
+
     def process_race(self, venue, date, race_num):
         """End-to-end processing with clear separation."""
         # Layer 1: Data ingestion
         race_card = self.scraper.scrape_race(venue, date, race_num)
-        
+
         # Layer 2: Feature engineering
         features = self.feature_builder.build(race_card)
-        
+
         # Layer 3: Prediction
         predictions = self.predictor.predict(features)
-        
+
         # Layer 4: Results
         return predictions
 
@@ -171,7 +176,7 @@ class RacingPipeline:
         self.scraper = scraper
         self.feature_builder = feature_builder
         self.predictor = predictor
-    
+
     # Allows injecting mocks for testing
 
 # Interface/protocol definition
@@ -220,12 +225,14 @@ except ScrapeError as e:
 ## Key Architectural Principles for Racing-Analysis
 
 ### Separation of Concerns
+
 - Scraping module: Only handles data fetching
 - Feature module: Only builds features
 - Model module: Only predictions
 - Clear interfaces between modules
 
 ### Dependency Direction
+
 ```
 Scraper → Features → Models → Results
    ↑        ↑         ↑
@@ -235,18 +242,21 @@ Scraper → Features → Models → Results
 Lower layers don't know about higher layers.
 
 ### Testability
+
 - Each module testable independently
 - Dependency injection for testing
 - Clear contracts (protocols/interfaces)
 - Mock-friendly design
 
 ### Scalability
+
 - Identify bottlenecks early
 - Design with parallelization in mind
 - Use async/await where appropriate
 - Plan for horizontal scaling
 
 ### Resilience
+
 - Handle failures gracefully
 - Implement retries with backoff
 - Log and monitor errors
@@ -255,6 +265,7 @@ Lower layers don't know about higher layers.
 ## Common Architectural Tasks
 
 ### Design New Component
+
 - [ ] Clarify requirements and constraints
 - [ ] Identify integration points
 - [ ] Define module boundaries
@@ -263,6 +274,7 @@ Lower layers don't know about higher layers.
 - [ ] Prototype key interactions
 
 ### Evaluate Architecture Alternative
+
 - [ ] List criteria (simplicity, performance, scalability, etc.)
 - [ ] Score each alternative
 - [ ] Compare trade-offs
@@ -270,6 +282,7 @@ Lower layers don't know about higher layers.
 - [ ] Make recommendation
 
 ### Refactor for Scalability
+
 - [ ] Profile current system bottleneck
 - [ ] Design scalable alternative
 - [ ] Plan migration strategy
@@ -277,6 +290,7 @@ Lower layers don't know about higher layers.
 - [ ] Verify improvements
 
 ### Review System Coherence
+
 - [ ] Map data flow
 - [ ] Identify tight coupling
 - [ ] Check for consistency
@@ -284,6 +298,7 @@ Lower layers don't know about higher layers.
 - [ ] Document findings
 
 ## Success Criteria
+
 - ✅ Architecture aligns with requirements
 - ✅ Clear separation of concerns
 - ✅ Interfaces are well-defined

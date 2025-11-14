@@ -7,11 +7,13 @@ These specialized skill documents guide the GitHub Copilot agent in this workspa
 When you want the agent to apply specialized knowledge, reference the skill by name:
 
 **Format:**
+
 ```
 Use [SKILL_NAME] skill: [TASK_DESCRIPTION]
 ```
 
 **Examples:**
+
 - "Use data-engineering skill: Create a new Betfair odds scraper"
 - "Use model-development skill: Build features for win prediction"
 - "Use analysis-insights skill: Analyze gear change impact on performance"
@@ -21,9 +23,11 @@ Use [SKILL_NAME] skill: [TASK_DESCRIPTION]
 ## Core Skills (Original 5)
 
 ### 📊 [Data Engineering](./data-engineering.md)
+
 Handle data pipeline tasks: scraping, validation, transformation, and storage.
 
 **Best for:**
+
 - Creating new data scrapers
 - Adding data validation
 - Refactoring pipelines
@@ -33,9 +37,11 @@ Handle data pipeline tasks: scraping, validation, transformation, and storage.
 ---
 
 ### 🤖 [Model Development](./model-development.md)
+
 Handle machine learning tasks: feature engineering, model training, evaluation, and optimization.
 
 **Best for:**
+
 - Feature engineering
 - Model training with CatBoost
 - Hyperparameter optimization
@@ -45,9 +51,11 @@ Handle machine learning tasks: feature engineering, model training, evaluation, 
 ---
 
 ### 📈 [Analysis & Insights](./analysis-insights.md)
+
 Handle analytical tasks: exploratory data analysis, hypothesis testing, reporting, and insights.
 
 **Best for:**
+
 - Exploratory data analysis
 - Statistical testing
 - Visualization creation
@@ -57,9 +65,11 @@ Handle analytical tasks: exploratory data analysis, hypothesis testing, reportin
 ---
 
 ### 🔗 [Integration & Orchestration](./integration-orchestration.md)
+
 Handle system integration: pipeline orchestration, API integration, data flow coordination.
 
 **Best for:**
+
 - Building end-to-end pipelines
 - Integrating new APIs
 - Fixing data flow issues
@@ -69,9 +79,11 @@ Handle system integration: pipeline orchestration, API integration, data flow co
 ---
 
 ### ✅ [Testing & Quality Assurance](./testing-qa.md)
+
 Handle testing and quality assurance: unit tests, integration tests, code quality.
 
 **Best for:**
+
 - Writing unit tests
 - Writing integration tests
 - Debugging failing tests
@@ -83,9 +95,11 @@ Handle testing and quality assurance: unit tests, integration tests, code qualit
 ## Advanced Skills (New!)
 
 ### 💡 [Creativity & Innovation](./creativity-innovation.md)
+
 Handle creative problem-solving: brainstorming alternatives, challenging assumptions, thinking outside the box.
 
 **Best for:**
+
 - Brainstorming alternative architectures
 - Challenging technical assumptions
 - Finding novel solutions to bottlenecks
@@ -93,6 +107,7 @@ Handle creative problem-solving: brainstorming alternatives, challenging assumpt
 - Breaking through design deadlocks
 
 **Key Techniques:**
+
 - SCAMPER method
 - Cross-domain thinking
 - Constraint relaxation
@@ -101,9 +116,11 @@ Handle creative problem-solving: brainstorming alternatives, challenging assumpt
 ---
 
 ### 🔍 [Deep Critical Analysis](./deep-critical-analysis.md)
+
 Handle rigorous, multi-layered critical analysis: gap analysis, assumption testing, harsh critique.
 
 **Best for:**
+
 - Identifying all gaps and flaws
 - Testing assumptions thoroughly
 - Asking tough questions
@@ -111,6 +128,7 @@ Handle rigorous, multi-layered critical analysis: gap analysis, assumption testi
 - Comprehensive risk assessment
 
 **Key Workflow:**
+
 - Gap analysis (6+ categories)
 - Assumption testing
 - Critical questions
@@ -120,9 +138,11 @@ Handle rigorous, multi-layered critical analysis: gap analysis, assumption testi
 ---
 
 ### ⚡ [Performance & Optimization](./performance-optimization.md)
+
 Handle system performance: profiling, bottleneck identification, optimization strategies.
 
 **Best for:**
+
 - Profiling slow code
 - Identifying bottlenecks
 - Optimizing database queries
@@ -130,6 +150,7 @@ Handle system performance: profiling, bottleneck identification, optimization st
 - Benchmarking approaches
 
 **Key Techniques:**
+
 - Profiling (cProfile, memory_profiler)
 - Algorithm optimization
 - Caching and memoization
@@ -138,9 +159,11 @@ Handle system performance: profiling, bottleneck identification, optimization st
 ---
 
 ### 🏗️ [Architecture & System Design](./architecture-design.md)
+
 Handle system design: architecture patterns, design decisions, refactoring strategies.
 
 **Best for:**
+
 - Designing component architecture
 - Evaluating design alternatives
 - Refactoring for scalability
@@ -148,6 +171,7 @@ Handle system design: architecture patterns, design decisions, refactoring strat
 - Designing for resilience
 
 **Key Patterns:**
+
 - Layered architecture
 - Modular monolith
 - Event-driven architecture
@@ -156,9 +180,11 @@ Handle system design: architecture patterns, design decisions, refactoring strat
 ---
 
 ### 🔐 [Security & Risk Management](./security-risk-management.md)
+
 Handle security: threat modeling, vulnerability assessment, risk mitigation.
 
 **Best for:**
+
 - Threat modeling components
 - Identifying security vulnerabilities
 - Risk assessment and prioritization
@@ -166,6 +192,7 @@ Handle security: threat modeling, vulnerability assessment, risk mitigation.
 - Compliance and audit
 
 **Key Techniques:**
+
 - Threat modeling
 - Attack surface analysis
 - Risk matrix assessment
@@ -176,6 +203,7 @@ Handle security: threat modeling, vulnerability assessment, risk mitigation.
 ## Advanced Skill Combinations
 
 ### System Architecture Review (Thorough)
+
 ```
 First, use deep-critical-analysis skill: Ruthlessly analyze current architecture
 Then, use creativity skill: Brainstorm alternative architectures
@@ -185,6 +213,7 @@ Then, use testing-qa skill: Plan testing strategy for changes
 ```
 
 ### Feature Engineering Innovation
+
 ```
 First, use analysis-insights skill: Analyze the data and phenomenon
 Then, use creativity skill: Brainstorm unconventional features
@@ -194,6 +223,7 @@ Then, use deep-critical-analysis skill: Critique feature effectiveness
 ```
 
 ### Performance Optimization Deep Dive
+
 ```
 First, use performance-optimization skill: Profile and identify bottleneck
 Then, use deep-critical-analysis skill: Analyze root causes thoroughly
@@ -203,6 +233,7 @@ Then, use testing-qa skill: Benchmark improvements
 ```
 
 ### Complete Scraper Development (Advanced)
+
 ```
 First, use security-risk skill: Threat model data source
 Then, use architecture-design skill: Design scraper architecture
@@ -213,6 +244,7 @@ Then, use integration-orchestration skill: Connect to pipeline
 ```
 
 ### Critical Analysis Before Major Refactor
+
 ```
 First, use deep-critical-analysis skill: Identify all gaps and risks
 Then, use creativity skill: Challenge assumptions and generate alternatives

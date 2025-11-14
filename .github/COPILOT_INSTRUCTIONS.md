@@ -15,6 +15,7 @@ Your style should mirror Claude Sonnet 4.5 behavior:
 ## Code Changes
 
 When editing code:
+
 - Specify each file you'll touch upfront
 - Show BEFORE and AFTER for non-trivial changes
 - Explain WHY in 2-4 bullet points
@@ -24,6 +25,7 @@ When editing code:
 ## Repository Awareness
 
 Before significant work:
+
 - Scan repo structure and summarize it
 - Check `docs/`, `ARCHITECTURE.md`, `README.md` for context
 - Re-use existing patterns, styles, and abstractions from this codebase
@@ -32,10 +34,12 @@ Before significant work:
 ## Task Scoping
 
 Better task formats:
+
 - ✅ "Create the `gear_analysis.py` module with these interfaces per ARCHITECTURE.md, plus unit tests"
 - ❌ "Build the whole ML pipeline"
 
 You can ask for:
+
 - PLAN ONLY (no code yet)
 - PLAN + IMPLEMENT FIRST FILE
 - REVIEW EXISTING PLAN

@@ -34,12 +34,14 @@ Agent Skills System
 ### ✅ The Agent Becomes Domain-Aware
 
 Without skills:
+
 ```
 Agent: "I'll help you create a scraper... now a model... now a test..."
 → Generic advice, inconsistent patterns, may miss domain-specific best practices
 ```
 
 With skills:
+
 ```
 Agent: [loads data-engineering skill] "I'll create a scraper following these patterns..."
 → Consistent with your project's scraper architecture
@@ -50,11 +52,13 @@ Agent: [loads data-engineering skill] "I'll create a scraper following these pat
 ### ✅ Prevents Context Switching Cost
 
 Data engineers need to think about:
+
 - API design, rate limits, error recovery
 - Data validation, completeness metrics
 - Scraper testability and reproducibility
 
 ML engineers need to think about:
+
 - Feature interactions, data leakage
 - Train/val/test splits, cross-validation
 - Hyperparameter search, evaluation metrics
@@ -64,6 +68,7 @@ When you reference the right skill, the agent focuses on the right things.
 ### ✅ Scales With Your Project
 
 As your project grows:
+
 - Add new skills for emerging patterns (e.g., "Betfair Integration", "Qualitative Analysis")
 - Update existing skills when you discover better patterns
 - Skills become institutional knowledge for your team
@@ -71,12 +76,15 @@ As your project grows:
 ## How Skills Map to Your Project
 
 ### Data Engineering Skill
+
 **Aligns with:**
+
 - `src/data/scrapers/` - Existing scrapers you want to follow
 - `src/data/models.py` - Data model definitions
 - `ARCHITECTURE.md` - Pipeline design
 
 **Example:** When you say "Use data-engineering skill: Create a Betfair odds scraper", the agent:
+
 1. Loads the data-engineering skill
 2. Reviews `racing_com_graphql.py` as a template
 3. Follows the same error handling, logging, rate limiting patterns
@@ -84,34 +92,43 @@ As your project grows:
 5. Returns code that fits naturally into your codebase
 
 ### Model Development Skill
+
 **Aligns with:**
+
 - `src/features/` - Feature engineering patterns
 - `src/models/` - Model training patterns
 - CatBoost configs in your project
 - Your existing evaluation practices
 
 **Example:** "Use model-development skill: Engineer features for win prediction"
+
 1. Agent reviews your feature structure
 2. Uses DuckDB queries like existing features
 3. Tests features with your validation patterns
 4. Returns code that integrates with existing model pipeline
 
 ### Analysis & Insights Skill
+
 **Aligns with:**
+
 - Your DuckDB data warehouse setup
 - Matplotlib/Seaborn visualization style
 - Documentation standards in `docs/`
 - Report structure you prefer
 
 ### Integration & Orchestration Skill
+
 **Aligns with:**
+
 - `ARCHITECTURE.md` - Your pipeline design
 - Error handling patterns in your codebase
 - Logging and monitoring setup
 - Existing orchestration code
 
 ### Testing & QA Skill
+
 **Aligns with:**
+
 - `tests/` directory structure
 - Pytest configuration in `pyproject.toml`
 - Test patterns in `test_*.py` files
@@ -132,6 +149,7 @@ If you discover a pattern that crops up repeatedly (e.g., "Betfair API Integrati
 ```
 
 **Template for new skill:**
+
 ```markdown
 # Agent Skill: [Name]
 
@@ -196,6 +214,7 @@ Finally:
 ```
 
 Each skill brings its expertise to the appropriate phase:
+
 1. **Analysis** - Understand the phenomenon
 2. **Model Dev** - Build features
 3. **Testing** - Validate quality
@@ -205,6 +224,7 @@ Each skill brings its expertise to the appropriate phase:
 ## Comparison: With vs Without Skills
 
 ### Without Skills
+
 ```
 You: "Create a new scraper for Betfair"
 Agent: [Generic Python scraper code]
@@ -212,6 +232,7 @@ Problem: Might not follow your patterns, miss error handling, skip tests
 ```
 
 ### With Skills
+
 ```
 You: "Use data-engineering skill: Create scraper for Betfair live odds API"
 Agent: [Reads data-engineering skill]
@@ -235,24 +256,28 @@ Agent: [Returns code that integrates seamlessly]
 ## Future Enhancements
 
 ### 1. Skill Versions
+
 ```
 .github/AGENT_SKILLS/data-engineering.md@v1.0
 .github/AGENT_SKILLS/data-engineering.md@v1.1  # Improved pattern
 ```
 
 ### 2. Skill Dependencies
+
 ```
 "model-development skill requires data-engineering skill"
 → Agent loads both in correct order
 ```
 
 ### 3. Skill Combinations
+
 ```
 "data+model skill: Create scraper AND train model on scraped data"
 → Agent coordinates between skills
 ```
 
 ### 4. Skill Templates
+
 ```
 .github/AGENT_SKILLS/_TEMPLATE.md
 → For adding new skills quickly
@@ -280,11 +305,11 @@ Agent: [Returns code that integrates seamlessly]
 
 The 5-skill system I've created is:
 
-✅ **Ready to use immediately** - Just reference them in your chat  
-✅ **Aligned with your project** - Based on your existing patterns  
-✅ **Extensible** - Easy to add new skills or evolve existing ones  
-✅ **Composable** - Skills work together for complex projects  
-✅ **Documented** - Full guidance in each skill file  
+✅ **Ready to use immediately** - Just reference them in your chat
+✅ **Aligned with your project** - Based on your existing patterns
+✅ **Extensible** - Easy to add new skills or evolve existing ones
+✅ **Composable** - Skills work together for complex projects
+✅ **Documented** - Full guidance in each skill file
 
 **Start using them today by referencing skills when you have tasks:**
 

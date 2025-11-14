@@ -1,9 +1,11 @@
 # Agent Skill: Analysis & Insights
 
 ## Purpose
+
 Handle analytical tasks: exploratory data analysis, hypothesis testing, reporting, and insights extraction.
 
 ## When to Use
+
 - "Use analysis-insights skill: Analyze..."
 - "Use analysis-insights skill: Generate report for..."
 - "Use analysis-insights skill: Test hypothesis about..."
@@ -50,7 +52,7 @@ import pandas as pd
 
 conn = duckdb.connect('data/racing.duckdb')
 df = conn.execute("""
-    SELECT 
+    SELECT
         venue,
         COUNT(*) as race_count,
         AVG(field_size) as avg_field_size
@@ -75,6 +77,7 @@ plt.savefig('reports/odds_by_venue.png', dpi=300, bbox_inches='tight')
 ```
 
 ## Key Files
+
 - `data/racing.duckdb` - Main data warehouse
 - `docs/qualitative-pipeline/` - Analysis documentation
 - `reports/` - Output reports and visualizations
@@ -84,6 +87,7 @@ plt.savefig('reports/odds_by_venue.png', dpi=300, bbox_inches='tight')
 ## Common Tasks
 
 ### Exploratory Data Analysis
+
 - [ ] Load and inspect raw data
 - [ ] Calculate summary statistics
 - [ ] Identify distributions and outliers
@@ -91,6 +95,7 @@ plt.savefig('reports/odds_by_venue.png', dpi=300, bbox_inches='tight')
 - [ ] Create initial visualizations
 
 ### Statistical Testing
+
 - [ ] Define null and alternative hypotheses
 - [ ] Select appropriate statistical test
 - [ ] Check test assumptions
@@ -98,6 +103,7 @@ plt.savefig('reports/odds_by_venue.png', dpi=300, bbox_inches='tight')
 - [ ] Interpret results with caution
 
 ### Generate Report
+
 - [ ] Write executive summary
 - [ ] Include key findings and visualizations
 - [ ] Explain methodology
@@ -105,6 +111,7 @@ plt.savefig('reports/odds_by_venue.png', dpi=300, bbox_inches='tight')
 - [ ] Suggest next steps
 
 ### Create Dashboard
+
 - [ ] Identify key metrics
 - [ ] Design dashboard layout
 - [ ] Implement interactive elements (if applicable)
@@ -112,6 +119,7 @@ plt.savefig('reports/odds_by_venue.png', dpi=300, bbox_inches='tight')
 - [ ] Document how to use
 
 ## Success Criteria
+
 - ✅ Analysis answers the research question clearly
 - ✅ Methodology is documented and reproducible
 - ✅ Visualizations are clear and well-labeled
