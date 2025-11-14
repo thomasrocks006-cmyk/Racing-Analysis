@@ -55,7 +55,7 @@ class RacingComGraphQLScraper:
 
     GRAPHQL_URL = "https://graphql.rmdprod.racing.com/"
     API_KEY = "da2-6nsi4ztsynar3l3frgxf77q5fe"
-    
+
     HEADERS = {
         "x-api-key": API_KEY,
         "Content-Type": "application/json",
@@ -161,17 +161,14 @@ class RacingComGraphQLScraper:
         try:
             # Execute GraphQL query with rate limiting
             time.sleep(self.delay)
-            
+
             response = self.session.post(
                 self.GRAPHQL_URL,
                 json={
                     "query": self.RACE_QUERY,
-                    "variables": {
-                        "venueName": venue_name,
-                        "date": date_str
-                    }
+                    "variables": {"venueName": venue_name, "date": date_str},
                 },
-                timeout=15
+                timeout=15,
             )
             response.raise_for_status()
 
@@ -192,22 +189,30 @@ class RacingComGraphQLScraper:
             if isinstance(meeting, list):
                 if not meeting:
                     raise ValueError(f"No meeting found for {venue_name} on {date_str}")
-                meeting = meeting[0]  # Take first meeting (usually the main one, not trials)
+                meeting = meeting[
+                    0
+                ]  # Take first meeting (usually the main one, not trials)
 
             races = meeting.get("races", [])
             if not races:
                 raise ValueError(f"No races found at {venue_name} on {date_str}")
 
             # Filter for our specific race number
-            race_data = next((r for r in races if r.get("raceNumber") == race_number), None)
+            race_data = next(
+                (r for r in races if r.get("raceNumber") == race_number), None
+            )
             if not race_data:
-                raise ValueError(f"Race {race_number} not found at {venue_name} on {date_str}")
-            
+                raise ValueError(
+                    f"Race {race_number} not found at {venue_name} on {date_str}"
+                )
+
             # Build race ID
             venue_code = meeting.get("venueCode", venue_name.upper()[:3])
             race_id = f"{venue_code}-{date_str}-R{race_number}"
 
-            race = self._parse_race(meeting, race_data, race_id, race_date, race_number, venue_code)
+            race = self._parse_race(
+                meeting, race_data, race_id, race_date, race_number, venue_code
+            )
             horses, jockeys, trainers, runs, gear = self._parse_entries(
                 race_data.get("raceEntries", []), race_id
             )
@@ -241,7 +246,13 @@ class RacingComGraphQLScraper:
             raise
 
     def _parse_race(
-        self, meeting: dict, race_data: dict, race_id: str, race_date: date, race_number: int, venue_code: str
+        self,
+        meeting: dict,
+        race_data: dict,
+        race_id: str,
+        race_date: date,
+        race_number: int,
+        venue_code: str,
     ) -> Race:
         """
         Parse race details from GraphQL response.
@@ -267,7 +278,9 @@ class RacingComGraphQLScraper:
         start_datetime_str = race_data.get("raceStartDateTime")
         if start_datetime_str:
             try:
-                start_time = datetime.fromisoformat(start_datetime_str.replace("Z", "+00:00"))
+                start_time = datetime.fromisoformat(
+                    start_datetime_str.replace("Z", "+00:00")
+                )
             except (ValueError, AttributeError):
                 pass
 
@@ -278,7 +291,8 @@ class RacingComGraphQLScraper:
             venue_name=meeting.get("venueName", "Unknown"),
             race_number=race_number,
             race_name=race_data.get("name", f"Race {race_number}"),
-            distance=self._parse_distance(race_data.get("distance")) or 1200,  # Default 1200m
+            distance=self._parse_distance(race_data.get("distance"))
+            or 1200,  # Default 1200m
             track_condition=meeting.get("trackCondition"),
             track_type=track_type,
             rail_position=meeting.get("railPosition"),
@@ -292,7 +306,13 @@ class RacingComGraphQLScraper:
 
     def _parse_entries(
         self, entries: list[dict], race_id: str
-    ) -> tuple[list[ScrapedHorse], list[ScrapedJockey], list[ScrapedTrainer], list[ScrapedRun], list[ScrapedGear]]:
+    ) -> tuple[
+        list[ScrapedHorse],
+        list[ScrapedJockey],
+        list[ScrapedTrainer],
+        list[ScrapedRun],
+        list[ScrapedGear],
+    ]:
         """
         Parse race entries into model instances.
 
@@ -313,7 +333,7 @@ class RacingComGraphQLScraper:
             # Parse horse
             horse_data = entry.get("horse", {})
             horse_name = horse_data.get("name", "Unknown")
-            
+
             sex = None  # Default to None if not recognized
             sex_str = horse_data.get("sex", "").upper()
             if sex_str in ["G", "GELDING"]:
@@ -321,7 +341,9 @@ class RacingComGraphQLScraper:
             elif sex_str in ["M", "MARE"]:
                 sex = SexType.MARE
             elif sex_str in ["H", "HORSE"]:
-                sex = SexType.STALLION  # "Horse" typically means stallion in racing context
+                sex = (
+                    SexType.STALLION
+                )  # "Horse" typically means stallion in racing context
             elif sex_str in ["C", "COLT"]:
                 sex = SexType.COLT
             elif sex_str in ["F", "FILLY"]:
@@ -339,22 +361,26 @@ class RacingComGraphQLScraper:
 
             # Parse jockey
             jockey_data = entry.get("jockey") or {}
-            jockey_name = jockey_data.get("name") or jockey_data.get("surname", "Unknown")
-            
+            jockey_name = jockey_data.get("name") or jockey_data.get(
+                "surname", "Unknown"
+            )
+
             jockey = ScrapedJockey(name=jockey_name)
             jockeys.append(jockey)
 
             # Parse trainer
             trainer_data = entry.get("trainer") or {}
-            trainer_name = trainer_data.get("name") or trainer_data.get("surname", "Unknown")
-            
+            trainer_name = trainer_data.get("name") or trainer_data.get(
+                "surname", "Unknown"
+            )
+
             trainer = ScrapedTrainer(name=trainer_name)
             trainers.append(trainer)
 
             # Parse run
             barrier = self._parse_int(entry.get("barrierNumber"))
             weight = self._parse_decimal(entry.get("weight"))
-            
+
             run = ScrapedRun(
                 race_id=race_id,
                 horse_name=horse_name,
@@ -376,10 +402,10 @@ class RacingComGraphQLScraper:
                     gear_str = ", ".join(str(g) for g in gear_data if g)
                 else:
                     gear_str = str(gear_data)
-                
+
                 gear_changes = entry.get("gearChanges", "")
                 has_changes = entry.get("gearHasChanges", False)
-                
+
                 gear = ScrapedGear(
                     race_id=race_id,
                     horse_name=horse_name,
@@ -428,7 +454,7 @@ class RacingComGraphQLScraper:
             return GearType.NONE
 
         gear_lower = gear_str.lower()
-        
+
         if "blinker" in gear_lower:
             return GearType.BLINKERS
         elif "visor" in gear_lower:
@@ -493,11 +519,11 @@ class RacingComGraphQLScraper:
 
         try:
             time.sleep(self.delay)
-            
+
             response = self.session.post(
                 self.GRAPHQL_URL,
                 json={"query": query, "variables": {"date": date_str}},
-                timeout=15
+                timeout=15,
             )
             response.raise_for_status()
 
