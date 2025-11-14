@@ -8,8 +8,8 @@ Tests:
 3. What CSS selectors work?
 """
 
-import sys
 import logging
+import sys
 from pathlib import Path
 
 # Add src to path
@@ -56,12 +56,18 @@ def test_melbourne_cup():
             if race_card.runs:
                 logger.info("\nFirst 5 Runners:")
                 for i, run in enumerate(race_card.runs[:5]):
-                    horse = next((h for h in race_card.horses if h.horse_id == run.horse_id), None)
-                    jockey = next((j for j in race_card.jockeys if j.jockey_id == run.jockey_id), None)
-                    
+                    horse = next(
+                        (h for h in race_card.horses if h.horse_id == run.horse_id),
+                        None,
+                    )
+                    jockey = next(
+                        (j for j in race_card.jockeys if j.jockey_id == run.jockey_id),
+                        None,
+                    )
+
                     horse_name = horse.name if horse else "Unknown"
                     jockey_name = jockey.name if jockey else "Unknown"
-                    
+
                     logger.info(
                         f"  {run.barrier}. {horse_name} - "
                         f"{jockey_name} ({run.weight_carried}kg)"
@@ -100,49 +106,55 @@ def test_multiple_races():
 
             for race_num in test_races:
                 logger.info(f"\nScraping Flemington R{race_num}...")
-                
+
                 try:
                     race_card = scraper.scrape_race(
                         "flemington", "2024-11-05", race_number=race_num
                     )
-                    
+
                     completeness = race_card.validate_completeness()
                     runners = len(race_card.runs)
-                    
-                    results.append({
-                        "race": race_num,
-                        "completeness": completeness,
-                        "runners": runners,
-                        "pass": completeness >= 80,
-                    })
-                    
+
+                    results.append(
+                        {
+                            "race": race_num,
+                            "completeness": completeness,
+                            "runners": runners,
+                            "pass": completeness >= 80,
+                        }
+                    )
+
                     logger.info(
                         f"  R{race_num}: {runners} runners, "
                         f"{completeness:.1f}% complete "
                         f"{'✅' if completeness >= 80 else '⚠️'}"
                     )
-                
+
                 except Exception as e:
                     logger.error(f"  R{race_num}: Failed - {e}")
-                    results.append({
-                        "race": race_num,
-                        "completeness": 0,
-                        "runners": 0,
-                        "pass": False,
-                    })
+                    results.append(
+                        {
+                            "race": race_num,
+                            "completeness": 0,
+                            "runners": 0,
+                            "pass": False,
+                        }
+                    )
 
         # Summary
         logger.info("\n" + "=" * 60)
         logger.info("SUMMARY")
         logger.info("=" * 60)
-        
+
         passed = sum(1 for r in results if r["pass"])
         total = len(results)
-        avg_completeness = sum(r["completeness"] for r in results) / total if total > 0 else 0
-        
+        avg_completeness = (
+            sum(r["completeness"] for r in results) / total if total > 0 else 0
+        )
+
         logger.info(f"Tests Passed: {passed}/{total}")
         logger.info(f"Average Completeness: {avg_completeness:.1f}%")
-        
+
         if passed == total:
             logger.info("✅ ALL TESTS PASSED")
         else:
@@ -172,7 +184,7 @@ if __name__ == "__main__":
     logger.info("\n" + "=" * 60)
     logger.info("FINAL RESULT")
     logger.info("=" * 60)
-    
+
     if test1_pass and test2_pass:
         logger.info("✅ ALL TESTS PASSED - Scraper is functional!")
         sys.exit(0)

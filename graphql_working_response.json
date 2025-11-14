@@ -1,0 +1,5672 @@
+{
+  "data": {
+    "GetMeetingByDate": [
+      {
+        "id": "5186487",
+        "venueName": "dubbo",
+        "venueCode": 133,
+        "date": "2025-11-14",
+        "track": "Turf",
+        "trackCondition": null,
+        "railPosition": null,
+        "weather": null,
+        "state": "NSW",
+        "races": [
+          {
+            "id": "5396641",
+            "raceNumber": 1,
+            "name": "BENCHMARK 66 HANDICAP",
+            "distance": "1600m",
+            "class": "BM66",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5396642",
+            "raceNumber": 2,
+            "name": "BENCHMARK 58 HANDICAP",
+            "distance": "1100m",
+            "class": "BM58",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5396643",
+            "raceNumber": 3,
+            "name": "BENCHMARK 58 HANDICAP",
+            "distance": "1400m",
+            "class": "BM58",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5396644",
+            "raceNumber": 4,
+            "name": "COUNTRY BOOSTED CLASS 1 HANDICAP",
+            "distance": "1200m",
+            "class": "CTRY CL1",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5396645",
+            "raceNumber": 5,
+            "name": "CLASS 1 & MAIDEN PLATE",
+            "distance": "1600m",
+            "class": "CL1-SW",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5396646",
+            "raceNumber": 6,
+            "name": "COUNTRY BOOSTED MAIDEN PLATE",
+            "distance": "1000m",
+            "class": "CTRY MDN-SW",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5396647",
+            "raceNumber": 7,
+            "name": "MAIDEN HANDICAP",
+            "distance": "1300m",
+            "class": "MDN",
+            "status": "Nominations",
+            "raceEntries": []
+          }
+        ]
+      },
+      {
+        "id": "5193049",
+        "venueName": "flemington",
+        "venueCode": 151,
+        "date": "2025-11-14",
+        "track": "Turf",
+        "trackCondition": "N/A",
+        "railPosition": null,
+        "weather": null,
+        "state": "VIC",
+        "races": [
+          {
+            "id": "5447224",
+            "raceNumber": 1,
+            "name": "Jump Out - Good 4",
+            "distance": "1000m",
+            "class": "JumpOut - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447225",
+            "raceNumber": 2,
+            "name": "Jump Out - Good 4",
+            "distance": "1000m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447226",
+            "raceNumber": 3,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447227",
+            "raceNumber": 4,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "JumpOut - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447228",
+            "raceNumber": 5,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447229",
+            "raceNumber": 6,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "JumpOut - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447230",
+            "raceNumber": 7,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447231",
+            "raceNumber": 8,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "JumpOut - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447232",
+            "raceNumber": 9,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447233",
+            "raceNumber": 10,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "JumpOut - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447234",
+            "raceNumber": 11,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "JumpOut - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447235",
+            "raceNumber": 12,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447236",
+            "raceNumber": 13,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447237",
+            "raceNumber": 14,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "JumpOut - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447238",
+            "raceNumber": 15,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447239",
+            "raceNumber": 16,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "JumpOut - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447240",
+            "raceNumber": 17,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447241",
+            "raceNumber": 18,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "JumpOut - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          }
+        ]
+      },
+      {
+        "id": "5193050",
+        "venueName": "bet365-seymour",
+        "venueCode": 355,
+        "date": "2025-11-14",
+        "track": "Turf",
+        "trackCondition": "N/A",
+        "railPosition": null,
+        "weather": null,
+        "state": "VIC",
+        "races": [
+          {
+            "id": "5447429",
+            "raceNumber": 1,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447430",
+            "raceNumber": 2,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447431",
+            "raceNumber": 3,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447432",
+            "raceNumber": 4,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447433",
+            "raceNumber": 5,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447434",
+            "raceNumber": 6,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447435",
+            "raceNumber": 7,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447436",
+            "raceNumber": 8,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447437",
+            "raceNumber": 9,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447438",
+            "raceNumber": 10,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447439",
+            "raceNumber": 11,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447440",
+            "raceNumber": 12,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447441",
+            "raceNumber": 13,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447442",
+            "raceNumber": 14,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447443",
+            "raceNumber": 15,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447444",
+            "raceNumber": 16,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447445",
+            "raceNumber": 17,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447446",
+            "raceNumber": 18,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447447",
+            "raceNumber": 19,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          },
+          {
+            "id": "5447448",
+            "raceNumber": 20,
+            "name": "Jump Out - Good 4",
+            "distance": "800m",
+            "class": "Jump Out - G4",
+            "status": "Nominations",
+            "raceEntries": []
+          }
+        ]
+      },
+      {
+        "id": "5191654",
+        "venueName": "longford",
+        "venueCode": 239,
+        "date": "2025-11-14",
+        "track": "Turf",
+        "trackCondition": "Good",
+        "railPosition": null,
+        "weather": "Fine",
+        "state": "TAS",
+        "races": [
+          {
+            "id": "5430621",
+            "raceNumber": 1,
+            "name": "Open Trial",
+            "distance": "1400m",
+            "class": "OPN-TRL",
+            "status": "Results",
+            "raceEntries": [
+              {
+                "barrierNumber": 2,
+                "horse": {
+                  "name": "Asva",
+                  "sex": "Gelding",
+                  "age": "6",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "E.L.Byrne Burke"
+                },
+                "trainer": {
+                  "name": "G.T.Stevenson"
+                },
+                "weight": null,
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Lovin' Bev",
+                  "sex": "Mare",
+                  "age": "6",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "T.Baker"
+                },
+                "trainer": {
+                  "name": "S.M.Carr"
+                },
+                "weight": null,
+                "gearList": [
+                  "Tongue Control Bit"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 1,
+                "horse": {
+                  "name": "Ashy Boy",
+                  "sex": "Gelding",
+                  "age": "7YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "D.M.Ganderton"
+                },
+                "trainer": {
+                  "name": "G.T.Stevenson"
+                },
+                "weight": null,
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 4,
+                "horse": {
+                  "name": "Es And Es",
+                  "sex": "Gelding",
+                  "age": "5YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "C.M.Jordan"
+                },
+                "trainer": {
+                  "name": "G.T.Stevenson"
+                },
+                "weight": null,
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 6,
+                "horse": {
+                  "name": "Spring Bean",
+                  "sex": "Gelding",
+                  "age": "6YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.G.Radley"
+                },
+                "trainer": {
+                  "name": "G.T.Stevenson"
+                },
+                "weight": null,
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 7,
+                "horse": {
+                  "name": "Coastal Strike",
+                  "sex": "Gelding",
+                  "age": "6",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "I.Bowles"
+                },
+                "trainer": {
+                  "name": "P.A.Hill"
+                },
+                "weight": null,
+                "gearList": [
+                  "Compression Hood With Ear Muffs"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "King Island",
+                  "sex": "Gelding",
+                  "age": "9",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "K.G.Baker"
+                },
+                "trainer": {
+                  "name": "A.M.Brakey"
+                },
+                "weight": null,
+                "gearList": [
+                  "Tongue Control and Lugging Bit"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5430623",
+            "raceNumber": 2,
+            "name": "Open Trial",
+            "distance": "800m",
+            "class": "OPN-TRL",
+            "status": "Results",
+            "raceEntries": [
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Seydoux",
+                  "sex": "Mare",
+                  "age": "7",
+                  "colour": "Brown or Black"
+                },
+                "jockey": {
+                  "name": "E.L.Byrne Burke"
+                },
+                "trainer": {
+                  "name": "A.Trinder"
+                },
+                "weight": null,
+                "gearList": [
+                  "Cross-over Nose Band OFF",
+                  "Nasal Strip OFF",
+                  "Tongue Tie"
+                ],
+                "gearChanges": "Cross-over Nose Band OFF AGAIN, Nasal Strip OFF AGAIN, Tongue Tie AGAIN",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 4,
+                "horse": {
+                  "name": "First Accused",
+                  "sex": "Gelding",
+                  "age": "8YO",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "C.M.Jordan"
+                },
+                "trainer": {
+                  "name": "G.T.Stevenson"
+                },
+                "weight": null,
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Rubble 'N' Fudd",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Grey-Blk"
+                },
+                "jockey": {
+                  "name": "T.Baker"
+                },
+                "trainer": {
+                  "name": "J.K.Blacker"
+                },
+                "weight": null,
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 1,
+                "horse": {
+                  "name": "Press For Boom",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "J.G.Radley"
+                },
+                "trainer": {
+                  "name": "J.K.Blacker"
+                },
+                "weight": null,
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 2,
+                "horse": {
+                  "name": "Belpine Miss",
+                  "sex": "Mare",
+                  "age": "7",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "K.G.Baker"
+                },
+                "trainer": {
+                  "name": "B.A.Baker"
+                },
+                "weight": null,
+                "gearList": [
+                  "Bit Lifter"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 0,
+                "horse": {
+                  "name": "Wane's Quest",
+                  "sex": "Gelding",
+                  "age": "7",
+                  "colour": "Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "B.R.Franklin"
+                },
+                "weight": null,
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5430625",
+            "raceNumber": 3,
+            "name": "2YO/3YO Trial",
+            "distance": "800m",
+            "class": "2&3Y-TRL",
+            "status": "Results",
+            "raceEntries": [
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Miss Lyra",
+                  "sex": "Filly",
+                  "age": "3YO",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "E.L.Byrne Burke"
+                },
+                "trainer": {
+                  "name": "A.Trinder"
+                },
+                "weight": null,
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 2,
+                "horse": {
+                  "name": "Up To Tori",
+                  "sex": "Filly",
+                  "age": "3",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "T.Baker"
+                },
+                "trainer": {
+                  "name": "S.M.Carr"
+                },
+                "weight": null,
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 1,
+                "horse": {
+                  "name": "Brutal Empire",
+                  "sex": "Colt",
+                  "age": "2YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.G.Radley"
+                },
+                "trainer": {
+                  "name": "J.K.Blacker"
+                },
+                "weight": null,
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5447427",
+            "raceNumber": 4,
+            "name": "Maiden/Class 2  Trial",
+            "distance": "800m",
+            "class": "MDN/CL2-TRL",
+            "status": "Results",
+            "raceEntries": [
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Diesel's Sunshine",
+                  "sex": "Mare",
+                  "age": "7YO",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "J.G.Radley"
+                },
+                "trainer": {
+                  "name": "A.E.Roach"
+                },
+                "weight": null,
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 2,
+                "horse": {
+                  "name": "King Pin Power",
+                  "sex": "Gelding",
+                  "age": "5YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "K.G.Baker"
+                },
+                "trainer": {
+                  "name": "B.P.M.Kent"
+                },
+                "weight": null,
+                "gearList": [
+                  "Lugging Bit"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 6,
+                "horse": {
+                  "name": "Thickskinned",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "D.M.Ganderton"
+                },
+                "trainer": {
+                  "name": "M.A.Ganderton"
+                },
+                "weight": null,
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)",
+                  "Nose Roll"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Zulu Fields",
+                  "sex": "Mare",
+                  "age": "6",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "C.M.Jordan"
+                },
+                "trainer": {
+                  "name": "P.W.Dargan"
+                },
+                "weight": null,
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 1,
+                "horse": {
+                  "name": "Guber",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "E.Annells"
+                },
+                "trainer": {
+                  "name": "P.W.Dargan"
+                },
+                "weight": null,
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 4,
+                "horse": {
+                  "name": "Called Through",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "I.Bowles"
+                },
+                "trainer": {
+                  "name": "A.C.Fulton"
+                },
+                "weight": null,
+                "gearList": [
+                  "Nose Roll"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5447428",
+            "raceNumber": 5,
+            "name": "Maiden/Class 2  Trial",
+            "distance": "800m",
+            "class": "MDN/CL2-TRL",
+            "status": "Results",
+            "raceEntries": [
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Gie It Laldy",
+                  "sex": "Mare",
+                  "age": "6",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "I.Bowles"
+                },
+                "trainer": {
+                  "name": "P.W.Dargan"
+                },
+                "weight": null,
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 1,
+                "horse": {
+                  "name": "Pipe Down Ellie",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "C.M.Jordan"
+                },
+                "trainer": {
+                  "name": "DJ.Tyson"
+                },
+                "weight": null,
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 2,
+                "horse": {
+                  "name": "Do Not Comply",
+                  "sex": "Mare",
+                  "age": "4YO",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "E.Annells"
+                },
+                "trainer": {
+                  "name": "P.W.Dargan"
+                },
+                "weight": null,
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 0,
+                "horse": {
+                  "name": "White Star Suzie",
+                  "sex": "Mare",
+                  "age": "4YO",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "S.M.Carr"
+                },
+                "weight": null,
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 0,
+                "horse": {
+                  "name": "Frosty Ruge",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Grey"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "B.A.Baker"
+                },
+                "weight": null,
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 0,
+                "horse": {
+                  "name": "Speed Rock",
+                  "sex": "Gelding",
+                  "age": "8",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "A.J.Jones"
+                },
+                "weight": null,
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "5191856",
+        "venueName": "gundagai",
+        "venueCode": 179,
+        "date": "2025-11-14",
+        "track": "Turf",
+        "trackCondition": "Good",
+        "railPosition": "True",
+        "weather": "Overcast",
+        "state": "NSW",
+        "races": [
+          {
+            "id": "5436256",
+            "raceNumber": 7,
+            "name": "XXXX GOLD BIG DANCE ELIGIBILITY SNAKE GULLY CUP",
+            "distance": "1400m",
+            "class": "SNAKEGULLY BM94",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 4,
+                "horse": {
+                  "name": "I Am Lethal",
+                  "sex": "Gelding",
+                  "age": "7",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "Mitchell Beer & George Carpenter"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Cross-over Nose Band"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 18,
+                "horse": {
+                  "name": "Tap 'N' Run",
+                  "sex": "Gelding",
+                  "age": "8",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "R.Stubbs"
+                },
+                "weight": "56.5kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 11,
+                "horse": {
+                  "name": "Genetic Freak",
+                  "sex": "Gelding",
+                  "age": "6",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "L.J.Pepper"
+                },
+                "weight": "54.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Epaullo Creed",
+                  "sex": "Gelding",
+                  "age": "8",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "N.J.Olive"
+                },
+                "weight": "54.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 16,
+                "horse": {
+                  "name": "Sir Davy",
+                  "sex": "Gelding",
+                  "age": "8",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "D.J.McCarthy"
+                },
+                "weight": "59kg",
+                "gearList": [
+                  "Nose Roll"
+                ],
+                "gearChanges": "Blinkers AGAIN, Nose Roll FIRST TIME, Visors OFF FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 14,
+                "horse": {
+                  "name": "Mafia",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "Mitchell Beer & George Carpenter"
+                },
+                "weight": "56kg",
+                "gearList": [
+                  "Blinkers OFF",
+                  "Pads (Front)",
+                  "Visors"
+                ],
+                "gearChanges": "Blinkers OFF AGAIN, Pads (Front) FIRST TIME, Visors AGAIN",
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436257",
+            "raceNumber": 6,
+            "name": "BELLETTE\u2019S BINS THE TUCKERBOX",
+            "distance": "1000m",
+            "class": "TUCKERBOX BM87",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Destructive Diva",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "R.Bronett Prag"
+                },
+                "trainer": {
+                  "name": "N.F.Gardner"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 2,
+                "horse": {
+                  "name": "Flying Impala",
+                  "sex": "Gelding",
+                  "age": "6",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "D.Cole"
+                },
+                "trainer": {
+                  "name": "M.R.Bray"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Blinkers OFF",
+                  "Winkers"
+                ],
+                "gearChanges": "Blinkers OFF FIRST TIME, Winkers AGAIN",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 14,
+                "horse": {
+                  "name": "Vainstream",
+                  "sex": "Gelding",
+                  "age": "11",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "G.D.Crothers"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Cross-over Nose Band"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436258",
+            "raceNumber": 4,
+            "name": "THANK YOU LEN TOZER COUNTRY MAGIC BENCHMARK 58 SHOWCASE HANDICAP",
+            "distance": "1400m",
+            "class": "CTRY BM58",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 17,
+                "horse": {
+                  "name": "Doubtfree",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "D.L.Scott"
+                },
+                "weight": "56.5kg",
+                "gearList": [
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 13,
+                "horse": {
+                  "name": "Magic Shot",
+                  "sex": "Gelding",
+                  "age": "5YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.X.Martin"
+                },
+                "trainer": {
+                  "name": "T.R.Smart"
+                },
+                "weight": "61kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 14,
+                "horse": {
+                  "name": "Little Basheba",
+                  "sex": "Mare",
+                  "age": "6",
+                  "colour": "Brown or Black"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "G.Worsnop"
+                },
+                "weight": "59.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 1,
+                "horse": {
+                  "name": "Sweet Paree",
+                  "sex": "Mare",
+                  "age": "6",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "B.C.Vale"
+                },
+                "trainer": {
+                  "name": "S.N.MeyerVale"
+                },
+                "weight": "57.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Ample Time",
+                  "sex": "Mare",
+                  "age": "6",
+                  "colour": "Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "M.Guenther"
+                },
+                "weight": "55kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 15,
+                "horse": {
+                  "name": "Track And Field",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "K.P.Weir"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": "Ear Muffs (Pre-Race Only) FIRST TIME",
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436259",
+            "raceNumber": 5,
+            "name": "PATRIOT BLOODSTOCK CLASS 3 SHOWCASE HANDICAP",
+            "distance": "1180m",
+            "class": "CL3",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 7,
+                "horse": {
+                  "name": "Ana Carolina",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "C.Ramsbotham"
+                },
+                "trainer": {
+                  "name": "M.R.A.Kelley"
+                },
+                "weight": "55.5kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 12,
+                "horse": {
+                  "name": "Taluk",
+                  "sex": "Mare",
+                  "age": "4YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "B.P.Ward"
+                },
+                "trainer": {
+                  "name": "N.Cameron"
+                },
+                "weight": "57kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 14,
+                "horse": {
+                  "name": "Hellinda",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "P.Boudvillain"
+                },
+                "trainer": {
+                  "name": "D.L.Seib"
+                },
+                "weight": "57kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 4,
+                "horse": {
+                  "name": "Daze Off",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.T.Richards"
+                },
+                "trainer": {
+                  "name": "D.J.Gorrel"
+                },
+                "weight": "58.5kg",
+                "gearList": [
+                  "Nasal Strip"
+                ],
+                "gearChanges": "Nasal Strip FIRST TIME",
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436260",
+            "raceNumber": 8,
+            "name": "GUNDAGAI REGIONAL FUNERALS CLASS 1 SHOWCASE HANDICAP",
+            "distance": "1100m",
+            "class": "CL1",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 13,
+                "horse": {
+                  "name": "Dancing Man",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "D.Cole"
+                },
+                "trainer": {
+                  "name": "M.R.Bray"
+                },
+                "weight": "57.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Sheridan Street",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "P.Boudvillain"
+                },
+                "trainer": {
+                  "name": "D.J.Gorrel"
+                },
+                "weight": "55.5kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": "Tongue Tie FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 9,
+                "horse": {
+                  "name": "Too Darn Sassy",
+                  "sex": "Mare",
+                  "age": "4YO",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "Barbara Joseph, Paul & Matt Jones"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 15,
+                "horse": {
+                  "name": "Wauchope",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "R.Freeman"
+                },
+                "trainer": {
+                  "name": "Barbara Joseph, Paul & Matt Jones"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 6,
+                "horse": {
+                  "name": "Dee Dee Express",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "N.Heywood"
+                },
+                "trainer": {
+                  "name": "M.J.Dale"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 11,
+                "horse": {
+                  "name": "Baycat",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "S.M.Guymer"
+                },
+                "trainer": {
+                  "name": "J.M.Austin"
+                },
+                "weight": "56.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 18,
+                "horse": {
+                  "name": "Cashbook",
+                  "sex": "Gelding",
+                  "age": "3YO",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "T.R.Smart"
+                },
+                "weight": "60kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 16,
+                "horse": {
+                  "name": "Sontay",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "W.T.Price"
+                },
+                "trainer": {
+                  "name": "Mitchell Beer & George Carpenter"
+                },
+                "weight": "56.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 14,
+                "horse": {
+                  "name": "Threefold",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "D.L.Seib"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Ear Muffs"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 17,
+                "horse": {
+                  "name": "Hollerloud",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "DJ.O'Prey"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Blinkers",
+                  "Tongue Tie OFF",
+                  "Winkers OFF"
+                ],
+                "gearChanges": "Blinkers FIRST TIME, Tongue Tie OFF FIRST TIME, Winkers OFF FIRST TIME",
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436261",
+            "raceNumber": 3,
+            "name": "TAB CLASS 1 SHOWCASE HANDICAP",
+            "distance": "1400m",
+            "class": "CL1",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 16,
+                "horse": {
+                  "name": "Sectors",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "J.T.Richards"
+                },
+                "trainer": {
+                  "name": "M.A.Collins"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Nose Roll"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 14,
+                "horse": {
+                  "name": "Darn Deadly",
+                  "sex": "Mare",
+                  "age": "4YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "W.T.Price"
+                },
+                "trainer": {
+                  "name": "Mitchell Beer & George Carpenter"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 18,
+                "horse": {
+                  "name": "Rentessis",
+                  "sex": "Gelding",
+                  "age": "4YO",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "C.A.Weeding"
+                },
+                "weight": "60kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": "Blinkers FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 11,
+                "horse": {
+                  "name": "Sunday",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "J.S.Greentree"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 17,
+                "horse": {
+                  "name": "Ta La Masca",
+                  "sex": "Gelding",
+                  "age": "3",
+                  "colour": "Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "K.P.Weir"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 10,
+                "horse": {
+                  "name": "Doubtfree",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "D.L.Scott"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436262",
+            "raceNumber": 1,
+            "name": "TUMBLONG HILLS COUNTRY BOOSTED MAIDEN PLATE",
+            "distance": "1100m",
+            "class": "CTRY MDN-SW",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Forte Cheval",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "B.McDougall"
+                },
+                "trainer": {
+                  "name": "D.L.Scott"
+                },
+                "weight": "59kg",
+                "gearList": [
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 4,
+                "horse": {
+                  "name": "Justbetryin'",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "H.B.Durnan"
+                },
+                "trainer": {
+                  "name": "K.P.Weir"
+                },
+                "weight": "59kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": "Blinkers AGAIN",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 9,
+                "horse": {
+                  "name": "Instigate",
+                  "sex": "Mare",
+                  "age": "4YO",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "B.P.Ward"
+                },
+                "trainer": {
+                  "name": "N.Cameron"
+                },
+                "weight": "57kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 12,
+                "horse": {
+                  "name": "I'm Charming",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Chestnut"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "M.Travers"
+                },
+                "weight": "59kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)",
+                  "Lugging Bit"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 15,
+                "horse": {
+                  "name": "Classic Azabeel",
+                  "sex": "Filly",
+                  "age": "3",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.T.Richards"
+                },
+                "trainer": {
+                  "name": "D.J.Gorrel"
+                },
+                "weight": "55.5kg",
+                "gearList": [
+                  "Blinkers OFF"
+                ],
+                "gearChanges": "Blinkers OFF FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 16,
+                "horse": {
+                  "name": "Brass Monkeys",
+                  "sex": "Gelding",
+                  "age": "3YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "N.Heywood"
+                },
+                "trainer": {
+                  "name": "S.R.Collings"
+                },
+                "weight": "57.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Lord Limerick",
+                  "sex": "Gelding",
+                  "age": "3YO",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "D.L.Scott"
+                },
+                "weight": "57.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436263",
+            "raceNumber": 2,
+            "name": "CRITERION HOTEL SHOWCASE SUPER MAIDEN HANDICAP",
+            "distance": "1180m",
+            "class": "SUPER MDN",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 10,
+                "horse": {
+                  "name": "Super Nic",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Chestnut"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "G.J.Colvin"
+                },
+                "weight": "57kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 17,
+                "horse": {
+                  "name": "Alamagan",
+                  "sex": "Gelding",
+                  "age": "3YO",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "L.A.Day"
+                },
+                "trainer": {
+                  "name": "J.B.Ible"
+                },
+                "weight": "57.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 16,
+                "horse": {
+                  "name": "Treasure Hunter",
+                  "sex": "Gelding",
+                  "age": "3YO",
+                  "colour": "Brown or Black"
+                },
+                "jockey": {
+                  "name": "M.A.Cahill"
+                },
+                "trainer": {
+                  "name": "S.R.Collings"
+                },
+                "weight": "58kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 9,
+                "horse": {
+                  "name": "Rose Diamond",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.Penza"
+                },
+                "trainer": {
+                  "name": "M.R.A.Kelley"
+                },
+                "weight": "58.5kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": "Ear Muffs (Pre-Race Only) FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 6,
+                "horse": {
+                  "name": "Champ's Queen",
+                  "sex": "Mare",
+                  "age": "4YO",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "C.D.Widdison"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 12,
+                "horse": {
+                  "name": "Mo Cent",
+                  "sex": "Gelding",
+                  "age": "5YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.T.Richards"
+                },
+                "trainer": {
+                  "name": "R.Waters"
+                },
+                "weight": "56.5kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "5191294",
+        "venueName": "ladbrokes-geelong",
+        "venueCode": 158,
+        "date": "2025-11-14",
+        "track": "Turf",
+        "trackCondition": "Soft",
+        "railPosition": "Out 2m 1800m - 1400m, Out 2m 800m - 400m, True Remainder",
+        "weather": "Fine",
+        "state": "VIC",
+        "races": [
+          {
+            "id": "5436447",
+            "raceNumber": 5,
+            "name": "Evergreen Turf Plate",
+            "distance": "1207m",
+            "class": "3YF MDN-SW",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 8,
+                "horse": {
+                  "name": "Jessica Rabbit",
+                  "sex": "Filly",
+                  "age": "3",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "B.Mertens"
+                },
+                "trainer": {
+                  "name": "Mick Price & Michael Kent (Jnr)"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 16,
+                "horse": {
+                  "name": "Somersault",
+                  "sex": "Filly",
+                  "age": "3YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.Childs"
+                },
+                "trainer": {
+                  "name": "G.M.Begg"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Cross-over Nose Band"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 15,
+                "horse": {
+                  "name": "Light Filled",
+                  "sex": "Filly",
+                  "age": "3YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "R.J.Hurdle"
+                },
+                "trainer": {
+                  "name": "R.L.Hickmott"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": "Tongue Tie FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 14,
+                "horse": {
+                  "name": "Snitchy",
+                  "sex": "Filly",
+                  "age": "3",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "R.McLeod"
+                },
+                "trainer": {
+                  "name": "J.Warren"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": "Blinkers FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 4,
+                "horse": {
+                  "name": "Skjaldmo",
+                  "sex": "Filly",
+                  "age": "3YO",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "P.M.Moloney"
+                },
+                "trainer": {
+                  "name": "R.D.Griffiths"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Ear Muffs"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436448",
+            "raceNumber": 7,
+            "name": "Simpson Construction Handicap",
+            "distance": "1307m",
+            "class": "BM66",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 14,
+                "horse": {
+                  "name": "Divine Thoughts",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "C.MacRedmond"
+                },
+                "trainer": {
+                  "name": "Tony & Calvin McEvoy"
+                },
+                "weight": "58kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 7,
+                "horse": {
+                  "name": "Il Cubo",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.Childs"
+                },
+                "trainer": {
+                  "name": "R.J.Goodwin"
+                },
+                "weight": "60kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 6,
+                "horse": {
+                  "name": "Enigmatise",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Chestnut"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "N.Pfeiffer"
+                },
+                "weight": "54kg",
+                "gearList": [
+                  "Cross-over Nose Band OFF"
+                ],
+                "gearChanges": "Cross-over Nose Band OFF FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 13,
+                "horse": {
+                  "name": "Weather Delay",
+                  "sex": "Gelding",
+                  "age": "4YO",
+                  "colour": "Grey"
+                },
+                "jockey": {
+                  "name": "R.J.Hurdle"
+                },
+                "trainer": {
+                  "name": "R.L.Hickmott"
+                },
+                "weight": "58kg",
+                "gearList": [
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436449",
+            "raceNumber": 6,
+            "name": "Paul Kelly Creative Handicap",
+            "distance": "1507m",
+            "class": "BM62",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 10,
+                "horse": {
+                  "name": "Miss Tramell",
+                  "sex": "Mare",
+                  "age": "6",
+                  "colour": "Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "Amy & Ash Yargi"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 14,
+                "horse": {
+                  "name": "Pinkerton",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "L.Meech"
+                },
+                "trainer": {
+                  "name": "T.Dabernig"
+                },
+                "weight": "56kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 9,
+                "horse": {
+                  "name": "Geffina",
+                  "sex": "Mare",
+                  "age": "4YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "T.Madden"
+                },
+                "trainer": {
+                  "name": "A.J.Purcell"
+                },
+                "weight": "60.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436450",
+            "raceNumber": 4,
+            "name": "Ladbrokes SRM in Multis Plate",
+            "distance": "1207m",
+            "class": "3YC&G MDN-SW",
+            "status": "FinalFields",
+            "raceEntries": []
+          },
+          {
+            "id": "5436451",
+            "raceNumber": 3,
+            "name": "Ranvet Plate",
+            "distance": "1107m",
+            "class": "MDN-SW",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 9,
+                "horse": {
+                  "name": "Olivia Rose",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "Z.B.Spain"
+                },
+                "trainer": {
+                  "name": "Peter G Moody & Katherine Coleman"
+                },
+                "weight": "57.5kg",
+                "gearList": [
+                  "Lugging Bit",
+                  "Nose Roll"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 13,
+                "horse": {
+                  "name": "Molotov Cocktail",
+                  "sex": "Gelding",
+                  "age": "3",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.Childs"
+                },
+                "trainer": {
+                  "name": "R.J.Goodwin"
+                },
+                "weight": "58kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 8,
+                "horse": {
+                  "name": "Trentino",
+                  "sex": "Colt",
+                  "age": "3YO",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "J.L.Mott"
+                },
+                "trainer": {
+                  "name": "J.Sandhu"
+                },
+                "weight": "58kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Immortal Justice",
+                  "sex": "Mare",
+                  "age": "4YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "C.MacRedmond"
+                },
+                "trainer": {
+                  "name": "T.W.Donaldson-Aitken"
+                },
+                "weight": "57.5kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436452",
+            "raceNumber": 8,
+            "name": "Ladbrokes Top 2/3/4 Betting Handicap",
+            "distance": "1107m",
+            "class": "BM62",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 18,
+                "horse": {
+                  "name": "Demarcate",
+                  "sex": "Gelding",
+                  "age": "3",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "L.Currie"
+                },
+                "trainer": {
+                  "name": "Ben, Will & JD Hayes"
+                },
+                "weight": "58.5kg",
+                "gearList": [
+                  "Cross-over Nose Band"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Durham Legacy",
+                  "sex": "Gelding",
+                  "age": "3YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "L.Riordan"
+                },
+                "trainer": {
+                  "name": "Leon & Troy Corstens & Will Larkin"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 14,
+                "horse": {
+                  "name": "Asmita",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "L.Meech"
+                },
+                "trainer": {
+                  "name": "Peter G Moody & Katherine Coleman"
+                },
+                "weight": "56.5kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 15,
+                "horse": {
+                  "name": "Pure Rain",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "S.A.Beani"
+                },
+                "weight": "54.5kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 16,
+                "horse": {
+                  "name": "Seattle Hope",
+                  "sex": "Mare",
+                  "age": "5YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "A.Kelly"
+                },
+                "trainer": {
+                  "name": "M.Freedman"
+                },
+                "weight": "56kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 2,
+                "horse": {
+                  "name": "Jessup",
+                  "sex": "Gelding",
+                  "age": "6",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "J.C.Maskiell"
+                },
+                "trainer": {
+                  "name": "S.W.Mathrick"
+                },
+                "weight": "58.5kg",
+                "gearList": [
+                  "Lugging Bit"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436453",
+            "raceNumber": 2,
+            "name": "The Valley @ Geelong Plate",
+            "distance": "2412m",
+            "class": "MDN-SW",
+            "status": "FinalFields",
+            "raceEntries": []
+          },
+          {
+            "id": "5436454",
+            "raceNumber": 1,
+            "name": "The Road to Jericho Highweight Handicap",
+            "distance": "3762m",
+            "class": "BM78 HCP",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Nassak Diamond",
+                  "sex": "Mare",
+                  "age": "7",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "D.M.Parker"
+                },
+                "trainer": {
+                  "name": "Patrick & Michelle Payne"
+                },
+                "weight": "65kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 2,
+                "horse": {
+                  "name": "Fuwari",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "L.Remondet"
+                },
+                "trainer": {
+                  "name": "Y.Shima"
+                },
+                "weight": "65kg",
+                "gearList": [
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "5191835",
+        "venueName": "ballina",
+        "venueCode": 23,
+        "date": "2025-11-14",
+        "track": "Turf",
+        "trackCondition": "Soft",
+        "railPosition": "+1.5m 1000m - 250m, Cutaway applies.  True remainder ",
+        "weather": "Showers",
+        "state": "NSW",
+        "races": [
+          {
+            "id": "5436216",
+            "raceNumber": 6,
+            "name": "BALLINA FAIR BENCHMARK 82 HANDICAP",
+            "distance": "1405m",
+            "class": "BM82",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Silver Warrior",
+                  "sex": "Gelding",
+                  "age": "8",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "B.Baker"
+                },
+                "trainer": {
+                  "name": "A.Campton"
+                },
+                "weight": "56.5kg",
+                "gearList": [
+                  "Blinkers OFF",
+                  "Winkers"
+                ],
+                "gearChanges": "Blinkers OFF AGAIN, Synthetic Hoof Filler OFF FIRST TIME, Winkers AGAIN",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 8,
+                "horse": {
+                  "name": "Sarsen",
+                  "sex": "Gelding",
+                  "age": "7",
+                  "colour": "Chestnut"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "M.D.Brosnan"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Cross-over Nose Band"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 10,
+                "horse": {
+                  "name": "Nails And Pride",
+                  "sex": "Gelding",
+                  "age": "6",
+                  "colour": "Chestnut"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "M.J.Wilson"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Hanoverian Nose Band"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 2,
+                "horse": {
+                  "name": "Air Marshal",
+                  "sex": "Gelding",
+                  "age": "9",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.Newman"
+                },
+                "trainer": {
+                  "name": "R.E.Beaton"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 11,
+                "horse": {
+                  "name": "Saxon King",
+                  "sex": "Gelding",
+                  "age": "6",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "A.J.Mallyon"
+                },
+                "trainer": {
+                  "name": "K.A.Lees"
+                },
+                "weight": "60kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436217",
+            "raceNumber": 5,
+            "name": "ZZZFM F&M BM 58 HCP",
+            "distance": "1255m",
+            "class": "F&M BM58",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Never Island",
+                  "sex": "Mare",
+                  "age": "6",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "L.L.Boyd"
+                },
+                "trainer": {
+                  "name": "N.H.Mayfield-Smith"
+                },
+                "weight": "62.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436218",
+            "raceNumber": 7,
+            "name": "KOALA FARMS C,G&E BM 58 HCP",
+            "distance": "1255m",
+            "class": "C,G&E BM58",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 9,
+                "horse": {
+                  "name": "Invisible Target",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Grey"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "R.A.Pereira"
+                },
+                "weight": "56.5kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 13,
+                "horse": {
+                  "name": "Per Capita",
+                  "sex": "Gelding",
+                  "age": "6",
+                  "colour": "Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "S.B.Lee"
+                },
+                "weight": "58kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436219",
+            "raceNumber": 4,
+            "name": "LENNOX HOTEL BM 58 HCP",
+            "distance": "1910m",
+            "class": "BM58",
+            "status": "FinalFields",
+            "raceEntries": []
+          },
+          {
+            "id": "5436220",
+            "raceNumber": 2,
+            "name": "TAB COUNTRY BOOSTED CLASS 2 HCP",
+            "distance": "1005m",
+            "class": "CTRY CL2",
+            "status": "FinalFields",
+            "raceEntries": []
+          },
+          {
+            "id": "5436221",
+            "raceNumber": 8,
+            "name": "BALLINA RSL CLASS 1 & MAIDEN PLATE",
+            "distance": "1595m",
+            "class": "CL1-SW",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 15,
+                "horse": {
+                  "name": "Bails",
+                  "sex": "Mare",
+                  "age": "4YO",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "C.M.J.Vitler"
+                },
+                "trainer": {
+                  "name": "M.J.Dunn"
+                },
+                "weight": "55kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 19,
+                "horse": {
+                  "name": "Global",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Chestnut"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "S.B.Laming"
+                },
+                "weight": "56.5kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 12,
+                "horse": {
+                  "name": "Sanctuary Storm",
+                  "sex": "Gelding",
+                  "age": "4YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "A.J.Mallyon"
+                },
+                "trainer": {
+                  "name": "Annabel & Rob Archibald"
+                },
+                "weight": "59kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 14,
+                "horse": {
+                  "name": "Inquisitor",
+                  "sex": "Gelding",
+                  "age": "3",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "J.A.Williams"
+                },
+                "trainer": {
+                  "name": "R.H.Dart"
+                },
+                "weight": "57.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 17,
+                "horse": {
+                  "name": "Galaxy Sunset",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "C.M.Krahnen"
+                },
+                "trainer": {
+                  "name": "EM.Marchant"
+                },
+                "weight": "59kg",
+                "gearList": [
+                  "Visors"
+                ],
+                "gearChanges": "Visors FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 16,
+                "horse": {
+                  "name": "Assent",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "M.D.Brosnan"
+                },
+                "weight": "59kg",
+                "gearList": [
+                  "Cross-over Nose Band"
+                ],
+                "gearChanges": "Cross-over Nose Band FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 13,
+                "horse": {
+                  "name": "Perri Lass",
+                  "sex": "Mare",
+                  "age": "5YO",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "C.M.Anderson"
+                },
+                "weight": "57kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436222",
+            "raceNumber": 3,
+            "name": "BOXING DAY TICKETS ON SALE NOW MDN PLT",
+            "distance": "1005m",
+            "class": "MDN-SW",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 10,
+                "horse": {
+                  "name": "Decadad",
+                  "sex": "Gelding",
+                  "age": "3YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "S.E.Sheargold"
+                },
+                "trainer": {
+                  "name": "M.D.Brosnan"
+                },
+                "weight": "57.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 1,
+                "horse": {
+                  "name": "Gold Dazzler",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.A.Williams"
+                },
+                "trainer": {
+                  "name": "P.C.Bobic"
+                },
+                "weight": "59kg",
+                "gearList": [
+                  "Cross-over Nose Band OFF",
+                  "Winkers OFF"
+                ],
+                "gearChanges": "Cross-over Nose Band OFF AGAIN, Winkers OFF FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 6,
+                "horse": {
+                  "name": "Parading Gus",
+                  "sex": "Gelding",
+                  "age": "3YO",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "M.Hellyer"
+                },
+                "trainer": {
+                  "name": "C.M.Anderson"
+                },
+                "weight": "57.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436223",
+            "raceNumber": 1,
+            "name": "NBN NEWS COUNTRY BOOSTED MDN HCP",
+            "distance": "1305m",
+            "class": "CTRY MDN",
+            "status": "FinalFields",
+            "raceEntries": []
+          }
+        ]
+      },
+      {
+        "id": "5190694",
+        "venueName": "bordertown",
+        "venueCode": 52,
+        "date": "2025-11-14",
+        "track": "Turf",
+        "trackCondition": "Soft",
+        "railPosition": "True",
+        "weather": "Fine",
+        "state": "SA",
+        "races": [
+          {
+            "id": "5443344",
+            "raceNumber": 5,
+            "name": "Harpers Freight Benchmark 66 Handicap (Heat of Sportsbet Country Mile Series)",
+            "distance": "1550m",
+            "class": "BM66",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Divine Fire",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "M.Collett"
+                },
+                "trainer": {
+                  "name": "S.J.Theodore"
+                },
+                "weight": "55.5kg",
+                "gearList": [
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 2,
+                "horse": {
+                  "name": "France's Boy",
+                  "sex": "Gelding",
+                  "age": "12YO",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "John Hickmott & Carrina Riggs"
+                },
+                "weight": "56kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 13,
+                "horse": {
+                  "name": "Dark Lager",
+                  "sex": "Gelding",
+                  "age": "8",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "J.R.Searle"
+                },
+                "weight": "56kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 8,
+                "horse": {
+                  "name": "Deficit",
+                  "sex": "Gelding",
+                  "age": "7",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "A.Livesey"
+                },
+                "trainer": {
+                  "name": "D.C.Saxon"
+                },
+                "weight": "54kg",
+                "gearList": [
+                  "Concussion Plates (Front)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5443345",
+            "raceNumber": 4,
+            "name": "Woolshed Inn Benchmark 68 Handicap (Heat of Sportsbet Country Sprint Series)",
+            "distance": "1200m",
+            "class": "BM68",
+            "status": "FinalFields",
+            "raceEntries": []
+          },
+          {
+            "id": "5443346",
+            "raceNumber": 7,
+            "name": "Bordertown Stone Supplies Rating 0 - 54 Handicap",
+            "distance": "1100m",
+            "class": "0-54",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 11,
+                "horse": {
+                  "name": "Scandalist",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "A.J.Warren"
+                },
+                "trainer": {
+                  "name": "M.J.Seyers"
+                },
+                "weight": "57.5kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 9,
+                "horse": {
+                  "name": "Brooklyn Baby",
+                  "sex": "Mare",
+                  "age": "6",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "K.R.Crowther"
+                },
+                "trainer": {
+                  "name": "S.J.Theodore"
+                },
+                "weight": "57.5kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 16,
+                "horse": {
+                  "name": "Brazano",
+                  "sex": "Gelding",
+                  "age": "7",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "B.King"
+                },
+                "trainer": {
+                  "name": "Dion & Raygan Koch"
+                },
+                "weight": "58.5kg",
+                "gearList": [
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 15,
+                "horse": {
+                  "name": "Putanothercoinin",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "D.Caboche"
+                },
+                "trainer": {
+                  "name": "M.W.Ruberry"
+                },
+                "weight": "57.5kg",
+                "gearList": [
+                  "Bubble Cheeker (Near Side)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5443347",
+            "raceNumber": 6,
+            "name": "Border Blinds & Curtains Rating 0 - 54 Handicap",
+            "distance": "1550m",
+            "class": "0-54",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 13,
+                "horse": {
+                  "name": "Bona Fide Star",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "Gordon Richards & Damien Moyle"
+                },
+                "weight": "60kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 14,
+                "horse": {
+                  "name": "Turn Me Royale",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "P.M.Brewster"
+                },
+                "trainer": {
+                  "name": "P.Kearney"
+                },
+                "weight": "60kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 12,
+                "horse": {
+                  "name": "Mummsie",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "T.L.Voorham"
+                },
+                "trainer": {
+                  "name": "A.R.Bobbin"
+                },
+                "weight": "56kg",
+                "gearList": [
+                  "Blinkers OFF",
+                  "Winkers"
+                ],
+                "gearChanges": "Blinkers OFF FIRST TIME, Winkers FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 7,
+                "horse": {
+                  "name": "Last War",
+                  "sex": "Gelding",
+                  "age": "8",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "Z.Lloyd"
+                },
+                "trainer": {
+                  "name": "P.Huserot"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Bubble Cheeker (Off Side)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5443348",
+            "raceNumber": 3,
+            "name": "Brandt Class One Plate",
+            "distance": "2000m",
+            "class": "CL1-SW",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 2,
+                "horse": {
+                  "name": "Thavma",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.Tzaferis"
+                },
+                "trainer": {
+                  "name": "K.L.Evans"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 10,
+                "horse": {
+                  "name": "Irlandais",
+                  "sex": "Gelding",
+                  "age": "6",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "T.J.Pannell"
+                },
+                "trainer": {
+                  "name": "S.C.Irlam"
+                },
+                "weight": "57kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 9,
+                "horse": {
+                  "name": "Reciprocal",
+                  "sex": "Gelding",
+                  "age": "4YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "C.P.Murtagh"
+                },
+                "trainer": {
+                  "name": "R.W.Huxtable"
+                },
+                "weight": "59kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5443349",
+            "raceNumber": 2,
+            "name": "Creaser Constructions Maiden Plate",
+            "distance": "1200m",
+            "class": "3UP MDN-SW",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 14,
+                "horse": {
+                  "name": "Shame On Sue",
+                  "sex": "Mare",
+                  "age": "4YO",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "A.R.Bobbin"
+                },
+                "weight": "56kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 13,
+                "horse": {
+                  "name": "Gazelle",
+                  "sex": "Filly",
+                  "age": "3YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "R.L.Milnes"
+                },
+                "trainer": {
+                  "name": "G.J.Boyce"
+                },
+                "weight": "54.5kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5443350",
+            "raceNumber": 1,
+            "name": "Sportsbet Fast Form Maiden Plate",
+            "distance": "1550m",
+            "class": "3UP MDN-SW",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 12,
+                "horse": {
+                  "name": "Calusa's Fury",
+                  "sex": "Gelding",
+                  "age": "4YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "A.Livesey"
+                },
+                "trainer": {
+                  "name": "A.R.Bobbin"
+                },
+                "weight": "58kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": "Blinkers FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 6,
+                "horse": {
+                  "name": "Major Jackpot",
+                  "sex": "Gelding",
+                  "age": "4YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "B.King"
+                },
+                "trainer": {
+                  "name": "L.Halliday"
+                },
+                "weight": "58kg",
+                "gearList": [
+                  "Winkers"
+                ],
+                "gearChanges": "Winkers FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 11,
+                "horse": {
+                  "name": "Ourbolt",
+                  "sex": "Gelding",
+                  "age": "5YO",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "John Hickmott & Carrina Riggs"
+                },
+                "weight": "58kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "5189854",
+        "venueName": "rockhampton",
+        "venueCode": 347,
+        "date": "2025-11-14",
+        "track": "Turf",
+        "trackCondition": "Soft",
+        "railPosition": "1.5 metre Entire Course",
+        "weather": "Showers",
+        "state": "QLD",
+        "races": [
+          {
+            "id": "5438286",
+            "raceNumber": 8,
+            "name": "NEXT RJC RACEDAY 27 NOVEMBER OPEN Handicap",
+            "distance": "1050m",
+            "class": "HCP",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 9,
+                "horse": {
+                  "name": "Capo Strada",
+                  "sex": "Gelding",
+                  "age": "7",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "B.L.Johnson"
+                },
+                "trainer": {
+                  "name": "R.J.D.Vale"
+                },
+                "weight": "54.5kg",
+                "gearList": [
+                  "Ear Muffs"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5438287",
+            "raceNumber": 6,
+            "name": "BRISBANE AIRPORT HOTELS GROUP Class 4 Plate",
+            "distance": "1600m",
+            "class": "CL4-SW",
+            "status": "FinalFields",
+            "raceEntries": []
+          },
+          {
+            "id": "5438288",
+            "raceNumber": 4,
+            "name": "SMR LAWYERS Class 2 Handicap",
+            "distance": "1200m",
+            "class": "CL2",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Panigale",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "A.J.J.Butler"
+                },
+                "trainer": {
+                  "name": "C.K.Taylor"
+                },
+                "weight": "60kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": "Stallion Chain OFF FIRST TIME, Tongue Tie FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Red Beauty",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Chestnut"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "T.F.Smith"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Bandages (Hind)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5438289",
+            "raceNumber": 2,
+            "name": "GREAT NORTHERN BENCHMARK 58 Handicap",
+            "distance": "1100m",
+            "class": "BM58",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Shipping Lane",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "S.W.Kendrick"
+                },
+                "weight": "59.5kg",
+                "gearList": [
+                  "Cross-over Nose Band"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5438290",
+            "raceNumber": 7,
+            "name": "BROWN BROTHERS BENCHMARK 55 Handicap",
+            "distance": "1400m",
+            "class": "BM55",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 2,
+                "horse": {
+                  "name": "Bugden",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Chestnut"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "M.W.Goodwin"
+                },
+                "weight": "57kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5438291",
+            "raceNumber": 3,
+            "name": "DICK SULLIVAN MEMORIAL Maiden Plate",
+            "distance": "1300m",
+            "class": "MDN-SW",
+            "status": "FinalFields",
+            "raceEntries": []
+          },
+          {
+            "id": "5438292",
+            "raceNumber": 1,
+            "name": "CELEBRATE 2025 AT CALLAGHAN PARK QTIS Three-Year-Old Maiden Handicap",
+            "distance": "1050m",
+            "class": "3Y MDN",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 11,
+                "horse": {
+                  "name": "Precise Torque",
+                  "sex": "Gelding",
+                  "age": "3YO",
+                  "colour": "Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "S.W.Kendrick"
+                },
+                "weight": "59.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5438293",
+            "raceNumber": 5,
+            "name": "TAB BREEDERS PLATE QTIS Two-Year-Old Maiden Plate",
+            "distance": "1050m",
+            "class": "2Y MDN-SW",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 9,
+                "horse": {
+                  "name": "Wasabi Barbie",
+                  "sex": "Filly",
+                  "age": "2YO",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "T.F.Smith"
+                },
+                "weight": "55kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "5192929",
+        "venueName": "ballina",
+        "venueCode": 23,
+        "date": "2025-11-14",
+        "track": "Turf",
+        "trackCondition": "N/A",
+        "railPosition": null,
+        "weather": null,
+        "state": "NSW",
+        "races": [
+          {
+            "id": "5447246",
+            "raceNumber": 1,
+            "name": "MAIDEN TRIAL",
+            "distance": "1005m",
+            "class": "MDN-BT",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 0,
+                "horse": {
+                  "name": "Drahomira",
+                  "sex": "Filly",
+                  "age": "3",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "D.S.Bowen"
+                },
+                "weight": null,
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 0,
+                "horse": {
+                  "name": "Miss Mimosa",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "S.B.Lee"
+                },
+                "weight": null,
+                "gearList": [
+                  "Bubble Cheeker (Near Side)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5447247",
+            "raceNumber": 2,
+            "name": "OPEN TRIAL",
+            "distance": "1005m",
+            "class": "OPEN-BT",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 0,
+                "horse": {
+                  "name": "Jukebox In Siberia",
+                  "sex": "Mare",
+                  "age": "5YO",
+                  "colour": "Chestnut"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "S.B.Lee"
+                },
+                "weight": null,
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "5189060",
+        "venueName": "canterbury-park",
+        "venueCode": 76,
+        "date": "2025-11-14",
+        "track": "Turf",
+        "trackCondition": "Good",
+        "railPosition": "True",
+        "weather": "Fine",
+        "state": "NSW",
+        "races": [
+          {
+            "id": "5437387",
+            "raceNumber": 8,
+            "name": "METRO PETROLEUM HANDICAP",
+            "distance": "1100m",
+            "class": "BM78",
+            "status": "FinalFields",
+            "raceEntries": []
+          },
+          {
+            "id": "5437388",
+            "raceNumber": 5,
+            "name": "KIA EVENING STAR",
+            "distance": "1250m",
+            "class": "5Y+ BM72",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Gold Pattern",
+                  "sex": "Mare",
+                  "age": "6",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "J.J.Parr"
+                },
+                "trainer": {
+                  "name": "J.P.Thompson"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5437389",
+            "raceNumber": 6,
+            "name": "OGALO HANDICAP",
+            "distance": "1550m",
+            "class": "5Y+ BM72",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 6,
+                "horse": {
+                  "name": "Ronny Rock Art",
+                  "sex": "Gelding",
+                  "age": "8",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "W.J.Costin"
+                },
+                "trainer": {
+                  "name": "N.Osborne"
+                },
+                "weight": "54.5kg",
+                "gearList": [
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Broadway Bouncer",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "J.Ford"
+                },
+                "trainer": {
+                  "name": "K.L.Buchanan"
+                },
+                "weight": "60.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Roussillon",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.R.Collett"
+                },
+                "trainer": {
+                  "name": "D.C.Cunningham"
+                },
+                "weight": "58.5kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5437390",
+            "raceNumber": 7,
+            "name": "SUPER NASH BROTHERS HANDICAP",
+            "distance": "1900m",
+            "class": "5Y+ BM72",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 6,
+                "horse": {
+                  "name": "Mediaro",
+                  "sex": "Gelding",
+                  "age": "7",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "Z.T.Lloyd"
+                },
+                "trainer": {
+                  "name": "M.C.Smith"
+                },
+                "weight": "54kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 4,
+                "horse": {
+                  "name": "Jack Duggan",
+                  "sex": "Gelding",
+                  "age": "8",
+                  "colour": "Grey-Bay"
+                },
+                "jockey": {
+                  "name": "T.A.Clark"
+                },
+                "trainer": {
+                  "name": "J.C.Deamer"
+                },
+                "weight": "60kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Steel Blaze",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "B.M.Lazzarini"
+                },
+                "weight": "58.5kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5437391",
+            "raceNumber": 4,
+            "name": "PICCOLO ME HANDICAP",
+            "distance": "1250m",
+            "class": "F&M BM72",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 7,
+                "horse": {
+                  "name": "Flightcrew",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "Lee & Cherie Curtis"
+                },
+                "weight": "59.5kg",
+                "gearList": [
+                  "Concussion Plates (Front)",
+                  "Visors"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5437392",
+            "raceNumber": 1,
+            "name": "OOSHMAN PLATE",
+            "distance": "1550m",
+            "class": "3&4Y MDN-SW",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 1,
+                "horse": {
+                  "name": "Lady Yarrow",
+                  "sex": "Mare",
+                  "age": "4YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "A.McLucas"
+                },
+                "trainer": {
+                  "name": "T.M.Bateup"
+                },
+                "weight": "57kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5437393",
+            "raceNumber": 3,
+            "name": "P'NUT STREET NOODLES HANDICAP",
+            "distance": "1100m",
+            "class": "3YF MDN",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 13,
+                "horse": {
+                  "name": "Sylph",
+                  "sex": "Filly",
+                  "age": "3",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "T.Berry"
+                },
+                "trainer": {
+                  "name": "M.J.Freedman"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Cross-over Nose Band"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 12,
+                "horse": {
+                  "name": "Our Lady Peace",
+                  "sex": "Filly",
+                  "age": "3YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "A.R.D.Morgan"
+                },
+                "trainer": {
+                  "name": "G.Portelli"
+                },
+                "weight": "57kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 8,
+                "horse": {
+                  "name": "Capdiva",
+                  "sex": "Filly",
+                  "age": "3YO",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "A.B.Collett"
+                },
+                "trainer": {
+                  "name": "G.Portelli"
+                },
+                "weight": "57kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 9,
+                "horse": {
+                  "name": "You Sexy Thing",
+                  "sex": "Filly",
+                  "age": "3",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "R.King"
+                },
+                "trainer": {
+                  "name": "C.Maher"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 11,
+                "horse": {
+                  "name": "Misty Veil",
+                  "sex": "Filly",
+                  "age": "3",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "A.J.Hyeronimus"
+                },
+                "trainer": {
+                  "name": "C.Maher"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Cross-over Nose Band OFF",
+                  "Norton Bit"
+                ],
+                "gearChanges": "Cross-over Nose Band OFF FIRST TIME, Norton Bit FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 10,
+                "horse": {
+                  "name": "Vingt Neuf Noir",
+                  "sex": "Filly",
+                  "age": "3",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "Z.T.Lloyd"
+                },
+                "trainer": {
+                  "name": "J.P.Thompson"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Lugging Bit",
+                  "Tongue Tie"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5437394",
+            "raceNumber": 2,
+            "name": "SCHWEPPES HANDICAP",
+            "distance": "1250m",
+            "class": "3Y MDN",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 10,
+                "horse": {
+                  "name": "Brroosha",
+                  "sex": "Filly",
+                  "age": "3YO",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "A.J.Farragher"
+                },
+                "trainer": {
+                  "name": "C.Maher"
+                },
+                "weight": "55.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 12,
+                "horse": {
+                  "name": "Borderfall",
+                  "sex": "Gelding",
+                  "age": "3YO",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "D.Gibbons"
+                },
+                "trainer": {
+                  "name": "Annabel & Rob Archibald"
+                },
+                "weight": "57.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Ernaux",
+                  "sex": "Filly",
+                  "age": "3",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.R.Collett"
+                },
+                "trainer": {
+                  "name": "C.J.Waller"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Cross-over Nose Band"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 1,
+                "horse": {
+                  "name": "Ichiban Koji",
+                  "sex": "Colt",
+                  "age": "3YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "A.J.Hyeronimus"
+                },
+                "trainer": {
+                  "name": "C.J.Waller"
+                },
+                "weight": "57.5kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": "Ear Muffs (Pre-Race Only) FIRST TIME, Tongue Tie FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 7,
+                "horse": {
+                  "name": "Saveur",
+                  "sex": "Filly",
+                  "age": "3",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "K.McEvoy"
+                },
+                "trainer": {
+                  "name": "C.J.Waller"
+                },
+                "weight": "54.5kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "5192912",
+        "venueName": "bordertown",
+        "venueCode": 52,
+        "date": "2025-11-14",
+        "track": "Turf",
+        "trackCondition": "N/A",
+        "railPosition": null,
+        "weather": null,
+        "state": "SA",
+        "races": [
+          {
+            "id": "5447242",
+            "raceNumber": 1,
+            "name": "Open Trial",
+            "distance": "1000m",
+            "class": "Open Trl",
+            "status": "FinalFields",
+            "raceEntries": []
+          },
+          {
+            "id": "5447243",
+            "raceNumber": 2,
+            "name": "Open Trial",
+            "distance": "1000m",
+            "class": "Open Trl",
+            "status": "FinalFields",
+            "raceEntries": []
+          }
+        ]
+      },
+      {
+        "id": "5190980",
+        "venueName": "southside-pakenham",
+        "venueCode": 915,
+        "date": "2025-11-14",
+        "track": "Turf",
+        "trackCondition": "Heavy",
+        "railPosition": "Out 6m Entire Circuit",
+        "weather": "Fine",
+        "state": "VIC",
+        "races": [
+          {
+            "id": "5436455",
+            "raceNumber": 5,
+            "name": "Computer Talk - Business I.T Experts BM66 Handicap",
+            "distance": "2500m",
+            "class": "BM66",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 16,
+                "horse": {
+                  "name": "Buddong",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "R.McLeod"
+                },
+                "trainer": {
+                  "name": "P.Kearney"
+                },
+                "weight": "59kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 11,
+                "horse": {
+                  "name": "Ongatiti",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "L.Riordan"
+                },
+                "trainer": {
+                  "name": "C.Maher"
+                },
+                "weight": "56.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Thiblos",
+                  "sex": "Gelding",
+                  "age": "4YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "L.J.Bates"
+                },
+                "trainer": {
+                  "name": "L.M.Kennewell"
+                },
+                "weight": "56kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Black Peppermint",
+                  "sex": "Gelding",
+                  "age": "7YO",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "B.Rawiller"
+                },
+                "trainer": {
+                  "name": "Patrick & Michelle Payne"
+                },
+                "weight": "61kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 2,
+                "horse": {
+                  "name": "Natural Ruler",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "T.Stockdale"
+                },
+                "trainer": {
+                  "name": "Anthony & Sam Freedman"
+                },
+                "weight": "62kg",
+                "gearList": [
+                  "Cross-over Nose Band"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 4,
+                "horse": {
+                  "name": "Highland Glory",
+                  "sex": "Mare",
+                  "age": "6",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "D.O'Sullivan"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436456",
+            "raceNumber": 6,
+            "name": "Dalton Consulting Engineers 0-62 Handicap",
+            "distance": "1000m",
+            "class": "0 - 62",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 9,
+                "horse": {
+                  "name": "Faithinher",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "C.Gaudray"
+                },
+                "trainer": {
+                  "name": "Ben, Will & JD Hayes"
+                },
+                "weight": "57.5kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 7,
+                "horse": {
+                  "name": "Night Flash",
+                  "sex": "Gelding",
+                  "age": "3",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "K.Jennings"
+                },
+                "trainer": {
+                  "name": "Ben, Will & JD Hayes"
+                },
+                "weight": "57.5kg",
+                "gearList": [
+                  "Cross-over Nose Band OFF"
+                ],
+                "gearChanges": "Cross-over Nose Band OFF FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 13,
+                "horse": {
+                  "name": "Mission Gold",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "B.Rawiller"
+                },
+                "trainer": {
+                  "name": "Patrick & Michelle Payne"
+                },
+                "weight": "58.5kg",
+                "gearList": [
+                  "Cross-over Nose Band"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436457",
+            "raceNumber": 1,
+            "name": "Ladbrokes Popular SRM Fillies & Mares Maiden Plate",
+            "distance": "1600m",
+            "class": "F&M MDN-SW",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Rich Curves",
+                  "sex": "Mare",
+                  "age": "5YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "S.A.Wynne"
+                },
+                "trainer": {
+                  "name": "A.T.Hanley"
+                },
+                "weight": "58kg",
+                "gearList": [
+                  "Cross-over Nose Band OFF",
+                  "Tongue Tie OFF",
+                  "Winkers"
+                ],
+                "gearChanges": "Cross-over Nose Band OFF AGAIN, Tongue Tie OFF AGAIN, Winkers FIRST TIME",
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436458",
+            "raceNumber": 3,
+            "name": "Ladbrokes Pakenham Cup Saturday 13 December Maiden Plate",
+            "distance": "1400m",
+            "class": "MDN-SW",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Or Am I",
+                  "sex": "Filly",
+                  "age": "3YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "L.J.Bates"
+                },
+                "trainer": {
+                  "name": "G.Eurell"
+                },
+                "weight": "56kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 2,
+                "horse": {
+                  "name": "Lightning Joey",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "N.Farley"
+                },
+                "trainer": {
+                  "name": "L.J.McGill"
+                },
+                "weight": "59.5kg",
+                "gearList": [
+                  "Cross-over Nose Band"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436459",
+            "raceNumber": 2,
+            "name": "Stables Plus Maiden Plate",
+            "distance": "1200m",
+            "class": "MDN-SW",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 13,
+                "horse": {
+                  "name": "Sky Watcher",
+                  "sex": "Filly",
+                  "age": "3YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "L.K.Cartwright"
+                },
+                "trainer": {
+                  "name": "J.R.Laing"
+                },
+                "weight": "56kg",
+                "gearList": [
+                  "Bandages (Hind)"
+                ],
+                "gearChanges": "Bandages (Hind) FIRST TIME, Blinkers FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 10,
+                "horse": {
+                  "name": "Sabeeria",
+                  "sex": "Filly",
+                  "age": "3",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "C.I.Brown"
+                },
+                "weight": "56kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Miss Navratilova",
+                  "sex": "Filly",
+                  "age": "3YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "C.Gaudray"
+                },
+                "trainer": {
+                  "name": "Ben, Will & JD Hayes"
+                },
+                "weight": "56kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)",
+                  "Lugging Bit"
+                ],
+                "gearChanges": "Ear Muffs (Pre-Race Only) FIRST TIME, Lugging Bit FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 12,
+                "horse": {
+                  "name": "Gold Decree",
+                  "sex": "Gelding",
+                  "age": "3YO",
+                  "colour": "Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "M.Laurie"
+                },
+                "weight": "58kg",
+                "gearList": [
+                  "Hanoverian Nose Band"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436460",
+            "raceNumber": 8,
+            "name": "Gippsland Premium Quarries BM66 Handicap",
+            "distance": "1400m",
+            "class": "BM66",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Pop's Pipe",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Grey-Brown"
+                },
+                "jockey": {
+                  "name": "L.J.Neindorf"
+                },
+                "trainer": {
+                  "name": "P.J.Stokes"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Bubble Cheeker (Off Side)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 8,
+                "horse": {
+                  "name": "Grand Sage",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "N.Daniels"
+                },
+                "trainer": {
+                  "name": "RC.Manning"
+                },
+                "weight": "55.5kg",
+                "gearList": [
+                  "Barrier Blanket"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 4,
+                "horse": {
+                  "name": "Mamuno",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.L.Mott"
+                },
+                "trainer": {
+                  "name": "C.I.Brown"
+                },
+                "weight": "58kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 7,
+                "horse": {
+                  "name": "Miss Playlounge",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "B.Mertens"
+                },
+                "trainer": {
+                  "name": "C.W.McDonald"
+                },
+                "weight": "57.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 12,
+                "horse": {
+                  "name": "Magick Media",
+                  "sex": "Gelding",
+                  "age": "3YO",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "L.J.Bates"
+                },
+                "trainer": {
+                  "name": "G.Eurell"
+                },
+                "weight": "58kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436461",
+            "raceNumber": 7,
+            "name": "Grant's Plumbing & Drainage Solutions BM62 Handicap",
+            "distance": "1200m",
+            "class": "BM62",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 15,
+                "horse": {
+                  "name": "Lady Sadler",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "B.Mertens"
+                },
+                "trainer": {
+                  "name": "C.W.McDonald"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Tongue Tie",
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 2,
+                "horse": {
+                  "name": "Bancory Bay",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "B.Rawiller"
+                },
+                "trainer": {
+                  "name": "J.R.Laing"
+                },
+                "weight": "63.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 14,
+                "horse": {
+                  "name": "Steel Move",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "L.J.Neindorf"
+                },
+                "trainer": {
+                  "name": "Tony & Calvin McEvoy"
+                },
+                "weight": "60.5kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 9,
+                "horse": {
+                  "name": "Duel Venture",
+                  "sex": "Gelding",
+                  "age": "6",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "L.J.Bates"
+                },
+                "trainer": {
+                  "name": "G.Eurell"
+                },
+                "weight": "59.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Happy Link",
+                  "sex": "Mare",
+                  "age": "5YO",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "C.Gaudray"
+                },
+                "trainer": {
+                  "name": "G.Eurell"
+                },
+                "weight": "58.5kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5436462",
+            "raceNumber": 4,
+            "name": "Ray White Pakenham & Officer Maiden Plate",
+            "distance": "2000m",
+            "class": "MDN-SW",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 12,
+                "horse": {
+                  "name": "Nikephoros",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "L.N.McNeil"
+                },
+                "trainer": {
+                  "name": "D.M.Noonan"
+                },
+                "weight": "59.5kg",
+                "gearList": [
+                  "Cross-over Nose Band"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 2,
+                "horse": {
+                  "name": "Za Za Best",
+                  "sex": "Gelding",
+                  "age": "3",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "T.Stockdale"
+                },
+                "trainer": {
+                  "name": "Trent Busuttin & Natalie Young"
+                },
+                "weight": "58kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "5189900",
+        "venueName": "sunshine-coast",
+        "venueCode": 461,
+        "date": "2025-11-14",
+        "track": "Turf",
+        "trackCondition": "Soft",
+        "railPosition": "True Entire Course.",
+        "weather": "Showers",
+        "state": "QLD",
+        "races": [
+          {
+            "id": "5438170",
+            "raceNumber": 2,
+            "name": "XXXX Class 3 Handicap",
+            "distance": "1000m",
+            "class": "CL3",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 7,
+                "horse": {
+                  "name": "Bundella",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "A.T.Jones"
+                },
+                "trainer": {
+                  "name": "T.J.Gollan"
+                },
+                "weight": "59.5kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5438171",
+            "raceNumber": 1,
+            "name": "AIRMASTER Class 2 Handicap",
+            "distance": "2200m",
+            "class": "CL2",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Kalkanli",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "D.Thornton"
+                },
+                "trainer": {
+                  "name": "M.J.Wilson"
+                },
+                "weight": "57kg",
+                "gearList": [
+                  "Visors"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5438172",
+            "raceNumber": 6,
+            "name": "KAWANA SLSC BENCHMARK 65 Handicap",
+            "distance": "1200m",
+            "class": "BM65",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 7,
+                "horse": {
+                  "name": "All's Fair",
+                  "sex": "Mare",
+                  "age": "8",
+                  "colour": "Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "B.M.Hull"
+                },
+                "weight": "62kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 11,
+                "horse": {
+                  "name": "Maikrow",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "L.I.Martyn"
+                },
+                "trainer": {
+                  "name": "G.K.Taylor"
+                },
+                "weight": "58kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 12,
+                "horse": {
+                  "name": "Keepmeinthelope",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "A.T.Jones"
+                },
+                "trainer": {
+                  "name": "M.A.Currie"
+                },
+                "weight": "58kg",
+                "gearList": [
+                  "Nasal Strip",
+                  "Tongue Tie"
+                ],
+                "gearChanges": "Nasal Strip FIRST TIME, Tongue Tie FIRST TIME",
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5438173",
+            "raceNumber": 5,
+            "name": "CLUB MOOLOOLABA RATINGS BAND 0 - 58 Handicap",
+            "distance": "1600m",
+            "class": "0 - 58",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 3,
+                "horse": {
+                  "name": "Roxset",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "J.L.Bayliss"
+                },
+                "trainer": {
+                  "name": "J.Bayliss"
+                },
+                "weight": "56.5kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 20,
+                "horse": {
+                  "name": "Mazita",
+                  "sex": "Gelding",
+                  "age": "6",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "T.J.Pascoe"
+                },
+                "weight": "60kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 1,
+                "horse": {
+                  "name": "Deep Dawn",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "C.Graham"
+                },
+                "trainer": {
+                  "name": "R.L.Heathcote"
+                },
+                "weight": "57.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 19,
+                "horse": {
+                  "name": "Averred",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "G.R.Duncan"
+                },
+                "weight": "57kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 16,
+                "horse": {
+                  "name": "Extol",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "M.A.Currie"
+                },
+                "weight": "59kg",
+                "gearList": [
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 15,
+                "horse": {
+                  "name": "Linda's Magic",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "G.R.Schwenke"
+                },
+                "weight": "54kg",
+                "gearList": [
+                  "Bandages (Hind)"
+                ],
+                "gearChanges": "Bandages (Hind) FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 6,
+                "horse": {
+                  "name": "Roman Heir",
+                  "sex": "Gelding",
+                  "age": "8",
+                  "colour": "Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "D.G.Murphy"
+                },
+                "weight": "57.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5438174",
+            "raceNumber": 7,
+            "name": "MOFFAT BEACH BREWING CO RATINGS BAND 0 - 58 Handicap",
+            "distance": "1200m",
+            "class": "0 - 58",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Brave Jet",
+                  "sex": "Gelding",
+                  "age": "3",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "M.A.Palmer"
+                },
+                "trainer": {
+                  "name": "S.R.Foster"
+                },
+                "weight": "58kg",
+                "gearList": [
+                  "Blinkers OFF"
+                ],
+                "gearChanges": "Blinkers OFF FIRST TIME",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 10,
+                "horse": {
+                  "name": "Miss Mercy",
+                  "sex": "Mare",
+                  "age": "4YO",
+                  "colour": "Chestnut"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "S.W.Kendrick"
+                },
+                "weight": "58kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": "Tongue Tie FIRST TIME",
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5438175",
+            "raceNumber": 4,
+            "name": "SPORTS HUB Maiden Handicap",
+            "distance": "1600m",
+            "class": "MDN",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 14,
+                "horse": {
+                  "name": "What Did You Say",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "J.A.M.Moore"
+                },
+                "weight": "57.5kg",
+                "gearList": [
+                  "Cross-over Nose Band",
+                  "Tongue Tie OFF"
+                ],
+                "gearChanges": "Cross-over Nose Band FIRST TIME, Tongue Tie OFF AGAIN",
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 1,
+                "horse": {
+                  "name": "Watchya Language",
+                  "sex": "Mare",
+                  "age": "4YO",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "C.G.Sutherland"
+                },
+                "trainer": {
+                  "name": "S.J.Sutherland"
+                },
+                "weight": "58.5kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 16,
+                "horse": {
+                  "name": "Enidzel",
+                  "sex": "Gelding",
+                  "age": "4",
+                  "colour": "Bay"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "D.G.Murphy"
+                },
+                "weight": "56kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)",
+                  "Winkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 9,
+                "horse": {
+                  "name": "Rubos",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Bay or Brown"
+                },
+                "jockey": {
+                  "name": "M.E.Philpot"
+                },
+                "trainer": {
+                  "name": "T.N.Miller"
+                },
+                "weight": "54kg",
+                "gearList": [
+                  "Cross-over Nose Band"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5438176",
+            "raceNumber": 8,
+            "name": "BEN LIDDELL CONSTRUCTIONS Maiden Plate",
+            "distance": "1000m",
+            "class": "MDN-SW",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 4,
+                "horse": {
+                  "name": "Bubbly Moon",
+                  "sex": "Mare",
+                  "age": "4",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "D.B.Smith"
+                },
+                "trainer": {
+                  "name": "T.B.Thomas"
+                },
+                "weight": "56.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Very Demure",
+                  "sex": "Filly",
+                  "age": "3",
+                  "colour": "Brown"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "L.F.Birchley"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Blinkers"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 1,
+                "horse": {
+                  "name": "Alarmed",
+                  "sex": "Filly",
+                  "age": "3YO",
+                  "colour": "Brown"
+                },
+                "jockey": {
+                  "name": "B.E.Thompson"
+                },
+                "trainer": {
+                  "name": "T.M.Mackinnon"
+                },
+                "weight": "55kg",
+                "gearList": [
+                  "Cross-over Nose Band",
+                  "Tongue Control Bit"
+                ],
+                "gearChanges": "Cross-over Nose Band FIRST TIME, Tongue Control Bit FIRST TIME",
+                "gearHasChanges": false
+              }
+            ]
+          },
+          {
+            "id": "5438594",
+            "raceNumber": 3,
+            "name": "VANTAGE BUILDING GROUP Class 6 Handicap",
+            "distance": "1000m",
+            "class": "CL6",
+            "status": "FinalFields",
+            "raceEntries": [
+              {
+                "barrierNumber": 9,
+                "horse": {
+                  "name": "Holy Racket",
+                  "sex": "Gelding",
+                  "age": "5",
+                  "colour": "Chestnut"
+                },
+                "jockey": null,
+                "trainer": {
+                  "name": "M.A.Currie"
+                },
+                "weight": "61.5kg",
+                "gearList": null,
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 6,
+                "horse": {
+                  "name": "Wild Botanica",
+                  "sex": "Mare",
+                  "age": "6",
+                  "colour": "Chestnut"
+                },
+                "jockey": {
+                  "name": "M.Rodd"
+                },
+                "trainer": {
+                  "name": "S.W.Kendrick"
+                },
+                "weight": "56.5kg",
+                "gearList": [
+                  "Tongue Tie"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              },
+              {
+                "barrierNumber": 5,
+                "horse": {
+                  "name": "Platinum Lies",
+                  "sex": "Mare",
+                  "age": "5",
+                  "colour": "Bay"
+                },
+                "jockey": {
+                  "name": "C.D.Collis"
+                },
+                "trainer": {
+                  "name": "N.C.McCall"
+                },
+                "weight": "54kg",
+                "gearList": [
+                  "Ear Muffs (Pre-Race Only)"
+                ],
+                "gearChanges": null,
+                "gearHasChanges": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
